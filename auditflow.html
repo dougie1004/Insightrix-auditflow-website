@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuditFlow | Technology & Solutions</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Pretendard:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --brand-navy: #0A192F;
+            --brand-gold: #D4AF37;
+            --text-dark: #1F2937;
+            --text-grey: #6B7280;
+            --bg-light: #F9FAFB;
+            --bg-white: #FFFFFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 부드러운 스크롤 이동 */
+        body {
+            font-family: 'Pretendard', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Main Navigation */
+        nav.main-nav {
+            padding: 15px 40px;
+            border-bottom: 1px solid #eee;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 2000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 200px;
+            width: auto;
+        }
+
+        .main-nav-links {
+            display: flex;
+            gap: 30px;
+            font-weight: 600;
+        }
+
+        .main-nav-links a {
+            text-decoration: none;
+            color: var(--brand-navy);
+            transition: 0.3s;
+        }
+
+        .main-nav-links a:hover {
+            color: var(--brand-gold);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #0A192F 0%, #172a45 100%);
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-title span {
+            color: var(--brand-gold);
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #a8b2d1;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+
+        /* Sticky Sub-Navigation */
+        .sub-nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid #ddd;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 15px 0;
+        }
+
+        .sub-nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .sub-nav a:hover,
+        .sub-nav a.active {
+            color: var(--brand-navy);
+        }
+
+        .sub-nav a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--brand-gold);
+        }
+
+        /* Common Section Style */
+        section {
+            padding: 100px 24px;
+            scroll-margin-top: 60px;
+            /* 스크롤 시 헤더에 가려지지 않게 여백 줌 */
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--brand-navy);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-grey);
+            font-size: 1.1rem;
+        }
+
+        /* 1. Architecture Section */
+        .arch-diagram {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .arch-diagram img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .tech-card {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .tech-card i {
+            font-size: 2rem;
+            color: var(--brand-navy);
+            margin-bottom: 15px;
+        }
+
+        .tech-card h4 {
+            margin: 10px 0;
+            color: var(--brand-navy);
+        }
+
+        /* 2. Detailed Features */
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text h3 {
+            font-size: 1.8rem;
+            color: var(--brand-navy);
+            margin-bottom: 15px;
+        }
+
+        .feature-text p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .feature-tags span {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .feature-img {
+            flex: 1.2;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .feature-img img {
+            width: 100%;
+            display: block;
+        }
+
+        /* 3. Comparison Table */
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th,
+        td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            font-size: 1rem;
+        }
+
+        th {
+            background: #f8fafc;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Highlight Column */
+        th.highlight,
+        td.highlight {
+            background: #f0f9ff;
+            border-left: 2px solid #0284c7;
+            border-right: 2px solid #0284c7;
+            color: #0c4a6e;
+            font-weight: 600;
+        }
+
+        th.highlight {
+            background: #0284c7;
+            color: white;
+            border-top: 5px solid var(--brand-navy);
+        }
+
+        .check-icon {
+            color: #10b981;
+            font-size: 1.2rem;
+        }
+
+        .cross-icon {
+            color: #ef4444;
+            font-size: 1.2rem;
+        }
+
+        /* 4. Download CTA */
+        .download-section {
+            background: var(--brand-navy);
+            color: white;
+            text-align: center;
+        }
+
+        .download-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-download {
+            background: var(--brand-gold);
+            color: var(--brand-navy);
+            padding: 18px 40px;
+            border-radius: 10px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .btn-download:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background: #050d1a;
+            color: #8892b0;
+            padding: 60px 40px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 968px) {
+            .feature-row {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .feature-row:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .tech-stack-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sub-nav-container {
+                gap: 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="main-nav">
+        <a href="index.html"><img src="Insightrix.png" alt="Insightrix Logo" class="logo"></a>
+        <div class="main-nav-links">
+            <a href="index.html">Home</a>
+            <a href="company.html">Company</a>
+            <a href="auditflow.html" style="color:var(--brand-gold);">AuditFlow</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">AuditFlow <span>Solution Overview</span></h1>
+            <p class="hero-desc">
+                Rust 기반의 초고속 로컬 엔진과 Gemini 3.0 Pro의 인텔리전스가 만났습니다.<br>
+                가장 안전하고 강력한 1인 감사 시스템을 경험하세요.
+            </p>
+        </div>
+    </div>
+
+    <div class="sub-nav">
+        <div class="sub-nav-container">
+            <a href="#architecture">시스템 아키텍처</a>
+            <a href="#features">주요 기능</a>
+            <a href="#comparison">경쟁력 비교</a>
+            <a href="#download">다운로드</a>
+        </div>
+    </div>
+
+    <section id="architecture" style="background:white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>System Architecture</h2>
+                <p>보안과 성능을 동시에 잡은 Hybrid-Cloud 구조</p>
+            </div>
+
+            <div class="arch-diagram">
+                <img src="diagram_image.png" alt="AuditFlow Architecture Diagram">
+                <p style="margin-top:20px; color:#666; font-size:0.9rem;">
+                    * 민감한 원장 데이터는 로컬 PC(Rust Engine) 내에서만 처리되며,<br>
+                    비식별화된 패턴 데이터만 Gemini AI API와 통신하여 보안성을 극대화했습니다.
+                </p>
+            </div>
+
+            <div class="tech-stack-grid">
+                <div class="tech-card">
+                    <i class="fab fa-rust"></i>
+                    <h4>Rust & Tauri Core</h4>
+                    <p>기존 Electron 앱 대비 메모리 사용량 1/3, 속도 2배 향상된 초경량 엔진</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Gemini 3.0 Pro</h4>
+                    <p>100만 토큰의 컨텍스트 윈도우를 활용한 맥락 기반 심층 감사 수행</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-database"></i>
+                    <h4>Local Vector DB</h4>
+                    <p>사내 데이터를 벡터화하여 외부 유출 없이 로컬에서 고속 검색 및 매칭</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" style="background:var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Features</h2>
+                <p>감사 프로세스의 A to Z를 자동화합니다</p>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h3>01. 데이터 자동 수집 및 정제 (ETL)</h3>
+                    <p>SAP, 더존 등 9개 이상의 이종 ERP 시스템 데이터를 원클릭으로 업로드하세요. AuditFlow 엔진이 복잡한 회계 데이터를 감사에 적합한 표준 포맷으로 자동 변환하고
+                        무결성을 검증합니다.</p>
+                    <div class="feature-tags">
+                        <span>#Data_Pipeline</span> <span>#Auto_Cleaning</span> <span>#Integrity_Check</span>
+                    </div>
+                </div>
+                <div class="feature-img">
+                    <img src="https://via.placeholder.com/600x400/eee/aaa?text=Data+Ingestion+UI" alt="Data Ingestion">
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h3>02. 자율 시나리오 생성 (ASG)</h3>
+                    <p>규칙 기반(Rule-based) 감사의 한계를 넘었습니다. AI가 과거 2년치 데이터를 학습하여, 통계적 이상치와 비정상 패턴을 감지하고 새로운 감사 시나리오를 스스로
+                        제안합니다.</p>
+                    <div class="feature-tags">
+                        <span>#Gemini_AI</span> <span>#Scenario_Mining</span> <span>#Anomaly_Detection</span>
+                    </div>
+                </div>
+                <div class="feature-img">
+                    <img src="https://via.placeholder.com/600x400/eee/aaa?text=AI+Scenario+Generation"
+                        alt="ASG Feature">
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h3>03. 증빙 자동 매칭 및 리포팅</h3>
+                    <p>적발된 이상 거래와 관련된 이메일, 결재 문서, 영수증 이미지를 자동으로 찾아 매칭합니다. 감사인은 AI가 초안을 작성한 '감사 보고서'를 검토하고 클릭 한 번으로 발행할 수
+                        있습니다.</p>
+                    <div class="feature-tags">
+                        <span>#Auto_Reporting</span> <span>#Evidence_Linking</span> <span>#PDF_Export</span>
+                    </div>
+                </div>
+                <div class="feature-img">
+                    <img src="https://via.placeholder.com/600x400/eee/aaa?text=Auto+Reporting" alt="Reporting Feature">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison" style="background:white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why AuditFlow?</h2>
+                <p>전통적인 상용 툴 대비 압도적인 효율성을 보장합니다</p>
+            </div>
+
+            <div class="comparison-table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">구분</th>
+                            <th style="width: 25%;">전통적 감사 툴 (A사/T사)</th>
+                            <th class="highlight" style="width: 30%; font-size:1.1rem;">AuditFlow (Insightrix)</th>
+                            <th style="width: 20%;">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>도입 방식</strong></td>
+                            <td>서버 구축형 (무거운 설치)</td>
+                            <td class="highlight">SaaS형 설치 (경량 클라이언트)</td>
+                            <td>즉시 도입 가능</td>
+                        </tr>
+                        <tr>
+                            <td><strong>구축 기간</strong></td>
+                            <td>평균 3~6개월</td>
+                            <td class="highlight">1일 (데이터 연동 즉시)</td>
+                            <td>Time-to-Value 극대화</td>
+                        </tr>
+                        <tr>
+                            <td><strong>기술 기반</strong></td>
+                            <td>구형 언어 / 단순 룰셋</td>
+                            <td class="highlight">Rust (속도) + Gen AI (지능)</td>
+                            <td>기술적 우위</td>
+                        </tr>
+                        <tr>
+                            <td><strong>보안 방식</strong></td>
+                            <td>클라우드 전송 (유출 우려)</td>
+                            <td class="highlight">On-Premise (로컬 처리)</td>
+                            <td>데이터 주권 보장</td>
+                        </tr>
+                        <tr>
+                            <td><strong>시나리오 확장성</strong></td>
+                            <td>전문가가 수동 설정 필요</td>
+                            <td class="highlight">AI 자율 생성 (Self-Learning)</td>
+                            <td>유지보수 비용 절감</td>
+                        </tr>
+                        <tr>
+                            <td><strong>도입 비용</strong></td>
+                            <td>수억 원대 (라이선스+구축비)</td>
+                            <td class="highlight">합리적 구독형 (월/연 결제)</td>
+                            <td>초기 투자 비용 ↓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download-section">
+        <div class="container">
+            <div class="download-box">
+                <h2 style="margin-bottom:20px;">Ready to Transform Your Audit?</h2>
+                <p style="margin-bottom:40px; color:rgba(255,255,255,0.8);">
+                    지금 바로 AuditFlow 데스크톱 클라이언트를 설치하고,<br>
+                    10초 만에 끝나는 놀라운 감사 경험을 시작해 보세요.
+                </p>
+
+                <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+                    <a href="#" class="btn-download">
+                        <i class="fab fa-windows"></i> Windows 다운로드 (v1.0)
+                    </a>
+                </div>
+
+                <div style="margin-top:40px; background:white; padding:20px; border-radius:15px; color:#333;">
+                    <h3 style="font-size:1.1rem; color:var(--brand-navy); margin-bottom:15px;">라이선스 키 발급 신청</h3>
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true"
+                        width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Insightrix Corp. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
