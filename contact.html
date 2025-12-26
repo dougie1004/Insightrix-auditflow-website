@@ -4,17 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Insightrix</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Pretendard:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
+    <title>Contact Us</title>
+    <link rel="icon" href="Insightrix.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --brand-navy: #0A192F;
             --brand-gold: #D4AF37;
             --text-dark: #1F2937;
-            --text-grey: #6B7280;
             --bg-light: #F9FAFB;
         }
 
@@ -23,11 +21,10 @@
             margin: 0;
             padding: 0;
             color: var(--text-dark);
-            line-height: 1.7;
-            background-color: var(--bg-light);
+            background: var(--bg-light);
+            line-height: 1.6;
         }
 
-        /* Navigation */
         nav {
             padding: 20px 40px;
             border-bottom: 1px solid #eee;
@@ -41,18 +38,26 @@
         }
 
         .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--brand-navy);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
             height: 200px;
             width: auto;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             font-weight: 600;
         }
 
         .nav-links a {
-            text-decoration: none;
             color: var(--brand-navy);
             transition: 0.3s;
         }
@@ -62,131 +67,51 @@
             color: var(--brand-gold);
         }
 
-        /* Header */
-        .page-header {
-            background: var(--brand-navy);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            font-weight: 800;
-        }
-
-        .page-header p {
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Content Layout */
         .container {
             max-width: 1200px;
-            margin: -50px auto 50px;
+            margin: 50px auto;
             padding: 0 24px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
             gap: 30px;
         }
 
-        /* Left Column: Info */
-        .info-card {
+        .card {
             background: white;
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            height: fit-content;
         }
 
         .info-item {
             display: flex;
             gap: 20px;
             margin-bottom: 30px;
-        }
-
-        .info-item:last-child {
-            margin-bottom: 0;
+            align-items: center;
         }
 
         .icon-box {
+            font-size: 1.5rem;
+            color: var(--brand-navy);
             width: 50px;
-            height: 50px;
-            background: var(--bg-light);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--brand-navy);
-            font-size: 1.2rem;
-            flex-shrink: 0;
+            text-align: center;
         }
 
-        .info-content h4 {
-            margin: 0 0 5px;
-            font-size: 1.1rem;
-            color: var(--brand-navy);
-        }
-
-        .info-content p {
-            margin: 0;
-            color: var(--text-grey);
-            font-size: 0.95rem;
-        }
-
-        .map-container {
-            margin-top: 30px;
-            border-radius: 15px;
-            overflow: hidden;
-            height: 250px;
-        }
-
-        iframe.map {
-            width: 100%;
-            height: 100%;
+        iframe {
             border: 0;
-        }
-
-        /* Right Column: Form */
-        .form-card {
-            background: white;
-            padding: 10px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-        }
-
-        iframe.google-form {
             width: 100%;
-            height: 850px;
-            border: none;
         }
 
-        /* Footer */
         footer {
             background: #0A192F;
             color: #8892b0;
             padding: 60px 40px;
             text-align: center;
-            font-size: 0.9rem;
-            margin-top: 50px;
         }
 
         @media (max-width: 900px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
             .container {
-                margin-top: 30px;
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -195,7 +120,7 @@
 <body>
 
     <nav>
-        <a href="index.html"><img src="Insightrix.png" alt="Insightrix Logo" class="logo"></a>
+        <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"> INSIGHTRIX</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="company.html">Company</a>
@@ -204,57 +129,50 @@
         </div>
     </nav>
 
-    <header class="page-header">
+    <div style="background: var(--brand-navy); color: white; text-align: center; padding: 80px 20px;">
         <h1>Get in Touch</h1>
-        <p>데이터 감사의 혁신, Insightrix와 함께하세요.<br>파트너십, 투자, 솔루션 도입 등 모든 문의를 환영합니다.</p>
-    </header>
+        <p>파트너십, 투자, 솔루션 도입 문의</p>
+    </div>
 
     <div class="container">
-        <div class="contact-grid">
-            <div class="info-card">
-                <h3 style="margin-top:0; margin-bottom:30px; color:var(--brand-navy);">Contact Information</h3>
-
-                <div class="info-item">
-                    <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="info-content">
-                        <h4>Location</h4>
-                        <p>서울특별시 강남구 테헤란로...(상세주소)</p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="icon-box"><i class="fas fa-envelope"></i></div>
-                    <div class="info-content">
-                        <h4>Email</h4>
-                        <p>insightrix1004@gmail.com</p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
-                    <div class="info-content">
-                        <h4>Phone</h4>
-                        <p>010-xxx-xxx</p>
-                    </div>
-                </div>
-
-                <div class="map-container">
-                    <iframe class="map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.926943899127!2d126.9748473153106!3d37.56653597979851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1b47db63849%3A0x6c9c7f1a3028447d!2z7ISc7Jq47Yq567OE7Iuc7LKt!5e0!3m2!1sko!2skr!4v1646723225881!5m2!1sko!2skr"
-                        allowfullscreen="" loading="lazy"></iframe>
+        <div class="card">
+            <h3 style="margin-top:0; color:var(--brand-navy);">Contact Info</h3>
+            <div class="info-item">
+                <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <h4>Location</h4>
+                    <p>서울특별시 강남구 테헤란로</p>
                 </div>
             </div>
-
-            <div class="form-card">
-                <iframe class="google-form"
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true">Loading...</iframe>
+            <div class="info-item">
+                <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <h4>Email</h4>
+                    <p>insightrix1004@gmail.com</p>
+                </div>
             </div>
+            <div class="info-item">
+                <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                <div>
+                    <h4>Phone</h4>
+                    <p>010-3479-0526</p>
+                </div>
+            </div>
+            <div style="height: 250px; border-radius: 15px; overflow: hidden; margin-top: 20px;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.926943899127!2d126.9748473153106!3d37.56653597979851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1b47db63849%3A0x6c9c7f1a3028447d!2z7ISc7Jq47Yq567OE7Iuc7LKt!5e0!3m2!1sko!2skr!4v1646723225881!5m2!1sko!2skr"
+                    style="height: 100%;" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="card" style="padding: 10px;">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true"
+                height="850">Loading...</iframe>
         </div>
     </div>
 
     <footer>
-        <p>(주)인사이트릭스 | 대표: 이동욱 | 사업자등록번호: ...</p>
-        <p style="margin-top:10px;">© 2025 Insightrix Corp. All Rights Reserved.</p>
+        <p>© 2025 Insightrix Corp. All Rights Reserved.</p>
     </footer>
 
 </body>

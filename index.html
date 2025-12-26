@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insightrix | Data Intelligence for Business</title>
+    <title>Insightrix | Data Intelligence</title>
+    <link rel="icon" href="Insightrix.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --brand-navy: #0A192F;
@@ -21,7 +21,6 @@
             margin: 0;
             padding: 0;
             color: var(--text-dark);
-            line-height: 1.6;
         }
 
         a {
@@ -29,165 +28,98 @@
             color: inherit;
         }
 
-        /* Header & Nav */
-        header {
-            padding: 20px 40px;
+        /* 네비게이션 */
+        nav {
+            padding: 10px 40px;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eee;
-            background: rgba(255, 255, 255, 0.98);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--brand-navy);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
+        /* 로고 크기 200px 적용 */
         .logo img {
             height: 200px;
             width: auto;
+            display: block;
         }
 
-        /* 메인 로고는 적당한 크기 유지 */
-
-        /* 메뉴 링크 스타일 */
-        nav {
+        .nav-links {
             display: flex;
             gap: 40px;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
-        nav a {
-            transition: 0.3s;
+        .nav-links a {
             color: var(--brand-navy);
+            transition: 0.3s;
+            cursor: pointer;
         }
 
-        nav a:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--brand-gold);
         }
 
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 140px 20px;
-            background: linear-gradient(135deg, #0A192F 0%, #112240 100%);
+            background: #0A192F;
             color: white;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
-            font-weight: 800;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: #a8b2d1;
-            margin-bottom: 50px;
-            font-weight: 300;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
 
         .cta-button {
             background: var(--brand-gold);
             color: var(--brand-navy);
-            padding: 18px 45px;
+            padding: 15px 40px;
             border-radius: 8px;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s;
             display: inline-block;
         }
 
-        .cta-button:hover {
-            background: #fff;
-            transform: translateY(-3px);
-        }
-
-        /* Solutions Section */
         .section {
             padding: 100px 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 80px;
-            font-size: 2.5rem;
-            color: var(--brand-navy);
-            font-weight: 700;
-        }
-
         .product-card {
             display: flex;
             align-items: center;
-            gap: 60px;
+            gap: 50px;
             background: var(--bg-light);
-            padding: 60px;
+            padding: 50px;
             border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-        }
-
-        .product-info {
-            flex: 1;
-        }
-
-        .product-info h3 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--brand-navy);
-            font-weight: 700;
-        }
-
-        .product-info p {
-            font-size: 1.15rem;
-            color: #555;
-            margin-bottom: 35px;
-            line-height: 1.7;
-        }
-
-        .product-img {
-            flex: 1.2;
         }
 
         .product-img img {
             width: 100%;
             border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            display: block;
         }
 
-        /* Footer */
         footer {
             background: #0A192F;
-            color: #8892b0;
-            padding: 80px 40px;
+            color: #aaa;
+            padding: 60px 40px;
             text-align: center;
-            font-size: 0.95rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         @media (max-width: 968px) {
             .product-card {
                 flex-direction: column;
-                text-align: center;
-                padding: 40px;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            header {
+            nav {
                 flex-direction: column;
                 gap: 20px;
             }
@@ -197,44 +129,43 @@
 
 <body>
 
-    <header>
-        <a href="index.html" class="logo">
-            <img src="Insightrix.png" alt="Insightrix Logo"> INSIGHTRIX
-        </a>
-
-        <nav>
-            <a href="auditflow.html">AuditFlow</a>
+    <nav>
+        <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"></a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
             <a href="company.html">Company</a>
+            <a href="auditflow.html">AuditFlow</a>
             <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <section class="hero">
-        <h1>정교한 지표로<br>비즈니스의 통찰을 그리다</h1>
-        <p>데이터에 숨겨진 진실을 찾아 기업의 올바른 의사결정을 돕습니다.</p>
-        <a href="#solutions" class="cta-button">솔루션 살펴보기</a>
+        <h1>정교한 지표로 통찰을 그리다</h1>
+        <p style="margin-bottom: 50px; opacity: 0.8; font-size: 1.2rem;">데이터에 숨겨진 진실을 찾아 기업의 올바른 의사결정을 돕습니다.</p>
+        <a href="auditflow.html" class="cta-button">솔루션 살펴보기</a>
     </section>
 
-    <section id="solutions" class="section">
-        <div class="section-title">Our Solutions</div>
+    <section class="section">
+        <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: var(--brand-navy);">Our Solutions
+        </h2>
         <div class="product-card">
-            <div class="product-info">
-                <h3>AuditFlow</h3>
-                <p><strong>Gemini 3.0 Pro 기반 자율 감사 시스템</strong><br>
-                    2년치 전사 데이터를 10초 만에 통합 분석하여 리스크 사각지대를 제거합니다.
-                    감사 전문가의 통찰력과 AI의 기술력을 결합한 최고의 파트너를 만나보세요.</p>
-
-                <a href="auditflow.html" class="cta-button">AuditFlow 다운로드 &rarr;</a>
+            <div style="flex:1;">
+                <h3 style="font-size: 2rem; color: var(--brand-navy); margin-bottom: 20px;">AuditFlow</h3>
+                <p style="font-size: 1.1rem; line-height: 1.6;">
+                    <strong>Gemini 3.0 Pro 기반 자율 감사 시스템</strong><br>
+                    2년치 데이터를 10초 만에 분석하여 리스크 사각지대를 제거합니다.
+                </p>
+                <br>
+                <a href="auditflow.html" class="cta-button">상세 보기 →</a>
             </div>
-            <div class="product-img">
-                <img src="auditflow_demo.gif" alt="AuditFlow Dashboard Demo">
+            <div style="flex:1;">
+                <img src="auditflow_demo.gif" alt="AuditFlow Demo">
             </div>
         </div>
     </section>
 
     <footer>
-        <p>(주)인사이트릭스 | 대표: 이동욱 | 서울특별시 ...</p>
-        <p style="margin-top:10px;">© 2025 Insightrix Corp. All Rights Reserved. | Navigate Risks with AI</p>
+        <p>© 2025 Insightrix Corp. All Rights Reserved.</p>
     </footer>
 
 </body>

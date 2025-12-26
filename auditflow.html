@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuditFlow | Technology & Solutions</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Pretendard:wght@300;400;600;700;800&display=swap"
+    <title>AuditFlow | Technology</title>
+    <link rel="icon" href="Insightrix.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -14,9 +14,7 @@
             --brand-navy: #0A192F;
             --brand-gold: #D4AF37;
             --text-dark: #1F2937;
-            --text-grey: #6B7280;
             --bg-light: #F9FAFB;
-            --bg-white: #FFFFFF;
         }
 
         html {
@@ -28,78 +26,65 @@
             margin: 0;
             padding: 0;
             color: var(--text-dark);
-            line-height: 1.6;
         }
 
-        /* Main Navigation */
-        nav.main-nav {
-            padding: 15px 40px;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        nav {
+            padding: 10px 40px;
             border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
             background: rgba(255, 255, 255, 0.98);
-            z-index: 2000;
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
+        .logo img {
             height: 200px;
             width: auto;
+            display: block;
         }
 
-        .main-nav-links {
+        .nav-links {
             display: flex;
-            gap: 30px;
-            font-weight: 600;
+            gap: 40px;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
-        .main-nav-links a {
-            text-decoration: none;
+        .nav-links a {
             color: var(--brand-navy);
             transition: 0.3s;
+            cursor: pointer;
         }
 
-        .main-nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--brand-gold);
         }
 
-        /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #0A192F 0%, #172a45 100%);
+            background: #0A192F;
             color: white;
-            padding: 100px 20px 80px;
+            padding: 100px 20px;
             text-align: center;
         }
 
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .hero-title span {
-            color: var(--brand-gold);
-        }
-
-        .hero-desc {
-            font-size: 1.2rem;
-            color: #a8b2d1;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            font-weight: 300;
-        }
-
-        /* Video Link Overlay Style */
         .hero-image-wrapper {
             position: relative;
             display: inline-block;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
             max-width: 900px;
             width: 100%;
+            transition: transform 0.3s;
         }
 
         .hero-image-wrapper:hover {
@@ -111,222 +96,31 @@
             display: block;
         }
 
-        .play-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .hero-image-wrapper:hover .play-overlay {
-            opacity: 1;
-        }
-
-        .play-icon {
-            font-size: 4rem;
-            color: white;
-            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
-        }
-
-        /* Sticky Sub-Navigation */
         .sub-nav {
             position: sticky;
-            top: 0;
+            top: 220px;
             background: white;
             border-bottom: 1px solid #ddd;
-            z-index: 1000;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .sub-nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 50px;
+            z-index: 900;
             padding: 15px 0;
+            text-align: center;
         }
 
         .sub-nav a {
-            text-decoration: none;
-            color: #555;
+            margin: 0 20px;
             font-weight: 600;
-            font-size: 1rem;
-            position: relative;
-            padding: 5px 0;
+            color: #555;
         }
 
-        .sub-nav a:hover,
-        .sub-nav a.active {
+        .sub-nav a:hover {
             color: var(--brand-navy);
         }
 
-        .sub-nav a:hover::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--brand-gold);
-        }
-
-        /* Sections */
         section {
             padding: 100px 24px;
-            scroll-margin-top: 60px;
-        }
-
-        .container {
             max-width: 1100px;
             margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            color: var(--brand-navy);
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            color: var(--text-grey);
-            font-size: 1.1rem;
-        }
-
-        /* Architecture */
-        .arch-diagram {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .arch-diagram img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .tech-stack-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .tech-card {
-            background: var(--bg-light);
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .tech-card i {
-            font-size: 2rem;
-            color: var(--brand-navy);
-            margin-bottom: 15px;
-        }
-
-        /* Features */
-        .feature-row {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            margin-bottom: 80px;
-        }
-
-        .feature-row:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .feature-text {
-            flex: 1;
-        }
-
-        .feature-text h3 {
-            font-size: 1.8rem;
-            color: var(--brand-navy);
-            margin-bottom: 15px;
-        }
-
-        .feature-tags span {
-            background: #e0e7ff;
-            color: #3730a3;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-right: 8px;
-        }
-
-        .feature-img {
-            flex: 1.2;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .feature-img img {
-            width: 100%;
-            display: block;
-        }
-
-        /* Comparison Table */
-        .comparison-table-wrapper {
-            overflow-x: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-        }
-
-        th,
-        td {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        th.highlight,
-        td.highlight {
-            background: #f0f9ff;
-            border-left: 2px solid #0284c7;
-            border-right: 2px solid #0284c7;
-            color: #0c4a6e;
-            font-weight: 600;
-        }
-
-        th.highlight {
-            background: #0284c7;
-            color: white;
-            border-top: 5px solid var(--brand-navy);
-        }
-
-        /* Download Section */
-        .download-section {
-            background: var(--brand-navy);
-            color: white;
-            text-align: center;
+            scroll-margin-top: 280px;
         }
 
         .btn-download {
@@ -335,40 +129,25 @@
             padding: 18px 40px;
             border-radius: 10px;
             font-weight: 800;
-            text-decoration: none;
             display: inline-flex;
-            align-items: center;
             gap: 10px;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
-
-        .btn-download:hover {
-            background: white;
-            transform: translateY(-3px);
         }
 
         footer {
-            background: #050d1a;
-            color: #8892b0;
+            background: #0A192F;
+            color: #aaa;
             padding: 60px 40px;
             text-align: center;
-            font-size: 0.9rem;
         }
 
         @media (max-width: 968px) {
-            .feature-row {
+            nav {
                 flex-direction: column;
-                text-align: center;
-            }
-
-            .tech-stack-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .sub-nav-container {
                 gap: 20px;
-                font-size: 0.9rem;
+            }
+
+            .sub-nav {
+                top: 240px;
             }
         }
     </style>
@@ -376,151 +155,60 @@
 
 <body>
 
-    <nav class="main-nav">
-        <a href="index.html"><img src="Insightrix.png" alt="Insightrix Logo" class="logo"></a>
-        <div class="main-nav-links">
+    <nav>
+        <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"></a>
+        <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="company.html">Company</a>
-            <a href="auditflow.html" style="color:var(--brand-gold);">AuditFlow</a>
+            <a href="auditflow.html" class="active">AuditFlow</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
 
     <div class="hero-section">
-        <div class="container">
-            <h1 class="hero-title">AuditFlow <span>Solution Overview</span></h1>
-            <p class="hero-desc">
-                Rust 기반의 초고속 로컬 엔진과 Gemini 3.0 Pro의 인텔리전스가 만났습니다.<br>
-                아래 이미지를 클릭하여 데모 시연 영상을 확인하세요.
-            </p>
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">AuditFlow Overview</h1>
+        <p style="margin-bottom: 40px; opacity: 0.8;">이미지를 클릭하여 데모 시연 영상을 확인하세요.</p>
 
-            <a href="https://youtu.be/M_gpQ_8xSTA" target="_blank" class="hero-image-wrapper">
-                <img src="auditflow_demo.gif" alt="AuditFlow Demo Click to Watch">
-                <div class="play-overlay">
-                    <i class="fas fa-play-circle play-icon"></i>
-                </div>
-            </a>
-        </div>
+        <a href="https://www.youtube.com/YOUR_VIDEO_ID" target="_blank" class="hero-image-wrapper">
+            <img src="auditflow_demo.gif" alt="Demo Video">
+        </a>
     </div>
 
     <div class="sub-nav">
-        <div class="sub-nav-container">
-            <a href="#architecture">시스템 아키텍처</a>
-            <a href="#features">주요 기능</a>
-            <a href="#comparison">경쟁력 비교</a>
-            <a href="#download">다운로드</a>
-        </div>
+        <a href="#architecture">아키텍처</a>
+        <a href="#features">주요 기능</a>
+        <a href="#download">다운로드</a>
     </div>
 
-    <section id="architecture" style="background:white;">
-        <div class="container">
-            <div class="section-header">
-                <h2>System Architecture</h2>
-                <p>보안과 성능을 동시에 잡은 Hybrid-Cloud 구조</p>
-            </div>
-            <div class="arch-diagram">
-                <img src="diagram_image.png" alt="AuditFlow Architecture Diagram">
-                <p style="margin-top:20px; color:#666; font-size:0.9rem;">
-                    * 민감한 원장 데이터는 로컬 PC(Rust Engine) 내에서만 처리되며,<br>
-                    비식별화된 패턴 데이터만 Gemini AI API와 통신합니다.
-                </p>
-            </div>
-            <div class="tech-stack-grid">
-                <div class="tech-card"><i class="fab fa-rust"></i>
-                    <h4>Rust & Tauri Core</h4>
-                    <p>메모리 안전성 및 초고속 처리</p>
-                </div>
-                <div class="tech-card"><i class="fas fa-brain"></i>
-                    <h4>Gemini 3.0 Pro</h4>
-                    <p>문맥 기반 심층 감사 수행</p>
-                </div>
-                <div class="tech-card"><i class="fas fa-database"></i>
-                    <h4>Local Vector DB</h4>
-                    <p>데이터 유출 없는 로컬 검색</p>
-                </div>
+    <section id="architecture">
+        <h2 style="text-align: center; margin-bottom: 40px; color: var(--brand-navy); font-size: 2.2rem;">System
+            Architecture</h2>
+        <div style="text-align: center;">
+            <img src="diagram_image.png" alt="Architecture"
+                style="max-width: 100%; border-radius: 10px; border: 1px solid #eee;">
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">* 민감 데이터는 로컬 Rust 엔진에서 처리됩니다.</p>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2 style="text-align: center; margin-bottom: 40px; color: var(--brand-navy); font-size: 2.2rem;">Key Features
+        </h2>
+        <div style="display: flex; gap: 40px; align-items: center; justify-content: center;">
+            <div>
+                <h3>01. 자율 시나리오 생성 (ASG)</h3>
+                <p>AI가 과거 데이터를 학습하여 감사 시나리오를 스스로 제안합니다.</p>
             </div>
         </div>
     </section>
 
-    <section id="features" style="background:var(--bg-light);">
-        <div class="container">
-            <div class="section-header">
-                <h2>Key Features</h2>
-                <p>감사 프로세스의 A to Z를 자동화합니다</p>
-            </div>
-            <div class="feature-row">
-                <div class="feature-text">
-                    <h3>01. 데이터 자동 수집 (ETL)</h3>
-                    <p>9개 이상의 ERP 데이터를 원클릭으로 수집 및 정제합니다.</p>
-                    <div class="feature-tags"><span>#Data_Pipeline</span> <span>#Auto_Cleaning</span></div>
-                </div>
-                <div class="feature-img"><img src="https://via.placeholder.com/600x400/eee/aaa?text=Data+Ingestion"
-                        alt="ETL"></div>
-            </div>
-            <div class="feature-row">
-                <div class="feature-text">
-                    <h3>02. 자율 시나리오 생성 (ASG)</h3>
-                    <p>AI가 과거 데이터를 학습하여 감사 시나리오를 스스로 제안합니다.</p>
-                    <div class="feature-tags"><span>#Gemini_AI</span> <span>#Auto_Scenario</span></div>
-                </div>
-                <div class="feature-img"><img src="https://via.placeholder.com/600x400/eee/aaa?text=AI+Analysis"
-                        alt="ASG"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="comparison" style="background:white;">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why AuditFlow?</h2>
-                <p>압도적인 효율성을 경험하세요</p>
-            </div>
-            <div class="comparison-table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th width="25%">구분</th>
-                            <th width="25%">타사 솔루션</th>
-                            <th class="highlight" width="30%">AuditFlow</th>
-                            <th width="20%">비고</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>도입 방식</strong></td>
-                            <td>서버 구축 (무거움)</td>
-                            <td class="highlight">SaaS형 설치 (가벼움)</td>
-                            <td>즉시 도입</td>
-                        </tr>
-                        <tr>
-                            <td><strong>구축 기간</strong></td>
-                            <td>3~6개월</td>
-                            <td class="highlight">1일 (즉시 연동)</td>
-                            <td>Time-to-Value</td>
-                        </tr>
-                        <tr>
-                            <td><strong>보안 방식</strong></td>
-                            <td>클라우드 전송</td>
-                            <td class="highlight">On-Premise (로컬)</td>
-                            <td>데이터 주권</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section id="download" class="download-section">
-        <div class="container">
-            <h2>Ready to Transform Your Audit?</h2>
-            <p style="margin-bottom:30px; opacity:0.8;">지금 바로 데스크톱 클라이언트를 다운로드하세요.</p>
-            <a href="#" class="btn-download"><i class="fab fa-windows"></i> Windows 다운로드</a>
-            <div style="margin-top:40px; background:white; padding:20px; border-radius:15px; color:#333;">
-                <h3>라이선스 키 발급 신청</h3>
-                <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true"
-                    width="100%" height="600" frameborder="0"></iframe>
-            </div>
+    <section id="download"
+        style="text-align: center; background: var(--brand-navy); color: white; border-radius: 20px; padding: 60px;">
+        <h2 style="margin-bottom: 30px;">Start AuditFlow Now</h2>
+        <a href="#" class="btn-download"><i class="fas fa-download"></i> Windows 다운로드</a>
+        <div style="margin-top: 40px; background: white; padding: 10px; border-radius: 15px; height: 600px;">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true"
+                width="100%" height="100%" frameborder="0"></iframe>
         </div>
     </section>
 
@@ -531,5 +219,3 @@
 </body>
 
 </html>
-
-
