@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Insightrix</title>
+    <title>About Insightrix | Corporate Profile</title>
     <link rel="icon" href="Insightrix.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --brand-navy: #0A192F;
@@ -21,13 +22,16 @@
             margin: 0;
             padding: 0;
             color: var(--text-dark);
+            line-height: 1.7;
         }
 
+        /* 링크 밑줄 제거 */
         a {
-            text-decoration: none;
+            text-decoration: none !important;
             color: inherit;
         }
 
+        /* 네비게이션 */
         nav {
             padding: 10px 40px;
             border-bottom: 1px solid #eee;
@@ -40,6 +44,7 @@
             align-items: center;
         }
 
+        /* 로고 200px 고정 */
         .logo img {
             height: 200px;
             width: auto;
@@ -57,6 +62,7 @@
             color: var(--brand-navy);
             transition: 0.3s;
             cursor: pointer;
+            border-bottom: none;
         }
 
         .nav-links a:hover,
@@ -64,26 +70,111 @@
             color: var(--brand-gold);
         }
 
+        /* Header */
         .page-header {
-            background: #0A192F;
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
         }
 
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
         .section {
-            padding: 80px 24px;
+            padding: 100px 24px;
             max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--brand-navy);
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        /* Mission & Vision Grid */
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .mv-card {
+            padding: 40px;
+            background: var(--bg-light);
+            border-radius: 20px;
+            border-left: 5px solid var(--brand-gold);
+        }
+
+        .mv-card h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            color: var(--brand-navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Core Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .value-item {
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--brand-navy);
+            margin-bottom: 20px;
+        }
+
+        .value-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Leadership Styling */
+        .leadership-section {
+            background: var(--bg-light);
+            padding: 100px 24px;
         }
 
         .leader-card {
             display: flex;
             background: white;
             border-radius: 20px;
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             margin-bottom: 40px;
-            overflow: hidden;
         }
 
         .leader-img {
@@ -98,16 +189,33 @@
             flex: 1;
         }
 
+        .leader-title {
+            color: var(--brand-gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
         footer {
             background: #0A192F;
-            color: #aaa;
+            color: #8892b0;
             padding: 60px 40px;
             text-align: center;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+
+            .mv-grid,
+            .values-grid,
             .leader-card {
+                grid-template-columns: 1fr;
                 flex-direction: column;
+            }
+
+            .leader-img {
+                width: 100%;
+                height: 300px;
             }
 
             nav {
@@ -131,44 +239,96 @@
     </nav>
 
     <header class="page-header">
-        <h1 style="font-size: 3rem; margin-bottom: 20px;">The Standard of Integrity</h1>
-        <p style="font-size: 1.2rem; opacity: 0.9;">데이터 기술로 비즈니스의 신뢰를 재정의합니다.</p>
+        <h1>The Standard of Integrity</h1>
+        <p>인사이트릭스는 데이터 기술로 비즈니스의 신뢰를 재정의합니다.<br>
+            복잡한 데이터 속에서 가장 명확한 진실을 찾아냅니다.</p>
     </header>
 
     <section class="section">
-        <h2 style="text-align: center; margin-bottom: 60px; color: var(--brand-navy); font-size: 2.2rem;">Leadership
-        </h2>
-
-        <div class="leader-card">
-            <img src="https://via.placeholder.com/300x400?text=CEO" alt="CEO" class="leader-img">
-            <div class="leader-info">
-                <h3 style="font-size: 1.8rem; margin: 0 0 5px;">이동욱 (Dong-wook Lee)</h3>
-                <span style="color: var(--brand-gold); font-weight: 600;">Founder & CEO</span>
-                <p style="margin-top: 20px; color: #555;">"기술이 감사인의 가장 강력한 무기가 될 수 있음을 확신했습니다."</p>
-                <p style="margin-top: 10px; font-size: 0.9rem;">• 前 글로벌 기업 내부감사 20년<br>• AICPA, CIA, CFE 보유</p>
+        <div class="section-title">Our Philosophy</div>
+        <div class="mv-grid">
+            <div class="mv-card">
+                <h3><i class="fas fa-flag"></i> Mission</h3>
+                <p><strong>"To Illuminate the Truth in Data"</strong><br><br>
+                    우리는 감사인과 기업이 데이터의 사각지대 없이 리스크를 통제하고,
+                    더 투명하고 건강한 비즈니스 생태계를 만들도록 돕습니다.</p>
             </div>
-        </div>
-
-        <div class="leader-card">
-            <img src="https://via.placeholder.com/300x400?text=CFO" alt="CFO" class="leader-img">
-            <div class="leader-info">
-                <h3 style="font-size: 1.8rem; margin: 0 0 5px;">김혜정 (Hye-jeong Kim)</h3>
-                <span style="color: var(--brand-gold); font-weight: 600;">CFO</span>
-                <p style="margin-top: 20px; color: #555;">"데이터가 가리키는 재무적 진실을 정확하게 읽어내어 투명한 성장을 책임집니다."</p>
-                <p style="margin-top: 10px; font-size: 0.9rem;">• 재무/회계 분야 17년 경력 전문가</p>
-            </div>
-        </div>
-
-        <div class="leader-card">
-            <img src="https://via.placeholder.com/300x400?text=CTO" alt="CTO" class="leader-img">
-            <div class="leader-info">
-                <h3 style="font-size: 1.8rem; margin: 0 0 5px;">김민준 (Min-jun Kim)</h3>
-                <span style="color: var(--brand-gold); font-weight: 600;">CTO</span>
-                <p style="margin-top: 20px; color: #555;">"Rust 고성능 엔진과 Gemini AI 통합을 총괄합니다."</p>
-                <p style="margin-top: 10px; font-size: 0.9rem;">• Full-stack Software Architect</p>
+            <div class="mv-card">
+                <h3><i class="fas fa-eye"></i> Vision</h3>
+                <p><strong>"Global No.1 Autonomous Audit Platform"</strong><br><br>
+                    인간의 통찰력(Insight)과 AI 기술(Matrix)의 결합을 통해,
+                    전 세계 어디서나 통용되는 자율 감사 시스템의 표준이 됩니다.</p>
             </div>
         </div>
     </section>
+
+    <section class="section">
+        <div class="section-title">Core Values</div>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-icon"><i class="fas fa-search-dollar"></i></div>
+                <h4>Insight (통찰)</h4>
+                <p>단순한 데이터 나열이 아닌, 문제의 본질을 꿰뚫는 깊이 있는 시각을 제공합니다.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+                <h4>Integrity (무결성)</h4>
+                <p>감사의 기본 원칙을 준수하며, 타협하지 않는 데이터의 정확성과 윤리를 지킵니다.</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon"><i class="fas fa-microchip"></i></div>
+                <h4>Innovation (혁신)</h4>
+                <p>Rust와 AI 등 최신 기술을 통해 전통적인 감사 프로세스의 한계를 뛰어넘습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="leadership-section">
+        <div class="section">
+            <div class="section-title">Leadership</div>
+
+            <div class="leader-card">
+                <img src="https://via.placeholder.com/300x400?text=CEO" alt="CEO" class="leader-img">
+                <div class="leader-info">
+                    <h3 style="font-size: 1.8rem; margin: 0 0 5px;">이동욱 (Dong-wook Lee)</h3>
+                    <span class="leader-title">Founder & CEO</span>
+                    <p>"20년간의 감사 현장 경험을 통해, 기술이 감사인의 가장 강력한 무기가 될 수 있음을 확신했습니다."</p>
+                    <ul style="list-style: none; padding: 0; margin-top: 20px; font-size: 0.95rem; color: #555;">
+                        <li><i class="fas fa-check-circle"></i> 現 Insightrix 대표이사</li>
+                        <li><i class="fas fa-check-circle"></i> 前 글로벌 기업 내부감사 (20년)</li>
+                        <li><i class="fas fa-certificate"></i> AICPA, CIA, CFE 보유</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="leader-card">
+                <img src="https://via.placeholder.com/300x400?text=CFO" alt="CFO" class="leader-img">
+                <div class="leader-info">
+                    <h3 style="font-size: 1.8rem; margin: 0 0 5px;">김혜정 (Hye-jeong Kim)</h3>
+                    <span class="leader-title">CFO (Chief Financial Officer)</span>
+                    <p>"17년간의 재무적 통찰로 기업의 안정적인 성장과 투명한 거버넌스를 책임집니다."</p>
+                    <ul style="list-style: none; padding: 0; margin-top: 20px; font-size: 0.95rem; color: #555;">
+                        <li><i class="fas fa-check-circle"></i> 現 Insightrix CFO</li>
+                        <li><i class="fas fa-check-circle"></i> 재무/회계 분야 17년 경력 전문가</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="leader-card">
+                <img src="https://via.placeholder.com/300x400?text=CTO" alt="CTO" class="leader-img">
+                <div class="leader-info">
+                    <h3 style="font-size: 1.8rem; margin: 0 0 5px;">김민준 (Min-jun Kim)</h3>
+                    <span class="leader-title">Co-Founder & CTO</span>
+                    <p>"Rust 기반의 고성능 엔진과 Gemini 3.0 Pro AI 모델 통합을 총괄합니다."</p>
+                    <ul style="list-style: none; padding: 0; margin-top: 20px; font-size: 0.95rem; color: #555;">
+                        <li><i class="fas fa-check-circle"></i> Full-stack Software Architect</li>
+                        <li><i class="fas fa-check-circle"></i> AI & LLM Integration Expert</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <footer>
         <p>© 2025 Insightrix Corp. All Rights Reserved.</p>
