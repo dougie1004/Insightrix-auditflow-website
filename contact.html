@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="icon" href="Insightrix.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -22,11 +23,16 @@
             padding: 0;
             color: var(--text-dark);
             background: var(--bg-light);
-            line-height: 1.6;
+        }
+
+        /* 링크 밑줄 제거 (전체 적용) */
+        a {
+            text-decoration: none !important;
+            color: inherit;
         }
 
         nav {
-            padding: 20px 40px;
+            padding: 10px 40px;
             border-bottom: 1px solid #eee;
             position: sticky;
             top: 0;
@@ -37,29 +43,25 @@
             align-items: center;
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--brand-navy);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
+        /* 로고 스타일: 200px 크기 고정 */
         .logo img {
             height: 200px;
             width: auto;
+            display: block;
         }
 
         .nav-links {
             display: flex;
             gap: 40px;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
         .nav-links a {
             color: var(--brand-navy);
             transition: 0.3s;
+            cursor: pointer;
+            border-bottom: none;
         }
 
         .nav-links a:hover,
@@ -67,6 +69,7 @@
             color: var(--brand-gold);
         }
 
+        /* 컨텐츠 스타일 */
         .container {
             max-width: 1200px;
             margin: 50px auto;
@@ -104,7 +107,7 @@
 
         footer {
             background: #0A192F;
-            color: #8892b0;
+            color: #aaa;
             padding: 60px 40px;
             text-align: center;
         }
@@ -113,6 +116,11 @@
             .container {
                 grid-template-columns: 1fr;
             }
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -120,7 +128,8 @@
 <body>
 
     <nav>
-        <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"> INSIGHTRIX</a>
+        <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"></a>
+
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="company.html">Company</a>
@@ -129,7 +138,7 @@
         </div>
     </nav>
 
-    <div style="background: var(--brand-navy); color: white; text-align: center; padding: 80px 20px;">
+    <div style="background: #0A192F; color: white; text-align: center; padding: 80px 20px;">
         <h1>Get in Touch</h1>
         <p>파트너십, 투자, 솔루션 도입 문의</p>
     </div>
