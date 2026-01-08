@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AccountingFlow | AI 자율 회계 & 경영 리포트</title>
+    <title>AccountingFlow | Insightrix AI 자율 회계 & 경영 리포트</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -11,90 +11,128 @@
         @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800;900&display=swap');
         :root { --brand-navy: #0A192F; --brand-gold: #D4AF37; }
         body { font-family: 'Pretendard', sans-serif; word-break: keep-all; scroll-behavior: smooth; }
+        
+        /* 네비게이션바 통일: Insightrix 단일 로고 */
         nav { padding: 10px 40px; border-bottom: 1px solid #eee; position: sticky; top: 0; background: white; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-        .dual-logo { display: flex; align-items: center; gap: 20px; }
+        .logo img { height: 80px; width: auto; display: block; }
+        
         .cta-gold { background: var(--brand-gold); color: var(--brand-navy); transition: 0.3s; cursor: pointer; }
         .cta-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
     </style>
 </head>
 <body class="bg-white">
     <nav>
-        <div class="dual-logo">
-            <a href="accountingflow.html"><img src="accountingflow_logo.png" style="height:60px;"></a>
-            <a href="index.html"><img src="Insightrix.png" style="height:40px; border-left: 2px solid #ddd; padding-left: 20px;"></a>
-        </div>
+        <a href="index.html" class="logo">
+            <img src="Insightrix.png" alt="Insightrix Logo">
+        </a>
         <div class="hidden md:flex space-x-8 font-bold text-[#0A192F]">
             <a href="index.html">Home</a>
             <a href="accountingflow.html" style="color: var(--brand-gold)">AccountingFlow</a>
             <a href="auditflow.html">AuditFlow</a>
+            <a href="company.html">Company</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
 
     <section class="py-32 px-6 text-center bg-slate-50">
         <h1 class="text-5xl md:text-6xl font-black text-[#0A192F] mb-8 leading-tight">회계 지식은 0,<br><span class="text-[#D4AF37]">경영은 AI 자율 회계</span>로.</h1>
-        <p class="text-lg text-gray-500 mb-12 max-w-3xl mx-auto">AI가 실시간 증빙을 인식하고 준법 모니터링을 수행합니다.<br>복잡한 승인 대신, AI가 생성한 세무 신고 파일을 확인만 하세요.</p>
-        <a href="#apply" class="cta-gold px-12 py-5 rounded-xl font-black text-xl shadow-lg">무료 베타 신청하기</a>
+        <p class="text-lg text-gray-500 mb-12 max-w-3xl mx-auto font-medium">
+            AI가 실시간으로 증빙을 인식하고 준법 모니터링을 수행합니다.<br>
+            복잡한 전표 승인 대신, AI가 자동 생성한 세무 신고 파일을 확인만 하세요.
+        </p>
+        <div class="flex justify-center gap-4">
+            <a href="#apply" class="cta-gold px-12 py-5 rounded-xl font-black text-xl shadow-lg">무료 베타 신청하기</a>
+        </div>
     </section>
 
     <section class="py-32 px-6">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-black mb-16 text-[#0A192F]">비즈니스를 위한 자율 엔진</h2>
+            <h2 class="text-4xl font-black mb-16 text-[#0A192F]">자율 회계의 세 가지 핵심</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-10 bg-gray-50 rounded-[2.5rem] text-left border border-gray-100 hover:shadow-xl transition-all">
-                    <i class="fas fa-scan text-4xl text-[#D4AF37] mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">지능형 증빙 자동 인식</h3>
-                    <p class="text-gray-500 leading-relaxed">영수증부터 계산서까지 AI가 스스로 읽고 계정과목을 분류합니다. 수기 입력이 사라집니다.</p>
+                <div class="p-10 bg-gray-50 rounded-[2.5rem] text-left border border-gray-100 hover:shadow-xl transition-all" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-[#0A192F] text-[#D4AF37] rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                        <i class="fas fa-scan text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#0A192F]">지능형 증빙 자동 인식</h3>
+                    <p class="text-gray-500 leading-relaxed font-medium">영수증부터 세금계산서까지 AI가 스스로 읽고 계정 과목을 분류합니다. 수기 입력의 고통이 완전히 사라집니다.</p>
                 </div>
-                <div class="p-10 bg-gray-50 rounded-[2.5rem] text-left border border-gray-100 hover:shadow-xl transition-all">
-                    <i class="fas fa-user-shield text-4xl text-[#D4AF37] mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">AI Compliance 감시</h3>
-                    <p class="text-gray-500 leading-relaxed">회계 기준과 사내 규정을 학습한 AI가 부적절한 전표 처리를 실시간으로 감시합니다.</p>
+                <div class="p-10 bg-gray-50 rounded-[2.5rem] text-left border border-gray-100 hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-[#0A192F] text-[#D4AF37] rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                        <i class="fas fa-user-shield text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#0A192F]">AI Compliance 모니터링</h3>
+                    <p class="text-gray-500 leading-relaxed font-medium">회계 기준과 사내 규정을 학습한 AI가 부적절한 전표 처리를 실시간 감시합니다. 리스크를 사전에 원천 차단합니다.</p>
                 </div>
-                <div class="p-10 bg-gray-50 rounded-[2.5rem] text-left border border-gray-100 hover:shadow-xl transition-all">
-                    <i class="fas fa-file-invoice-dollar text-4xl text-[#D4AF37] mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">세무 신고 자동화</h3>
-                    <p class="text-gray-500 leading-relaxed">부가세, 원천세, 법인세 신고 파일을 AI가 직접 생성합니다. 신고 누락 리스크를 차단하세요.</p>
+                <div class="p-10 bg-gray-50 rounded-[2.5rem] text-left border border-gray-100 hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-[#0A192F] text-[#D4AF37] rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                        <i class="fas fa-file-invoice-dollar text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#0A192F]">세무 신고 자동 자동화</h3>
+                    <p class="text-gray-500 leading-relaxed font-medium">부가세, 원천세, 법인세 신고 파일을 AI가 직접 생성합니다. 데이터 기반의 정확한 신고로 세무 비용을 혁신적으로 낮춥니다.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="apply" class="py-32 px-6 bg-gray-50">
-        <div class="max-w-4xl mx-auto bg-white p-12 md:p-16 rounded-[3.5rem] border border-gray-100 shadow-2xl">
+        <div class="max-w-4xl mx-auto bg-white p-12 md:p-16 rounded-[3.5rem] border border-gray-100 shadow-2xl" data-aos="fade-up">
             <div class="text-center mb-12">
-                <div class="inline-block px-4 py-1 text-xs font-bold text-[#D4AF37] bg-yellow-50 rounded-full mb-4">BETA TEST PROGRAM</div>
-                <h2 class="text-4xl font-black text-[#0A192F]">현장의 목소리를 들려주세요</h2>
+                <div class="inline-block px-4 py-1 text-xs font-bold text-[#D4AF37] bg-yellow-50 rounded-full mb-4 uppercase tracking-widest">Beta Test Program</div>
+                <h2 class="text-4xl font-black text-[#0A192F]">AI 자율 회계 체험하기</h2>
+                <p class="mt-4 text-gray-500 font-medium">간단한 정보를 입력하시면 베타테스트 신청이 완료됩니다.</p>
             </div>
+            
             <form id="beta-form" action="https://formspree.io/f/xaqnrpnn" method="POST" class="space-y-6">
                 <div class="grid md:grid-cols-2 gap-6 text-left">
-                    <div><label class="block text-xs font-black text-gray-700 mb-2">회사명</label><input type="text" name="company" placeholder="회사명 입력" required class="w-full px-6 py-4 rounded-xl border border-gray-100 outline-none focus:border-[#D4AF37]"></div>
-                    <div><label class="block text-xs font-black text-gray-700 mb-2">성함</label><input type="text" name="name" placeholder="성함 입력" required class="w-full px-6 py-4 rounded-xl border border-gray-100 outline-none focus:border-[#D4AF37]"></div>
+                    <div>
+                        <label class="block text-xs font-black text-gray-700 mb-2 uppercase">회사명</label>
+                        <input type="text" name="company" placeholder="회사명 입력" required class="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-100 outline-none focus:border-[#D4AF37] focus:bg-white transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black text-gray-700 mb-2 uppercase">담당자 성함</label>
+                        <input type="text" name="name" placeholder="성함 입력" required class="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-100 outline-none focus:border-[#D4AF37] focus:bg-white transition-all">
+                    </div>
                 </div>
-                <div class="text-left"><label class="block text-xs font-black text-gray-700 mb-2">이메일</label><input type="email" name="email" placeholder="ceo@company.com" required class="w-full px-6 py-4 rounded-xl border border-gray-100 outline-none focus:border-[#D4AF37]"></div>
-                <button type="submit" id="submit-btn" class="w-full cta-gold py-6 rounded-2xl text-2xl font-black">무료 베타 신청하기</button>
+                <div class="text-left">
+                    <label class="block text-xs font-black text-gray-700 mb-2 uppercase">연락처 (이메일)</label>
+                    <input type="email" name="email" placeholder="ceo@company.com" required class="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-100 outline-none focus:border-[#D4AF37] focus:bg-white transition-all">
+                </div>
+                <button type="submit" id="submit-btn" class="w-full cta-gold py-6 rounded-2xl text-2xl font-black shadow-xl">무료 베타 신청하기</button>
             </form>
         </div>
     </section>
 
-    <footer class="bg-[#0A192F] py-20 text-center text-white">
-        <p class="text-gray-400 mb-4">보안 마스킹 기술과 분산형 인프라로 당신의 소중한 경영 데이터를 보호합니다.</p>
-        <p class="text-gray-600 text-xs">© 2026 Insightrix Corp. All rights reserved.</p>
+    <footer class="bg-[#0A192F] py-20 px-8 text-center text-white">
+        <p class="text-gray-400 font-medium mb-4">인사이트릭스의 AI 엔진이 기업 경영의 자율화를 선도합니다.</p>
+        <p class="text-gray-600 text-xs">&copy; 2026 Insightrix Corp. All rights reserved.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        // AOS 애니메이션 초기화
         AOS.init({ duration: 1000, once: true });
+
+        // 폼 제출 로직 (전송 후 강제로 thanks.html 이동)
         const form = document.getElementById('beta-form');
         const btn = document.getElementById('submit-btn');
+
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            btn.disabled = true; btn.innerText = "전송 중...";
+            btn.disabled = true;
+            btn.innerText = "전송 중...";
+
             try {
-                await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+                // Formspree API 전송
+                await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                // 성공 여부와 상관없이 시연을 위해 강제 이동
                 window.location.href = "thanks.html";
             } catch (error) {
-                window.location.href = "thanks.html"; // 오프라인/에러 시에도 강제로 완료 페이지 이동
+                // 에러 발생 시에도 시연의 흐름을 끊지 않기 위해 강제 이동
+                window.location.href = "thanks.html";
             }
         });
     </script>
