@@ -72,12 +72,12 @@
             background: #0A192F;
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
         }
 
         .container {
             max-width: 1200px;
-            margin: 50px auto;
+            margin: -50px auto 80px;
             padding: 0 24px;
             display: grid;
             grid-template-columns: 1fr 1.5fr;
@@ -88,7 +88,7 @@
             background: white;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
         }
 
         .info-item {
@@ -99,7 +99,7 @@
         }
 
         .icon-box {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--brand-navy);
             width: 50px;
             height: 50px;
@@ -118,24 +118,36 @@
 
         .info-content p {
             margin: 0;
-            color: #666;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* 지도 영역 스타일 */
+        .map-wrapper {
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 30px;
+            border: 1px solid #f1f5f9;
         }
 
         iframe {
             border: 0;
             width: 100%;
+            height: 100%;
         }
 
         footer {
             background: #0A192F;
             color: #aaa;
-            padding: 60px 40px;
+            padding: 80px 40px;
             text-align: center;
         }
 
         @media (max-width: 900px) {
             .container {
                 grid-template-columns: 1fr;
+                margin-top: 30px;
             }
             nav {
                 flex-direction: column;
@@ -144,7 +156,7 @@
             }
             .nav-links {
                 gap: 20px;
-                font-size: 0.9rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -165,20 +177,20 @@
     </nav>
 
     <div class="hero-banner">
-        <div style="color: var(--brand-gold); font-weight: 800; margin-bottom: 10px; letter-spacing: 2px;">GET IN TOUCH</div>
-        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Partner with Insightrix</h1>
-        <p style="opacity: 0.8;">회계 솔루션 및 자율 감사 시스템 도입에 관한 문의를 남겨주세요.</p>
+        <div style="color: var(--brand-gold); font-weight: 800; margin-bottom: 15px; letter-spacing: 2px;">GET IN TOUCH</div>
+        <h1 style="font-size: 2.8rem; margin-bottom: 15px; font-weight: 800;">Contact Our Team</h1>
+        <p style="opacity: 0.8; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">인사이트릭스는 기업의 투명성과 혁신을 위해 언제나 열려있습니다.<br>비즈니스 협력 및 솔루션 도입 문의를 남겨주세요.</p>
     </div>
 
     <div class="container">
         <div class="card">
-            <h3 style="margin-top:0; color:var(--brand-navy); font-size: 1.8rem; margin-bottom: 40px;">Contact Info</h3>
+            <h3 style="margin-top:0; color:var(--brand-navy); font-size: 1.8rem; margin-bottom: 40px; font-weight: 800;">Contact Details</h3>
             
             <div class="info-item">
                 <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
                 <div class="info-content">
                     <h4>Location</h4>
-                    <p>서울특별시 강남구 테헤란로</p>
+                    <p>서울특별시 강남구 테헤란로 123 (역삼동)</p>
                 </div>
             </div>
 
@@ -198,14 +210,15 @@
                 </div>
             </div>
 
-            <div style="height: 300px; border-radius: 15px; overflow: hidden; margin-top: 30px; border: 1px solid #eee;">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.926943899127!2d126.9748473153106!3d37.56653597979851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1b47db63849%3A0x6c9c7f1a3028447d!2z7ISc7Jq47Yq567OE7Iuc7LKt!5e0!3m2!1sko!2skr!4v1646723225881!5m2!1sko!2skr"
-                    style="height: 100%;" loading="lazy"></iframe>
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.7925761845!2d127.028475976251!3d37.49808542898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15060799fd9%3A0xe4d830b91d29480!2z7YWM7Zek656A66GcIDEyMw!5e0!3m2!1sko!2skr!4v1710000000000!5m2!1sko!2skr" 
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
 
-        <div class="card" style="padding: 15px; overflow: hidden;">
+        <div class="card" style="padding: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
             <iframe
                 src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true"
                 height="850" style="width: 100%; border: none;">Loading...</iframe>
@@ -213,8 +226,8 @@
     </div>
 
     <footer>
-        <div style="margin-bottom: 20px;">
-            <img src="Insightrix.png" alt="Insightrix" style="height: 40px; filter: brightness(0) invert(1); opacity: 0.5;">
+        <div style="margin-bottom: 30px;">
+            <img src="Insightrix.png" alt="Insightrix" style="height: 45px; filter: brightness(0) invert(1); opacity: 0.6;">
         </div>
         <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
     </footer>
