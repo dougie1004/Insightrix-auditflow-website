@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Contact Us | Insightrix Intelligence</title>
     <link rel="icon" href="Insightrix.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -23,14 +22,15 @@
             padding: 0;
             color: var(--text-dark);
             background: var(--bg-light);
+            line-height: 1.6;
         }
 
-        /* 링크 밑줄 제거 (전체 적용) */
         a {
             text-decoration: none !important;
             color: inherit;
         }
 
+        /* 통합 네비게이션 스타일 */
         nav {
             padding: 10px 40px;
             border-bottom: 1px solid #eee;
@@ -43,9 +43,8 @@
             align-items: center;
         }
 
-        /* 로고 스타일: 200px 크기 고정 */
         .logo img {
-            height: 200px;
+            height: 80px; /* 통합 사이즈 */
             width: auto;
             display: block;
         }
@@ -61,7 +60,6 @@
             color: var(--brand-navy);
             transition: 0.3s;
             cursor: pointer;
-            border-bottom: none;
         }
 
         .nav-links a:hover,
@@ -70,13 +68,20 @@
         }
 
         /* 컨텐츠 스타일 */
+        .hero-banner {
+            background: #0A192F;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
         .container {
             max-width: 1200px;
             margin: 50px auto;
             padding: 0 24px;
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            gap: 30px;
+            gap: 40px;
         }
 
         .card {
@@ -89,7 +94,7 @@
         .info-item {
             display: flex;
             gap: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             align-items: center;
         }
 
@@ -97,7 +102,23 @@
             font-size: 1.5rem;
             color: var(--brand-navy);
             width: 50px;
-            text-align: center;
+            height: 50px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-content h4 {
+            margin: 0 0 5px 0;
+            color: var(--brand-navy);
+            font-weight: 800;
+        }
+
+        .info-content p {
+            margin: 0;
+            color: #666;
         }
 
         iframe {
@@ -116,10 +137,14 @@
             .container {
                 grid-template-columns: 1fr;
             }
-
             nav {
                 flex-direction: column;
+                padding: 20px;
                 gap: 20px;
+            }
+            .nav-links {
+                gap: 20px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -132,56 +157,66 @@
 
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="company.html">Company</a>
+            <a href="accountingflow.html">AccountingFlow</a>
             <a href="auditflow.html">AuditFlow</a>
+            <a href="company.html">Company</a>
             <a href="contact.html" class="active">Contact</a>
         </div>
     </nav>
 
-    <div style="background: #0A192F; color: white; text-align: center; padding: 80px 20px;">
-        <h1>Get in Touch</h1>
-        <p>파트너십, 투자, 솔루션 도입 문의</p>
+    <div class="hero-banner">
+        <div style="color: var(--brand-gold); font-weight: 800; margin-bottom: 10px; letter-spacing: 2px;">GET IN TOUCH</div>
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Partner with Insightrix</h1>
+        <p style="opacity: 0.8;">회계 솔루션 및 자율 감사 시스템 도입에 관한 문의를 남겨주세요.</p>
     </div>
 
     <div class="container">
         <div class="card">
-            <h3 style="margin-top:0; color:var(--brand-navy);">Contact Info</h3>
+            <h3 style="margin-top:0; color:var(--brand-navy); font-size: 1.8rem; margin-bottom: 40px;">Contact Info</h3>
+            
             <div class="info-item">
                 <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
-                <div>
+                <div class="info-content">
                     <h4>Location</h4>
                     <p>서울특별시 강남구 테헤란로</p>
                 </div>
             </div>
+
             <div class="info-item">
                 <div class="icon-box"><i class="fas fa-envelope"></i></div>
-                <div>
+                <div class="info-content">
                     <h4>Email</h4>
                     <p>insightrix1004@gmail.com</p>
                 </div>
             </div>
+
             <div class="info-item">
                 <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
-                <div>
+                <div class="info-content">
                     <h4>Phone</h4>
                     <p>010-3479-0526</p>
                 </div>
             </div>
-            <div style="height: 250px; border-radius: 15px; overflow: hidden; margin-top: 20px;">
+
+            <div style="height: 300px; border-radius: 15px; overflow: hidden; margin-top: 30px; border: 1px solid #eee;">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.926943899127!2d126.9748473153106!3d37.56653597979851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1b47db63849%3A0x6c9c7f1a3028447d!2z7ISc7Jq47Yq567OE7Iuc7LKt!5e0!3m2!1sko!2skr!4v1646723225881!5m2!1sko!2skr"
                     style="height: 100%;" loading="lazy"></iframe>
             </div>
         </div>
-        <div class="card" style="padding: 10px;">
+
+        <div class="card" style="padding: 15px; overflow: hidden;">
             <iframe
                 src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true"
-                height="850">Loading...</iframe>
+                height="850" style="width: 100%; border: none;">Loading...</iframe>
         </div>
     </div>
 
     <footer>
-        <p>© 2025 Insightrix Corp. All Rights Reserved.</p>
+        <div style="margin-bottom: 20px;">
+            <img src="Insightrix.png" alt="Insightrix" style="height: 40px; filter: brightness(0) invert(1); opacity: 0.5;">
+        </div>
+        <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
     </footer>
 
 </body>
