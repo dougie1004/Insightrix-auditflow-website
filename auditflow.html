@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuditFlow | Technology</title>
+    <title>AuditFlow | Insightrix AI Compliance</title>
     <link rel="icon" href="Insightrix.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -34,7 +33,7 @@
             color: inherit;
         }
 
-        /* Navigation */
+        /* Navigation 통합 스타일 */
         nav {
             padding: 10px 40px;
             border-bottom: 1px solid #eee;
@@ -48,7 +47,7 @@
         }
 
         .logo img {
-            height: 200px;
+            height: 80px; /* 통합 브랜드 사이즈 */
             width: auto;
             display: block;
         }
@@ -102,7 +101,7 @@
         /* Sub Nav */
         .sub-nav {
             position: sticky;
-            top: 220px;
+            top: 100px; /* 네비게이션 높이에 맞춰 조정 */
             background: white;
             border-bottom: 1px solid #ddd;
             z-index: 900;
@@ -114,6 +113,7 @@
             margin: 0 20px;
             font-weight: 600;
             color: #555;
+            font-size: 0.95rem;
         }
 
         .sub-nav a:hover {
@@ -125,7 +125,7 @@
             padding: 100px 24px;
             max-width: 1100px;
             margin: 0 auto;
-            scroll-margin-top: 280px;
+            scroll-margin-top: 180px;
         }
 
         .section-title {
@@ -144,13 +144,6 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        /* Architecture */
-        .arch-diagram img {
-            max-width: 100%;
-            border-radius: 10px;
-            border: 1px solid #eee;
         }
 
         /* Tech Distinction Grid */
@@ -174,12 +167,6 @@
             margin-top: 0;
         }
 
-        .tech-card p {
-            color: #555;
-            font-size: 1.05rem;
-            margin-bottom: 0;
-        }
-
         .tech-card i {
             font-size: 2rem;
             color: var(--brand-gold);
@@ -187,18 +174,6 @@
         }
 
         /* Tables */
-        .comparison-group {
-            margin-bottom: 80px;
-        }
-
-        .comparison-group h3 {
-            font-size: 1.5rem;
-            color: var(--brand-navy);
-            border-left: 5px solid var(--brand-gold);
-            padding-left: 15px;
-            margin-bottom: 25px;
-        }
-
         .table-wrapper {
             overflow-x: auto;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -212,12 +187,10 @@
             min-width: 600px;
         }
 
-        th,
-        td {
+        th, td {
             padding: 18px;
             text-align: center;
             border-bottom: 1px solid #eee;
-            font-size: 0.95rem;
         }
 
         th {
@@ -226,17 +199,15 @@
             font-weight: 700;
         }
 
-        /* Highlight Column */
         .highlight {
             background: #f0f9ff;
-            color: #004d40;
             font-weight: 600;
-            border-left: 2px solid #D4AF37;
-            border-right: 2px solid #D4AF37;
+            border-left: 2px solid var(--brand-gold);
+            border-right: 2px solid var(--brand-gold);
         }
 
         th.highlight {
-            background: #0A192F;
+            background: var(--brand-navy);
             color: white;
             border-top: 5px solid var(--brand-gold);
         }
@@ -255,7 +226,7 @@
 
         .btn-download:hover {
             transform: translateY(-3px);
-            background: #fff;
+            filter: brightness(1.1);
         }
 
         footer {
@@ -266,21 +237,9 @@
         }
 
         @media (max-width: 968px) {
-            nav {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .sub-nav {
-                top: 240px;
-                white-space: nowrap;
-                overflow-x: auto;
-                justify-content: flex-start;
-            }
-
-            .tech-grid {
-                grid-template-columns: 1fr;
-            }
+            nav { flex-direction: column; gap: 20px; }
+            .sub-nav { top: 180px; }
+            .tech-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -291,15 +250,17 @@
         <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"></a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="company.html">Company</a>
+            <a href="accountingflow.html">AccountingFlow</a>
             <a href="auditflow.html" class="active">AuditFlow</a>
+            <a href="company.html">Company</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
 
     <div class="hero-section">
-        <h1 style="font-size: 3rem; margin-bottom: 20px;">AuditFlow Overview</h1>
-        <p style="margin-bottom: 40px; opacity: 0.8;">이미지를 클릭하여 데모 시연 영상을 확인하세요.</p>
+        <div style="display:inline-block; color:var(--brand-gold); font-weight:800; margin-bottom:15px; letter-spacing: 2px;">INSIGHTRIX COMPLIANCE</div>
+        <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 900;">AuditFlow</h1>
+        <p style="margin-bottom: 40px; opacity: 0.8; font-size: 1.2rem;">Gemini 3.0 Pro 기반 자율 감사 시스템</p>
 
         <a href="https://www.youtube.com/watch?v=M_gpQ_8xSTA" target="_blank" class="hero-image-wrapper">
             <img src="auditflow_demo.gif" alt="Demo Video">
@@ -316,8 +277,8 @@
     <section id="architecture">
         <h2 class="section-title">System Architecture</h2>
         <div style="text-align: center;">
-            <img src="diagram_image.png" alt="Architecture" class="arch-diagram">
-            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">* 민감 데이터는 로컬 Rust 엔진에서 처리됩니다.</p>
+            <img src="diagram_image.png" alt="Architecture" style="max-width: 100%; border-radius: 15px; border: 1px solid #eee;">
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">* 민감 데이터는 로컬 Rust 엔진(PII Density Filter)에서 전처리됩니다.</p>
         </div>
     </section>
 
@@ -325,218 +286,78 @@
         <h2 class="section-title">Key Features</h2>
         <div style="display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap;">
             <div style="flex:1; min-width:300px;">
-                <h3>01. 자율 시나리오 생성 (ASG)</h3>
-                <p>AI가 과거 데이터를 학습하여 감사 시나리오를 스스로 제안합니다.</p>
+                <h3 style="font-size: 1.8rem; color: var(--brand-navy);">01. 자율 시나리오 생성 (ASG)</h3>
+                <p style="font-size: 1.1rem; color: #555;">AI가 과거 감사 데이터와 기업의 회계 패턴을 학습하여 리스크 발생 가능성이 높은 시나리오를 스스로 제안합니다.</p>
             </div>
             <div style="flex:1; min-width:300px;">
-                <img src="https://via.placeholder.com/500x300?text=Auto+Scenario"
-                    style="width:100%; border-radius:15px;">
+                <img src="https://via.placeholder.com/500x300?text=Auto+Scenario" style="width:100%; border-radius:15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
             </div>
         </div>
     </section>
 
-    <section id="tech-diff" style="background: white;">
+    <section id="tech-diff">
         <h2 class="section-title">Technical Distinction</h2>
-        <p class="section-desc">단순한 LLM 래퍼(Wrapper)가 아닙니다. <br>감사 업무의 본질을 꿰뚫는 기술적 깊이를 확인하세요.</p>
+        <p class="section-desc">단순한 LLM 래퍼가 아닙니다. 감사 업무의 본질을 꿰뚫는 기술적 깊이를 확인하세요.</p>
 
         <div class="tech-grid">
             <div class="tech-card">
                 <i class="fas fa-brain"></i>
-                <h3>성능 / 정확도 (Reasoning)</h3>
-                <p>감사 업무는 단순 요약이 아니라 복잡한 자금 흐름을 추론해야 합니다. Gemini 3.0 Pro는 이전 모델 대비 추론 능력이 비약적으로 향상되어, 오탐(False
-                    Positive)을 획기적으로 줄여줍니다.</p>
+                <h3>추론 기반 감사 (Reasoning)</h3>
+                <p>Gemini 3.0 Pro 엔진은 단순 키워드 검색을 넘어 복잡한 자금 흐름 사이의 인과관계를 추론합니다. 이를 통해 기존 시스템이 놓치던 지능적 횡령이나 오탐을 90% 이상 개선합니다.</p>
             </div>
             <div class="tech-card">
                 <i class="fas fa-coins"></i>
-                <h3>비용 효율성 (Cost Efficiency)</h3>
-                <p>최신 모델임에도 불구하고, 향상된 연산 효율성으로 인해 고객사가 자체 고성능 서버(GPU)를 구축하는 것 대비 TCO(총 소유 비용)를 90% 이상 절감합니다.</p>
+                <h3>비용 효율성 (Cost)</h3>
+                <p>하이브리드 최적화 로직(Flash 모델과 Pro 모델의 자동 라우팅)을 통해 자체 GPU 서버 구축 대비 TCO를 획기적으로 절감하면서도 고성능 분석을 보장합니다.</p>
             </div>
         </div>
 
-        <div class="comparison-group">
-            <h3>왜 '자체 구축(On-Premise)'이 아닌 'SaaS API'인가?</h3>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th width="20%">구분</th>
-                            <th width="40%">고객사 자체 구축 (Open Source)</th>
-                            <th width="40%" class="highlight">AuditFlow (SaaS + Gemini)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>인프라 비용</strong></td>
-                            <td>고비용 (고성능 GPU 서버 필수)</td>
-                            <td class="highlight">0원 (기존 PC 사용)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>운영 책임</strong></td>
-                            <td>보안 패치, 해킹 방어 책임이 IT팀에 있음</td>
-                            <td class="highlight">구글/아마존의 보안 인프라 활용<br>(IT팀 운영 부담 완화)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>AI 성능</strong></td>
-                            <td>경량화 모델 사용으로 오탐 빈발</td>
-                            <td class="highlight">최상위 모델(Gemini 3.0 Pro)로 정확도 보장</td>
-                        </tr>
-                        <tr>
-                            <td><strong>비고</strong></td>
-                            <td>"현업 민원과 보안 사고 책임 감당 불가"</td>
-                            <td class="highlight">"배상책임보험을 통한 리스크 헷징"</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="20%">비교 항목</th>
+                        <th width="40%">자체 구축 (On-Premise)</th>
+                        <th width="40%" class="highlight">AuditFlow (SaaS)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>인프라 비용</strong></td>
+                        <td>고비용 (서버/GPU 관리 필수)</td>
+                        <td class="highlight">0원 (구독형 모델)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI 성능</strong></td>
+                        <td>제한적 (경량화 모델 사용)</td>
+                        <td class="highlight">최상위 모델 (Gemini 3.0 Pro)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>보안성</strong></td>
+                        <td>자체 관리 (보안 사고 책임)</td>
+                        <td class="highlight">Enterprise Grade 보안 인프라</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-        <div class="comparison-group">
-            <h3>"오픈소스나 강의 듣고 직접 구축하면 되지 않나요?"</h3>
-            <p style="margin-bottom:15px; color:#666;">단순 LLM 호출과 실제 '감사 시스템' 구축은 차원이 다른 문제입니다. AuditFlow는 '감사인의 시간'과
-                '개발 소통 비용'을 획기적으로 줄여줍니다.</p>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>비교 항목</th>
-                            <th>① LLM 직접 활용 (ChatGPT)</th>
-                            <th>② 사내 IT팀 자체 개발</th>
-                            <th class="highlight">③ AuditFlow (SaaS)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>데이터 처리</strong></td>
-                            <td>엑셀 파싱/비식별화 매번 수작업</td>
-                            <td>개발팀에 데이터 중요도 일일이 설명 필요</td>
-                            <td class="highlight">자동 전처리 엔진 탑재<br>(알아서 파싱/비식별화)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>프롬프트</strong></td>
-                            <td>매번 작성, 결과 품질 차이 심함</td>
-                            <td>감사 로직 모르는 개발자가 작성 (환각 빈발)</td>
-                            <td class="highlight">20년 노하우 최적화 프롬프트 내장</td>
-                        </tr>
-                        <tr>
-                            <td><strong>개발 소통</strong></td>
-                            <td>해당 없음</td>
-                            <td>"감사 용어" vs "개발 용어" 차이로 실패 확률 ↑</td>
-                            <td class="highlight">불필요 (감사 전문가가 직접 설계)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>도입 효과</strong></td>
-                            <td>개인의 도구 (자산화 안 됨)</td>
-                            <td>막대한 기회비용 (개발자 투입)</td>
-                            <td class="highlight">즉시 전사적 표준화 가능</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="comparison-group">
-            <h3>숨겨진 비용(Hidden Cost)과 위험(Risk) 해결</h3>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>비교 항목</th>
-                            <th>① 자체 구축 (On-Premise)</th>
-                            <th>② 직접 API 키 관리</th>
-                            <th class="highlight">③ AuditFlow 도입 (Best)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>하드웨어 비용</strong></td>
-                            <td>최소 3,000만 원 이상<br>(GPU 서버)</td>
-                            <td>불필요</td>
-                            <td class="highlight">0원</td>
-                        </tr>
-                        <tr>
-                            <td><strong>운영 비용</strong></td>
-                            <td>월 50만 원 이상 (전기료 등)</td>
-                            <td>사용량만큼 지불 (변동폭 큼)</td>
-                            <td class="highlight">월 29만 원 구독료에 포함<br>(예측 가능)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>기술 인력</strong></td>
-                            <td>AI 엔지니어 (연봉 6천↑)</td>
-                            <td>개발자 필요 (연동/에러처리)</td>
-                            <td class="highlight">불필요 (엑셀만 알면 됨)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>보안 위험</strong></td>
-                            <td>해킹 및 랜섬웨어 노출</td>
-                            <td>Key 유출 시 비용 폭탄</td>
-                            <td class="highlight">Proxy 서버가 Key 은닉<br>(보안 사고 차단)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="comparison-group">
-            <h3>왜 OpenAI가 아닌 Google Vertex AI인가?</h3>
-            <p style="margin-bottom:15px; color:#666;">감사 업무의 본질(대용량 데이터, 보안, 가성비)에 가장 적합한 엔진을 선택했습니다.</p>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>비교 항목</th>
-                            <th class="highlight" style="background:#e8f0fe; color:#1967d2;">Google Vertex AI (채택)</th>
-                            <th>OpenAI (ChatGPT)</th>
-                            <th>선정 근거 (Why Google?)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>분석 용량</strong></td>
-                            <td class="highlight">200만 토큰 (업계 최대)</td>
-                            <td>12.8만 토큰</td>
-                            <td>1년 치 전표를 한 번에 입력 가능<br>(OpenAI는 잘라서 넣어 맥락 끊김)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>데이터 보안</strong></td>
-                            <td class="highlight">Enterprise Grade (B2B)</td>
-                            <td>Public 학습 우려</td>
-                            <td>구글 내부망(VPC) 처리로 유출 차단<br>"내 데이터로 AI 학습 안 함"</td>
-                        </tr>
-                        <tr>
-                            <td><strong>운영 비용</strong></td>
-                            <td class="highlight">Gemini Flash ($0.075)</td>
-                            <td>GPT-4o Mini ($0.150)</td>
-                            <td>대량 전표 처리 시 50% 이상 원가 절감</td>
-                        </tr>
-                        <tr>
-                            <td><strong>생태계</strong></td>
-                            <td class="highlight">Google Workspace 연동</td>
-                            <td>MS Office</td>
-                            <td>타겟(스타트업) 90%가 G-Suite 사용<br>추후 확장 용이</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
     </section>
 
-    <section id="download"
-        style="text-align: center; background: var(--brand-navy); color: white; border-radius: 20px; padding: 60px;">
-        <h2 style="margin-bottom: 30px;">Start AuditFlow Now</h2>
-        <a href="#" class="btn-download"><i class="fas fa-download"></i> Windows 다운로드</a>
-        <div style="margin-top: 40px; background: white; padding: 10px; border-radius: 15px; height: 600px;">
-            <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true"
-                width="100%" height="100%" frameborder="0"></iframe>
+    <section id="download" style="text-align: center; background: var(--brand-navy); color: white; border-radius: 30px; padding: 80px 40px;">
+        <h2 style="margin-bottom: 30px; font-size: 2.5rem;">Start AuditFlow Now</h2>
+        <p style="margin-bottom: 40px; opacity: 0.8;">인사이트릭스의 감사 혁신을 지금 바로 경험해 보세요.</p>
+        <a href="#" class="btn-download"><i class="fas fa-download"></i> Windows Enterprise 다운로드</a>
+        
+        <div style="margin-top: 50px; background: white; padding: 15px; border-radius: 20px; height: 600px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true" width="100%" height="100%" frameborder="0">로드 중…</iframe>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 Insightrix Corp. All Rights Reserved.</p>
+        <div style="margin-bottom: 20px;">
+            <img src="Insightrix.png" alt="Insightrix" style="height: 40px; filter: brightness(0) invert(1); opacity: 0.5;">
+        </div>
+        <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
     </footer>
 
 </body>
-
-
 </html>
