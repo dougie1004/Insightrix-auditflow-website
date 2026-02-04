@@ -2,16 +2,20 @@
 <html lang="ko">
 
 <head>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PLHLHFBM');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PLHLHFBM');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuditFlow | Insightrix AI Compliance</title>
     <link rel="icon" href="Insightrix.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -52,7 +56,8 @@
         }
 
         .logo img {
-            height: 200px; /* 통합 브랜드 사이즈 */
+            height: 200px;
+            /* 통합 브랜드 사이즈 */
             width: auto;
             display: block;
         }
@@ -106,7 +111,8 @@
         /* Sub Nav */
         .sub-nav {
             position: sticky;
-            top: 100px; /* 네비게이션 높이에 맞춰 조정 */
+            top: 100px;
+            /* 네비게이션 높이에 맞춰 조정 */
             background: white;
             border-bottom: 1px solid #ddd;
             z-index: 900;
@@ -192,7 +198,8 @@
             min-width: 600px;
         }
 
-        th, td {
+        th,
+        td {
             padding: 18px;
             text-align: center;
             border-bottom: 1px solid #eee;
@@ -242,16 +249,25 @@
         }
 
         @media (max-width: 968px) {
-            nav { flex-direction: column; gap: 20px; }
-            .sub-nav { top: 180px; }
-            .tech-grid { grid-template-columns: 1fr; }
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .sub-nav {
+                top: 180px;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLHLHFBM"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLHLHFBM" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <nav>
         <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"></a>
         <div class="nav-links">
@@ -260,11 +276,14 @@
             <a href="auditflow.html" class="active">AuditFlow</a>
             <a href="company.html">Company</a>
             <a href="contact.html">Contact</a>
+            <a href="app.html" style="color: var(--brand-gold);">Pricing & Download</a>
         </div>
     </nav>
 
     <div class="hero-section">
-        <div style="display:inline-block; color:var(--brand-gold); font-weight:800; margin-bottom:15px; letter-spacing: 2px;">INSIGHTRIX COMPLIANCE</div>
+        <div
+            style="display:inline-block; color:var(--brand-gold); font-weight:800; margin-bottom:15px; letter-spacing: 2px;">
+            INSIGHTRIX COMPLIANCE</div>
         <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 900;">AuditFlow</h1>
         <p style="margin-bottom: 40px; opacity: 0.8; font-size: 1.2rem;">Gemini 3.0 Pro 기반 자율 감사 시스템</p>
 
@@ -283,8 +302,10 @@
     <section id="architecture">
         <h2 class="section-title">System Architecture</h2>
         <div style="text-align: center;">
-            <img src="diagram_image.png" alt="Architecture" style="max-width: 100%; border-radius: 15px; border: 1px solid #eee;">
-            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">* 민감 데이터는 로컬 Rust 엔진(PII Density Filter)에서 전처리됩니다.</p>
+            <img src="diagram_image.png" alt="Architecture"
+                style="max-width: 100%; border-radius: 15px; border: 1px solid #eee;">
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">* 민감 데이터는 로컬 Rust 엔진(PII Density Filter)에서
+                전처리됩니다.</p>
         </div>
     </section>
 
@@ -293,10 +314,12 @@
         <div style="display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap;">
             <div style="flex:1; min-width:300px;">
                 <h3 style="font-size: 1.8rem; color: var(--brand-navy);">01. 자율 시나리오 생성 (ASG)</h3>
-                <p style="font-size: 1.1rem; color: #555;">AI가 과거 감사 데이터와 기업의 회계 패턴을 학습하여 리스크 발생 가능성이 높은 시나리오를 스스로 제안합니다.</p>
+                <p style="font-size: 1.1rem; color: #555;">AI가 과거 감사 데이터와 기업의 회계 패턴을 학습하여 리스크 발생 가능성이 높은 시나리오를 스스로
+                    제안합니다.</p>
             </div>
             <div style="flex:1; min-width:300px;">
-                <img src="https://via.placeholder.com/500x300?text=Auto+Scenario" style="width:100%; border-radius:15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <img src="https://via.placeholder.com/500x300?text=Auto+Scenario"
+                    style="width:100%; border-radius:15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
             </div>
         </div>
     </section>
@@ -309,7 +332,8 @@
             <div class="tech-card">
                 <i class="fas fa-brain"></i>
                 <h3>추론 기반 감사 (Reasoning)</h3>
-                <p>Gemini 3.0 Pro 엔진은 단순 키워드 검색을 넘어 복잡한 자금 흐름 사이의 인과관계를 추론합니다. 이를 통해 기존 시스템이 놓치던 지능적 횡령이나 오탐을 90% 이상 개선합니다.</p>
+                <p>Gemini 3.0 Pro 엔진은 단순 키워드 검색을 넘어 복잡한 자금 흐름 사이의 인과관계를 추론합니다. 이를 통해 기존 시스템이 놓치던 지능적 횡령이나 오탐을 90% 이상
+                    개선합니다.</p>
             </div>
             <div class="tech-card">
                 <i class="fas fa-coins"></i>
@@ -348,24 +372,28 @@
         </div>
     </section>
 
-    <section id="download" style="text-align: center; background: var(--brand-navy); color: white; border-radius: 30px; padding: 80px 40px;">
+    <section id="download"
+        style="text-align: center; background: var(--brand-navy); color: white; border-radius: 30px; padding: 80px 40px;">
         <h2 style="margin-bottom: 30px; font-size: 2.5rem;">Start AuditFlow Now</h2>
         <p style="margin-bottom: 40px; opacity: 0.8;">인사이트릭스의 감사 혁신을 지금 바로 경험해 보세요.</p>
         <a href="#" class="btn-download"><i class="fas fa-download"></i> Windows Enterprise 다운로드</a>
-        
-        <div style="margin-top: 50px; background: white; padding: 15px; border-radius: 20px; height: 600px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true" width="100%" height="100%" frameborder="0">로드 중…</iframe>
+
+        <div
+            style="margin-top: 50px; background: white; padding: 15px; border-radius: 20px; height: 600px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true"
+                width="100%" height="100%" frameborder="0">로드 중…</iframe>
         </div>
     </section>
 
     <footer>
         <div style="margin-bottom: 20px;">
-            <img src="Insightrix.png" alt="Insightrix" style="height: 40px; filter: brightness(0) invert(1); opacity: 0.5;">
+            <img src="Insightrix.png" alt="Insightrix"
+                style="height: 40px; filter: brightness(0) invert(1); opacity: 0.5;">
         </div>
         <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
     </footer>
 
 </body>
+
 </html>
-
-
