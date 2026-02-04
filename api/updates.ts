@@ -1,5 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
-
+// No next/server import for standard Vercel Edge Functions in Vite projects
 export const config = {
     runtime: 'edge',
 };
@@ -24,7 +23,7 @@ interface UpdateManifest {
     };
 }
 
-export default async function handler(req: NextRequest) {
+export default async function handler(req: Request) {
     // Get service type from query params (accounting or audit)
     const { searchParams } = new URL(req.url);
     const serviceType = searchParams.get('service') || 'accounting';
@@ -66,7 +65,7 @@ export default async function handler(req: NextRequest) {
     const needsUpdate = compareVersions(currentVersion, latestVersion) < 0;
 
     if (!needsUpdate) {
-        return new NextResponse(JSON.stringify({
+        return new Response(JSON.stringify({
             message: 'No update available',
             current: currentVersion,
             latest: latestVersion
@@ -76,7 +75,7 @@ export default async function handler(req: NextRequest) {
         });
     }
 
-    return new NextResponse(JSON.stringify(manifest), {
+    return new Response(JSON.stringify(manifest), {
         status: 200,
         headers: {
             'Content-Type': 'application/json',

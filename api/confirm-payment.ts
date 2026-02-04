@@ -1,5 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
-
+// No next/server import for standard Vercel Edge Functions in Vite projects
 export const config = {
     runtime: 'edge',
 };
@@ -32,9 +31,12 @@ async function notifyError(error: any, context: string) {
     }
 }
 
-export default async function handler(req: NextRequest) {
+export default async function handler(req: Request) {
     if (req.method !== 'POST') {
-        return new NextResponse(JSON.stringify({ error: 'Method not allowed' }), { status: 405 });
+        return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+            status: 405,
+            headers: { 'Content-Type': 'application/json' }
+        });
     }
 
     try {
@@ -42,7 +44,10 @@ export default async function handler(req: NextRequest) {
 
         // 1. Basic Validation
         if (!paymentKey || !orderId || !amount || !serviceType) {
-            return new NextResponse(JSON.stringify({ error: 'Missing required fields' }), { status: 400 });
+            return new Response(JSON.stringify({ error: 'Missing required fields' }), {
+                status: 400,
+                headers: { 'Content-Type': 'application/json' }
+            });
         }
 
         // 2. Idempotency Check - Prevent duplicate processing
@@ -51,12 +56,15 @@ export default async function handler(req: NextRequest) {
             // Check if cache is still valid (within 1 hour)
             if (Date.now() - cached.timestamp < 3600000) {
                 console.log(`[Idempotency] Returning cached result for orderId: ${orderId}`);
-                return new NextResponse(JSON.stringify({
+                return new Response(JSON.stringify({
                     status: 'success',
                     message: 'Payment already processed (cached)',
                     licenseKey: cached.licenseKey,
                     serviceType: serviceType,
-                }), { status: 200 });
+                }), {
+                    status: 200,
+                    headers: { 'Content-Type': 'application/json' }
+                });
             } else {
                 // Cache expired, remove it
                 processedOrders.delete(orderId);
@@ -67,10 +75,13 @@ export default async function handler(req: NextRequest) {
         const secretKey = process.env.TOSS_SECRET_KEY;
         if (!secretKey) {
             await notifyError({ error: 'TOSS_SECRET_KEY not configured' }, 'Environment Setup');
-            return new NextResponse(JSON.stringify({ error: 'Server configuration error' }), { status: 500 });
+            return new Response(JSON.stringify({ error: 'Server configuration error' }), {
+                status: 500,
+                headers: { 'Content-Type': 'application/json' }
+            });
         }
 
-        const basicToken = Buffer.from(`${secretKey}:`).toString('base64');
+        const basicToken = btoa(`${secretKey}:`);
 
         // 4. Confirm Payment with Toss API
         const response = await fetch('https://api.tosspayments.com/v1/payments/confirm', {
@@ -97,10 +108,13 @@ export default async function handler(req: NextRequest) {
                 tossError: data,
             }, 'Toss API Verification');
 
-            return new NextResponse(JSON.stringify({
+            return new Response(JSON.stringify({
                 error: 'Payment verification failed',
                 details: data.message || 'Unknown error'
-            }), { status: response.status });
+            }), {
+                status: response.status,
+                headers: { 'Content-Type': 'application/json' }
+            });
         }
 
         // 5. Verification Successful -> Issue License Key
@@ -118,7 +132,7 @@ export default async function handler(req: NextRequest) {
         // 7. Clean up old cache entries (keep last 100)
         if (processedOrders.size > 100) {
             const oldestKey = processedOrders.keys().next().value;
-            processedOrders.delete(oldestKey);
+            if (oldestKey) processedOrders.delete(oldestKey);
         }
 
         // 8. TODO: Save to database (Supabase, Firebase, or Vercel Postgres)
@@ -135,7 +149,7 @@ export default async function handler(req: NextRequest) {
             }).catch(() => { }); // Silent fail for notifications
         }
 
-        return new NextResponse(JSON.stringify({
+        return new Response(JSON.stringify({
             status: 'success',
             message: 'Payment confirmed and license issued',
             licenseKey: licenseKey,
@@ -145,6 +159,7 @@ export default async function handler(req: NextRequest) {
         }), {
             status: 200,
             headers: {
+                'Content-Type': 'application/json',
                 'Cache-Control': 'no-store', // Never cache payment confirmations
             }
         });
@@ -155,9 +170,12 @@ export default async function handler(req: NextRequest) {
         // Send critical error notification
         await notifyError(error, 'Payment Confirmation Handler');
 
-        return new NextResponse(JSON.stringify({
+        return new Response(JSON.stringify({
             error: 'Internal server error',
             message: 'Please contact support if payment was deducted'
-        }), { status: 500 });
+        }), {
+            status: 500,
+            headers: { 'Content-Type': 'application/json' }
+        });
     }
 }
