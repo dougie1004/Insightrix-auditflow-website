@@ -1,4 +1,5 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import PricingSection from './components/PricingSection';
 import WelcomePro from './pages/WelcomePro';
 
@@ -57,6 +58,7 @@ function App() {
                     </div>
                 </footer>
             </div>
+            <Analytics />
         </Router>
     );
 }
