@@ -38,8 +38,8 @@
         }
 
         nav {
-            padding: 10px 40px;
-            border-bottom: 1px solid #eee;
+            padding: 16px 40px;
+            border-bottom: 1px solid #f1f5f9;
             position: sticky;
             top: 0;
             background: rgba(255, 255, 255, 0.98);
@@ -47,25 +47,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            backdrop-filter: blur(10px);
         }
 
-        /* 로고 사이즈 최적화 */
         .logo img {
             height: 200px;
             width: auto;
             display: block;
+            margin-top: 20px;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
-            font-weight: 700;
-            font-size: 1rem;
+            gap: 32px;
+            align-items: center;
         }
 
         .nav-links a {
+            font-size: 15px;
+            font-weight: 700;
             color: var(--brand-navy);
-            transition: 0.3s;
+            text-decoration: none;
+            transition: 0.2s;
             cursor: pointer;
         }
 
@@ -146,6 +149,63 @@
             padding: 40px;
             text-align: center;
         }
+
+        /* Tooltip Style */
+        [data-tooltip] {
+            position: relative;
+            cursor: help;
+        }
+
+        [data-tooltip]::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 25, 47, 0.95);
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            z-index: 100;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: max-content;
+            max-width: 280px;
+            white-space: normal;
+            text-align: center;
+            line-height: 1.5;
+            font-weight: 500;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Tooltip Arrow */
+        [data-tooltip]::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: rgba(10, 25, 47, 0.95) transparent transparent transparent;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            margin-bottom: -2px;
+            z-index: 100;
+        }
+
+        [data-tooltip]:hover::after,
+        [data-tooltip]:hover::before {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
     </style>
 </head>
 
@@ -153,22 +213,28 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLHLHFBM" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <nav>
-        <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"></a>
+        <a href="/index.html" class="logo"><img src="/Insightrix.png" alt="Insightrix Logo"></a>
         <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="accountingflow.html">AccountingFlow</a>
-            <a href="auditflow.html">AuditFlow</a>
-            <a href="company.html">Company</a>
-            <a href="contact.html">Contact</a>
-            <a href="app.html" style="color: var(--brand-gold);">Pricing & Download</a>
+            <a href="/index.html" class="active">Home</a>
+            <a href="/accountingflow.html">AccountingFlow</a>
+            <a href="/auditflow.html">AuditFlow</a>
+            <a href="/company.html">Company</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/app.html">Pricing & Download</a>
         </div>
     </nav>
 
     <div class="hero">
-        <h1 style="font-size: 3rem; margin-bottom: 20px;">자율 경영의 시작, AI CFO</h1>
-        <p style="margin-bottom: 40px; opacity: 0.8; font-size: 1.2rem;">인사이트릭스의 AI 엔진이 회계 처리를 넘어 준법 감시와 세무 신고까지 자율적으로
-            수행합니다.<br>대표님은 오직 비즈니스의 미래에만 집중하세요.</p>
-        <a href="accountingflow.html" class="cta-button">무료 베타 신청하기</a>
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">
+            판단은 사람의 몫입니다.<br>
+            Insightrix는 그 판단을 가능하게 만듭니다.
+        </h1>
+        <p style="margin-bottom: 40px; opacity: 0.85; font-size: 1.2rem;">
+            Insightrix는 회계와 감사에서<br>
+            AI가 결론을 내리지 않도록 설계된 Financial Intelligence Platform입니다.<br>
+            모든 결과는 검증 가능하고, 재현 가능합니다.
+        </p>
+
     </div>
 
     <section class="section">
@@ -182,9 +248,14 @@
                 <h3 style="font-size: 2.5rem; color: var(--brand-navy); margin-bottom: 20px; font-weight: 800;">
                     AccountingFlow</h3>
                 <p style="font-size: 1.15rem; line-height: 1.8; color: #4b5563;">
-                    <strong>AI 자율 회계 & 세무 자동화</strong><br>
-                    증빙 자동 인식부터 AI Compliance 모니터링, 세무 신고 자동 생성까지.<br>
-                    분산형 인프라로 보안은 극대화하고 서버 비용은 90% 절감했습니다.
+                    <strong>검증 가능한 회계 자동화 엔진</strong><br>
+                    증빙 인식부터 전표 생성까지 AI가 수행하되,<br>
+                    모든 결과는 복식부기 규칙과 시스템 검증을 통과해야만 저장됩니다.<br>
+                    회계 결과는 설명 가능하고, 재현 가능합니다.
+                </p>
+                <p style="font-size: 0.95rem; color:#6b7280; margin-top:10px;">
+                    ※ AccountingFlow는 회계 판단을 대체하지 않습니다.<br>
+                    모든 전표는 감사 대응이 가능한 구조로 생성됩니다.
                 </p>
                 <br><a href="accountingflow.html" class="cta-button"
                     style="background: var(--brand-navy); color: white;">상세 보기 →</a>
@@ -195,15 +266,15 @@
         </div>
 
         <div class="stats-grid">
-            <div class="stat-item">
+            <div class="stat-item" data-tooltip="자체 인프라 구축 및 단순 반복 업무 인건비 대비 절감 효과">
                 <h4 style="font-size:2rem; color:var(--brand-navy); margin:0;">87%</h4>
-                <p style="margin:5px 0; font-size:0.9rem; color:#666;">기존 대비 고정비 절감</p>
+                <p style="margin:5px 0; font-size:0.9rem; color:#666;">파일럿 기준 평균 87% 고정비 절감</p>
             </div>
             <div class="stat-item">
                 <h4 style="font-size:2rem; color:var(--brand-navy); margin:0;">Zero</h4>
-                <p style="margin:5px 0; font-size:0.9rem; color:#666;">데이터 보안 사고</p>
+                <p style="margin:5px 0; font-size:0.9rem; color:#666;">Local-First 구조 기반 보안 사고 0건</p>
             </div>
-            <div class="stat-item">
+            <div class="stat-item" data-tooltip="Local-First Edge Computing 기술로 클라우드 비용 최소화">
                 <h4 style="font-size:2rem; color:var(--brand-navy); margin:0;">1/10</h4>
                 <p style="margin:5px 0; font-size:0.9rem; color:#666;">타사 대비 서버 유지비</p>
             </div>
@@ -214,9 +285,14 @@
                 <h3 style="font-size: 2.5rem; color: var(--brand-navy); margin-bottom: 20px; font-weight: 800;">
                     AuditFlow</h3>
                 <p style="font-size: 1.15rem; line-height: 1.8; color: #4b5563;">
-                    <strong>전문 감사인을 위한 전수 분석 시스템</strong><br>
-                    방대한 데이터를 실시간 분석하여 리스크 사각지대를 제로화합니다.<br>
-                    Gemini 3.0 Pro의 고도화된 추론으로 정밀 감사 리포트를 발행합니다.
+                    <strong>전문 감사인을 위한 판단 근거 생성 시스템</strong><br>
+                    AuditFlow는 이상하다고 말하지 않습니다.<br>
+                    대신, 어떤 규칙을 위반했는지와 그 근거를 명확히 보여줍니다.<br>
+                    모든 분석 결과는 재현 가능하며, 감사 트레일을 자동 생성합니다.
+                </p>
+                <p style="font-size: 0.95rem; color:#6b7280; margin-top:10px;">
+                    ※ AuditFlow는 모델에 의존하지 않는 구조(Model-Agnostic)로 설계되었습니다.<br>
+                    판단 기준은 규칙과 증거에 고정됩니다.
                 </p>
                 <br><a href="auditflow.html" class="cta-button">상세 보기 →</a>
             </div>
@@ -225,7 +301,11 @@
     </section>
 
     <footer>
-        <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">인사이트릭스의 AI 엔진이 기업 경영의 미래를 혁신합니다.</p>
+        <div style="margin-bottom: 20px;">
+            <img src="./Insightrix.png" alt="Insightrix Logo"
+                style="height: 35px; filter: brightness(0) invert(1); opacity: 0.8;">
+        </div>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">Insightrix는 AI가 판단하지 않는 검증 가능한 시스템을 설계합니다.</p>
         <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
     </footer>
 </body>

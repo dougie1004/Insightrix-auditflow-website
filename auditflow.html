@@ -44,8 +44,8 @@
 
         /* Navigation 통합 스타일 */
         nav {
-            padding: 10px 40px;
-            border-bottom: 1px solid #eee;
+            padding: 16px 40px;
+            border-bottom: 1px solid #f1f5f9;
             position: sticky;
             top: 0;
             background: rgba(255, 255, 255, 0.98);
@@ -53,25 +53,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            backdrop-filter: blur(10px);
         }
 
         .logo img {
             height: 200px;
-            /* 통합 브랜드 사이즈 */
             width: auto;
             display: block;
+            margin-top: 20px;
         }
 
         .nav-links {
             display: flex;
-            gap: 40px;
-            font-weight: 700;
-            font-size: 1.1rem;
+            gap: 32px;
+            align-items: center;
         }
 
         .nav-links a {
+            font-size: 15px;
+            font-weight: 700;
             color: var(--brand-navy);
-            transition: 0.3s;
+            text-decoration: none;
+            transition: 0.2s;
             cursor: pointer;
         }
 
@@ -263,6 +266,178 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* New Section Lists */
+        .structured-list {
+            max-width: 850px;
+            margin: 0 auto;
+            counter-reset: item;
+            list-style: none;
+            padding: 0;
+        }
+
+        .structured-list li {
+            position: relative;
+            margin-bottom: 25px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            border: 1px solid #f1f5f9;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .structured-list li:hover {
+            transform: translateX(10px);
+            border-color: var(--brand-gold);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .structured-list li::before {
+            counter-increment: item;
+            content: counter(item);
+            width: 35px;
+            height: 35px;
+            background: var(--brand-navy);
+            color: var(--brand-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .negative-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+        }
+
+        .negative-list li {
+            padding: 20px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .negative-list li::before {
+            content: '×';
+            color: #ef4444;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .artifact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .artifact-card {
+            padding: 25px;
+            background: white;
+            border: 1px solid #f1f5f9;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+            color: var(--brand-navy);
+        }
+
+        .artifact-card i {
+            color: var(--brand-gold);
+            font-size: 1.2rem;
+        }
+
+        /* Responsibility Matrix */
+        .matrix-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .matrix-table th {
+            background: var(--brand-navy);
+            color: white;
+            padding: 20px;
+            font-size: 1.1rem;
+        }
+
+        .matrix-table td {
+            padding: 15px 25px;
+            border-bottom: 1px solid #f1f5f9;
+            font-weight: 600;
+        }
+
+        .matrix-row-title {
+            background: #f8fafc;
+            width: 30%;
+            color: var(--brand-navy);
+            border-right: 1px solid #f1f5f9;
+        }
+
+        .check-icon {
+            color: #10b981;
+            font-size: 1.2rem;
+        }
+
+        .cross-icon {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            opacity: 0.3;
+        }
+
+        /* Business Value Cards */
+        .value-v-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .value-v-card {
+            background: #F9FAFB;
+            padding: 35px;
+            border-radius: 24px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .value-v-card h4 {
+            color: var(--brand-navy);
+            font-size: 1.3rem;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .value-v-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.7;
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -270,57 +445,147 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLHLHFBM" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <nav>
-        <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"></a>
+        <a href="/index.html" class="logo"><img src="/Insightrix.png" alt="Insightrix Logo"></a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="accountingflow.html">AccountingFlow</a>
-            <a href="auditflow.html" class="active">AuditFlow</a>
-            <a href="company.html">Company</a>
-            <a href="contact.html">Contact</a>
-            <a href="app.html" style="color: var(--brand-gold);">Pricing & Download</a>
+            <a href="/index.html">Home</a>
+            <a href="/accountingflow.html">AccountingFlow</a>
+            <a href="/auditflow.html" class="active">AuditFlow</a>
+            <a href="/company.html">Company</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/app.html">Pricing & Download</a>
         </div>
     </nav>
 
-    <div class="hero-section">
+    <div class="hero-section" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <div
             style="display:inline-block; color:var(--brand-gold); font-weight:800; margin-bottom:15px; letter-spacing: 2px;">
-            INSIGHTRIX COMPLIANCE</div>
+            INSIGHTRIX AUDIT INFRASTRUCTURE</div>
         <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 900;">AuditFlow</h1>
-        <p style="margin-bottom: 40px; opacity: 0.8; font-size: 1.2rem;">Gemini 3.0 Pro 기반 자율 감사 시스템</p>
+        <p style="margin-bottom: 40px; opacity: 0.85; font-size: 1.2rem;">
+            AuditFlow는 AI가 결론을 내리지 않는 감사 시스템입니다.<br>
+            모든 분석은 규칙·근거·재현 가능성 위에서 이루어집니다.
+        </p>
 
-        <a href="https://www.youtube.com/watch?v=M_gpQ_8xSTA" target="_blank" class="hero-image-wrapper">
-            <img src="auditflow_demo.gif" alt="Demo Video">
-        </a>
+        <!-- 데모 섹션 제거됨 -->
     </div>
 
-    <div class="sub-nav">
-        <a href="#architecture">아키텍처</a>
-        <a href="#features">주요 기능</a>
-        <a href="#tech-diff">기술적 차별성</a>
-    </div>
 
-    <section id="architecture">
-        <h2 class="section-title">System Architecture</h2>
-        <div style="text-align: center;">
-            <img src="diagram_image.png" alt="Architecture"
-                style="max-width: 100%; border-radius: 15px; border: 1px solid #eee;">
-            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">* 민감 데이터는 로컬 Rust 엔진(PII Density Filter)에서
-                전처리됩니다.</p>
+
+    <!-- Section ①: Audit Judgment Pipeline -->
+    <section id="pipeline" style="background: var(--bg-light);">
+        <h2 class="section-title">Audit Judgment Pipeline</h2>
+        <p class="section-desc">
+            AuditFlow는 단순히 이상을 탐지하지 않습니다.<br>
+            감사인의 판단 과정을 단계별로 고정합니다.
+        </p>
+
+        <ol class="structured-list">
+            <li><strong>Data Intake</strong> – 원천 데이터 수집 및 비식별화</li>
+            <li><strong>Rule Matching</strong> – 사전 정의된 감사 규칙과의 정합성 검증</li>
+            <li><strong>Scenario Construction</strong> – 규칙 위반 가능 시나리오 구성</li>
+            <li><strong>Evidence Binding</strong> – 데이터·규칙·판단 경로 연결</li>
+            <li><strong>Human Judgment</strong> – 감사인의 최종 판단</li>
+            <li><strong>Replay & Trace</strong> – 동일 입력에 대한 동일 판단 재현</li>
+        </ol>
+    </section>
+
+    <!-- Section: Audit Constitution -->
+    <section id="constitution" style="background: white;">
+        <h2 class="section-title">Audit Constitution</h2>
+        <p class="section-desc">
+            AuditFlow는 유연한 AI가 아니라,<br>
+            변경 이력이 기록되는 감사 헌법 위에서 작동합니다.
+        </p>
+
+        <ul class="structured-list">
+            <li><strong>No Silent Override</strong> – 모든 규칙 변경은 기록됩니다.</li>
+            <li><strong>No Black Box</strong> – 설명 불가능한 판단은 생성되지 않습니다.</li>
+            <li><strong>No Retroactive Change</strong> – 과거 판단은 사후 변경되지 않습니다.</li>
+            <li><strong>Human Accountability</strong> – 최종 책임은 항상 감사인에게 귀속됩니다.</li>
+        </ul>
+    </section>
+
+    <!-- New Section: Division of Responsibility -->
+    <section id="matrix" style="background: white;">
+        <h2 class="section-title">Division of Responsibility</h2>
+        <p class="section-desc">AuditFlow는 인간의 고유 영역을 침범하지 않으면서,<br>판단에 필요한 가장 무거운 "증명 책임"의 인프라를 전담합니다.</p>
+
+        <div class="matrix-container">
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th class="matrix-row-title">감사 단계</th>
+                        <th>인간 (감수인)</th>
+                        <th>AuditFlow</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="matrix-row-title">감사 기준 정의</td>
+                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
+                        <td><i class="fas fa-times-circle cross-icon"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="matrix-row-title">이상 여부 최종 판단</td>
+                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
+                        <td><i class="fas fa-times-circle cross-icon"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="matrix-row-title">법적 감사 의견 표명</td>
+                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
+                        <td><i class="fas fa-times-circle cross-icon"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="matrix-row-title">위반 시나리오 자동 생성</td>
+                        <td><i class="fas fa-times-circle cross-icon"></i></td>
+                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
+                    </tr>
+                    <tr>
+                        <td class="matrix-row-title">감증 근거 자동 정리</td>
+                        <td><i class="fas fa-times-circle cross-icon"></i></td>
+                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
+                    </tr>
+                    <tr>
+                        <td class="matrix-row-title">과거 판단 과정 완벽 재현</td>
+                        <td><i class="fas fa-times-circle cross-icon"></i></td>
+                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
+                    </tr>
+                    <tr>
+                        <td class="matrix-row-title">설명 책임 구조화 (Trail)</td>
+                        <td><i class="fas fa-times-circle cross-icon"></i></td>
+                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
     <section id="features">
         <h2 class="section-title">Key Features</h2>
-        <div style="display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap;">
-            <div style="flex:1; min-width:300px;">
-                <h3 style="font-size: 1.8rem; color: var(--brand-navy);">01. 자율 시나리오 생성 (ASG)</h3>
-                <p style="font-size: 1.1rem; color: #555;">AI가 과거 감사 데이터와 기업의 회계 패턴을 학습하여 리스크 발생 가능성이 높은 시나리오를 스스로
-                    제안합니다.</p>
+        <div class="tech-grid" style="margin-bottom: 0;">
+            <div
+                style="background: white; padding: 40px; border-radius: 20px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                <h3 style="font-size: 1.5rem; color: var(--brand-navy); margin-top: 0;">01. Rule-bound Scenario
+                    Generation</h3>
+                <p style="font-size: 1rem; color: #555; margin-bottom: 0;">
+                    통계적 이상이 아닌, 사전 정의된 감사 규칙 위반 가능성만을 시나리오로 생성합니다.
+                </p>
             </div>
-            <div style="flex:1; min-width:300px;">
-                <img src="https://via.placeholder.com/500x300?text=Auto+Scenario"
-                    style="width:100%; border-radius:15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <div
+                style="background: white; padding: 40px; border-radius: 20px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                <h3 style="font-size: 1.5rem; color: var(--brand-navy); margin-top: 0;">02. Evidence-first Audit Trail
+                </h3>
+                <p style="font-size: 1rem; color: #555; margin-bottom: 0;">
+                    모든 시나리오는 원천 데이터, 감지 규칙, 시스템의 판단 경로가 하나로 묶여 관리됩니다.
+                </p>
             </div>
+        </div>
+        <div
+            style="margin-top: 30px; background: white; padding: 40px; border-radius: 20px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px rgba(0,0,0,0.02); text-align: center; max-width: 100%;">
+            <h3 style="font-size: 1.5rem; color: var(--brand-navy); margin-top: 0;">03. Judgment Replay Engine</h3>
+            <p style="font-size: 1rem; color: #555; margin-bottom: 0;">
+                과거의 특정 시점으로 돌아가 동일한 데이터에 대해 시스템이 왜 그런 시나리오를 생성했는지 완벽하게 재현합니다.
+            </p>
         </div>
     </section>
 
@@ -331,14 +596,20 @@
         <div class="tech-grid">
             <div class="tech-card">
                 <i class="fas fa-brain"></i>
-                <h3>추론 기반 감사 (Reasoning)</h3>
-                <p>Gemini 3.0 Pro 엔진은 단순 키워드 검색을 넘어 복잡한 자금 흐름 사이의 인과관계를 추론합니다. 이를 통해 기존 시스템이 놓치던 지능적 횡령이나 오탐을 90% 이상
-                    개선합니다.</p>
+                <h3>규칙 기반 판단 구조 (Constitutional Audit)</h3>
+                <p>
+                    AuditFlow의 모든 분석은 사전에 정의된 감사 규칙을 기준으로 수행됩니다.<br>
+                    통계적으로 수상하더라도, 규칙 위반이 없으면 ‘문제 없음’으로 처리됩니다.<br>
+                    이는 감사인의 법적 책임 구조를 그대로 존중하기 위함입니다.
+                </p>
             </div>
             <div class="tech-card">
                 <i class="fas fa-coins"></i>
-                <h3>비용 효율성 (Cost)</h3>
-                <p>하이브리드 최적화 로직(Flash 모델과 Pro 모델의 자동 라우팅)을 통해 자체 GPU 서버 구축 대비 TCO를 획기적으로 절감하면서도 고성능 분석을 보장합니다.</p>
+                <h3>재현 가능한 비용 구조</h3>
+                <p>
+                    AuditFlow는 분석 결과뿐 아니라 비용 구조도 예측 가능합니다.<br>
+                    대량 데이터 분석 시에도 결과 품질과 비용이 출렁이지 않도록 설계되었습니다.
+                </p>
             </div>
         </div>
 
@@ -353,33 +624,95 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>인프라 비용</strong></td>
-                        <td>고비용 (서버/GPU 관리 필수)</td>
-                        <td class="highlight">0원 (구독형 모델)</td>
+                        <td><strong>판단 구조</strong></td>
+                        <td>코드/모델 혼합</td>
+                        <td class="highlight">규칙 기반 고정</td>
                     </tr>
                     <tr>
-                        <td><strong>AI 성능</strong></td>
-                        <td>제한적 (경량화 모델 사용)</td>
-                        <td class="highlight">최상위 모델 (Gemini 3.0 Pro)</td>
+                        <td><strong>재현 가능성</strong></td>
+                        <td>낮음</td>
+                        <td class="highlight">동일 입력 → 동일 결과</td>
                     </tr>
                     <tr>
-                        <td><strong>보안성</strong></td>
-                        <td>자체 관리 (보안 사고 책임)</td>
-                        <td class="highlight">Enterprise Grade 보안 인프라</td>
+                        <td><strong>감사 대응</strong></td>
+                        <td>추가 설명 필요</td>
+                        <td class="highlight">Trail 자동 생성</td>
+                    </tr>
+                    <tr>
+                        <td><strong>책임 소재</strong></td>
+                        <td>불명확</td>
+                        <td class="highlight">감사인 중심</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </section>
 
+    <!-- Section ③: Output Artifacts -->
+    <section id="outputs" style="background: white;">
+        <h2 class="section-title">Audit Outputs</h2>
+        <p class="section-desc">
+            AuditFlow의 결과는 ‘점수’가 아니라<br>
+            감사인이 바로 사용할 수 있는 구조화된 산출물입니다.
+        </p>
+
+        <div class="artifact-grid">
+            <div class="artifact-card"><i class="fas fa-file-invoice"></i> Rule-based Risk Scenario List</div>
+            <div class="artifact-card"><i class="fas fa-link"></i> Evidence-linked Audit Trail</div>
+            <div class="artifact-card"><i class="fas fa-history"></i> Judgment Replay Log</div>
+            <div class="artifact-card"><i class="fas fa-tasks"></i> Dismissed / Manual Review / Flagged 분류 결과</div>
+        </div>
+    </section>
+
+    <!-- New Section: Why AuditFlow (The Power of Proof) -->
+    <section id="business-value" style="background: white;">
+        <h2 class="section-title">The Power of Proof</h2>
+        <p class="section-desc">AuditFlow는 단순한 편의 도구가 아닙니다.<br>감사인이 자신의 판단을 "증명"할 수 있게 함으로써 경제적·법적 리스크를 방어합니다.</p>
+
+        <div class="value-v-grid">
+            <div class="value-v-card">
+                <h4><i class="fas fa-balance-scale"></i> 소송 및 분쟁 대응</h4>
+                <p>수년 후 발생할 수 있는 감리 및 소송 상황에서, 당시의 판단 근거와 데이터 경로를 원클릭으로 재현하여 입증 책임을 다합니다.</p>
+            </div>
+            <div class="value-v-card">
+                <h4><i class="fas fa-university"></i> 감독기관 질의 대응</h4>
+                <p>금융감독원 등 규제 기관의 철저한 소명 요구에 대해, 수정 불가능한 감사 Trail과 룰 매칭 로그를 바탕으로 객관적인 대응을 지원합니다.</p>
+            </div>
+            <div class="value-v-card">
+                <h4><i class="fas fa-check-double"></i> 감사 품질의 일관성</h4>
+                <p>법인 내 파트너 간, 혹은 프로젝트 간 판단 기준의 편차를 줄여 전체 조직의 감사 품질을 상향 평준화하고 에러율을 혁신적으로 낮춥니다.</p>
+            </div>
+            <div class="value-v-card">
+                <h4><i class="fas fa-history"></i> 내부 품질 관리(QCR)</h4>
+                <p>판단 과정이 블랙박스가 아닌 투명한 로그로 남으므로, 사후적인 품질 검토(Quality Control Review) 비용을 80% 이상 절감합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section ②: What AuditFlow Never Does -->
+    <section id="never" style="background: var(--bg-light); border-top: 1px solid #f1f5f9;">
+        <h2 class="section-title">What AuditFlow Never Does</h2>
+        <p class="section-desc">기술적 한계가 아니라, 감사인의 책임을 존중하기 위한 의도적 제약입니다.</p>
+        <ul class="negative-list">
+            <li>감사 의견을 자동 생성하지 않습니다.</li>
+            <li>위법 여부를 판정하지 않습니다.</li>
+            <li>통계적 이상만으로 결론을 내리지 않습니다.</li>
+            <li>책임 소재가 불분명한 자동화를 제공하지 않습니다.</li>
+        </ul>
+    </section>
+
 
 
     <footer>
         <div style="margin-bottom: 20px;">
-            <img src="Insightrix.png" alt="Insightrix"
-                style="height: 40px; filter: brightness(0) invert(1); opacity: 0.5;">
+            <img src="./Insightrix.png" alt="Insightrix Logo"
+                style="height: 35px; filter: brightness(0) invert(1); opacity: 0.8;">
         </div>
         <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
+        <p style="font-size:0.85rem; color:#999; margin-top: 10px;">
+            AuditFlow는 감사인의 판단을 대체하지 않습니다.<br>
+            판단이 가능하도록 구조를 제공합니다.
+        </p>
     </footer>
 
 </body>

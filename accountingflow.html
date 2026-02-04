@@ -5,7 +5,7 @@
     <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-PLHLHFBM');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AccountingFlow | Insightrix AI Secretary</title>
+    <title>AccountingFlow | Insightrix CFO Infrastructure</title>
     <link rel="icon" href="Insightrix.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
@@ -17,6 +17,31 @@
             --text-dark: #1F2937;
             --bg-light: #F9FAFB;
             --text-gray: #6B7280;
+        }
+
+        .negative-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .negative-list li {
+            padding: 20px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .negative-list li::before {
+            content: '×';
+            color: #ef4444;
+            font-size: 1.5rem;
+            font-weight: 800;
         }
 
         body {
@@ -31,8 +56,8 @@
 
         /* Navigation (Insightrix Main 통합) */
         nav {
-            padding: 10px 40px;
-            border-bottom: 1px solid #eee;
+            padding: 16px 40px;
+            border-bottom: 1px solid #f1f5f9;
             position: sticky;
             top: 0;
             background: rgba(255, 255, 255, 0.98);
@@ -40,25 +65,29 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            backdrop-filter: blur(10px);
         }
 
         .logo img {
             height: 200px;
             width: auto;
             display: block;
+            margin-top: 20px;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
-            font-weight: 700;
-            font-size: 1rem;
+            gap: 32px;
+            align-items: center;
         }
 
         .nav-links a {
+            font-size: 15px;
+            font-weight: 700;
             color: var(--brand-navy);
             text-decoration: none;
-            transition: 0.3s;
+            transition: 0.2s;
+            cursor: pointer;
         }
 
         .nav-links a:hover,
@@ -204,48 +233,95 @@
             style="display:none;visibility:hidden"></iframe></noscript>
 
     <nav>
-        <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"></a>
+        <a href="/index.html" class="logo"><img src="/Insightrix.png" alt="Insightrix Logo"></a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="accountingflow.html" class="active">AccountingFlow</a>
-            <a href="auditflow.html">AuditFlow</a>
-            <a href="company.html">Company</a>
-            <a href="contact.html">Contact</a>
-            <a href="app.html" style="color: var(--brand-gold);">Pricing & Download</a>
+            <a href="/index.html">Home</a>
+            <a href="/accountingflow.html" class="active">AccountingFlow</a>
+            <a href="/auditflow.html">AuditFlow</a>
+            <a href="/company.html">Company</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/app.html">Pricing & Download</a>
         </div>
     </nav>
 
     <div class="hero">
-        <h1>사장님의 밤이 편안해지는<br><span>AI 경영 비서</span>의 시작</h1>
-        <p>어려운 회계 공부는 이제 그만하세요. 20년 현장의 판단 기준을 담은 AI 비서가 당신의 질문에 답하고 꼼꼼하게 장부를 챙깁니다.</p>
-        <a href="#apply" class="cta-button">나만의 AI 비서 고용하기</a>
+        <h1>
+            편한 회계가 아니라<br>
+            <span>CFO가 신뢰하는 회계 인프라</span>
+        </h1>
+        <p>
+            AccountingFlow는 결론을 대신 내리지 않습니다.<br>
+            대신, 모든 숫자가 언제든 설명 가능한 상태로 유지되도록 설계되었습니다.<br>
+            자동화보다 중요한 것은, 판단 이후에도 버틸 수 있는 회계입니다.
+        </p>
+        <a href="#apply" class="cta-button">검증 가능한 회계 흐름 도입하기</a>
     </div>
 
     <section class="section">
         <div class="product-card">
             <div style="flex:1;">
                 <div class="feature-icon"><i class="fas fa-comments"></i></div>
-                <h3 style="font-size: 1.8rem; color: var(--brand-navy); margin-bottom: 15px; font-weight: 800;">묻고 답하는
-                    회계</h3>
-                <p style="color: var(--text-gray); font-size: 1.1rem;">"이번 달 밥값 얼마나 썼지?"라고 물어보세요. AI 비서가 즉시 브리핑하고 궁금증을
-                    해결해 드립니다.</p>
+                <h3 style="font-size: 1.8rem; color: var(--brand-navy); margin-bottom: 20px; font-weight: 800;">질문에 답하기
+                    전에,<br>먼저 근거를 정리합니다</h3>
+                <p style="color: var(--text-gray); font-size: 1.1rem; line-height: 1.7;">
+                    “이번 달 비용이 왜 늘었지?”라는 질문에<br>
+                    AccountingFlow는 숫자부터 말하지 않습니다.<br><br>
+                    전표 → 계정 → 증빙 → 흐름을 먼저 정리해 보여주고,<br>
+                    CFO가 직접 판단할 수 있는 상태를 만듭니다.
+                </p>
             </div>
             <div style="flex:1;">
                 <div class="feature-icon"><i class="fas fa-magic"></i></div>
-                <h3 style="font-size: 1.8rem; color: var(--brand-navy); margin-bottom: 15px; font-weight: 800;">알아서 척척
-                    정리</h3>
-                <p style="color: var(--text-gray); font-size: 1.1rem;">헷갈리는 계정 과목은 비서가 미리 골라둡니다. 사장님은 비서가 올린 보고서에 '승인'
-                    버튼만 누르시면 끝납니다.</p>
+                <h3 style="font-size: 1.8rem; color: var(--brand-navy); margin-bottom: 20px; font-weight: 800;">자동으로
+                    제안하되,<br>책임까지 자동화하지 않습니다</h3>
+                <p style="color: var(--text-gray); font-size: 1.1rem; line-height: 1.7;">
+                    계정 과목과 전표는 시스템이 먼저 제안합니다.<br>
+                    하지만 어떤 전표도 CFO의 확인 없이 확정되지 않습니다.<br><br>
+                    모든 분개는 왜 그렇게 처리되었는지<br>
+                    언제든 설명할 수 있도록 기록됩니다.
+                </p>
             </div>
         </div>
     </section>
 
+    <section style="background: white; padding: 60px 40px; text-align: center;">
+        <div
+            style="max-width: 800px; margin: 0 auto; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 40px 0;">
+            <p
+                style="font-size: 1.5rem; font-weight: 700; color: var(--brand-navy); line-height: 1.6; word-break: keep-all;">
+                AccountingFlow는 장부를 만드는 시스템이 아니라<br>
+                CFO가 안심하고 결정을 내릴 수 있게 만드는<br>
+                회계 판단 전 단계 인프라입니다.
+            </p>
+        </div>
+    </section>
+
+    <section style="background: var(--bg-light); padding: 100px 40px; text-align: center;">
+        <h2 class="section-title">What AccountingFlow Never Automates</h2>
+        <p class="section-desc">
+            AccountingFlow는 편의를 위해 기준을 낮추지 않습니다.<br>
+            빠른 회계보다, 나중에 설명 가능한 회계를 선택합니다.
+        </p>
+
+        <ul class="negative-list">
+            <li>증빙 없는 전표를 자동 확정하지 않습니다.</li>
+            <li>CFO 확인 없이 계정 과목을 변경하지 않습니다.</li>
+            <li>설명할 수 없는 분개를 생성하지 않습니다.</li>
+            <li>리스크가 있는 처리를 조용히 넘기지 않습니다.</li>
+        </ul>
+    </section>
+
     <section id="apply" class="form-section">
         <div class="form-container">
-            <h2 style="text-align: center; color: var(--brand-navy); margin-bottom: 10px; font-weight: 800;">파일럿 파트너 신청
-            </h2>
-            <p style="text-align: center; color: var(--text-gray); margin-bottom: 40px;">20년 CPA 노하우가 담긴 AI 비서를 가장 먼저
-                만나보세요.</p>
+            <h2 style="text-align: center; color: var(--brand-navy); margin-bottom: 20px; font-weight: 800;">검증·리뷰 중심 회계
+                인프라 파일럿</h2>
+            <p style="text-align: center; color: var(--text-gray); margin-bottom: 40px; line-height: 1.8;">
+                AccountingFlow는<br>
+                20년 이상 회계·감사 실무 기준을<br>
+                시스템 규칙으로 구현한 검증 중심 회계 엔진입니다.<br><br>
+                빠른 자동화가 아니라,<br>
+                CFO가 책임질 수 있는 회계를 원하는 기업만을 대상으로 합니다.
+            </p>
 
             <form id="betaForm" onsubmit="handleFormSubmit(event)">
                 <div class="form-group">
@@ -277,16 +353,19 @@
                     </select>
                 </div>
 
-                <button type="submit" class="cta-button" style="width: 100%; margin-top: 10px;">AI 비서 도입 신청하기</button>
-                <p style="text-align:center; font-size:0.85rem; color:#999; margin-top:25px; line-height: 1.5;">
-                    * 생각은 AI 비서가, 최종 결정과 책임은 사장님이 하도록 설계되었습니다.
-                </p>
+                <button type="submit" class="cta-button" style="width: 100%; margin-top: 10px;">CFO 신뢰 기준 회계 도입
+                    신청하기</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">인사이트릭스의 AI 엔진이 기업 경영의 미래를 혁신합니다.</p>
+        <div style="margin-bottom: 20px;">
+            <img src="./Insightrix.png" alt="Insightrix Logo"
+                style="height: 35px; filter: brightness(0) invert(1); opacity: 0.8;">
+        </div>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">Insightrix는 AI가 판단하지 않는, 사람이 책임질 수 있는 시스템을
+            설계합니다.</p>
         <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
     </footer>
 
