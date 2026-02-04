@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PLHLHFBM');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuditFlow | Insightrix AI Compliance</title>
+    <link rel="icon" href="Insightrix.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --brand-navy: #0A192F;
+            --brand-gold: #D4AF37;
+            --text-dark: #1F2937;
+            --bg-light: #F9FAFB;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navigation 통합 스타일 */
+        nav {
+            padding: 10px 40px;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 200px; /* 통합 브랜드 사이즈 */
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a {
+            color: var(--brand-navy);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--brand-gold);
+        }
+
+        /* Hero */
+        .hero-section {
+            background: #0A192F;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: inline-block;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        .hero-image-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Sub Nav */
+        .sub-nav {
+            position: sticky;
+            top: 100px; /* 네비게이션 높이에 맞춰 조정 */
+            background: white;
+            border-bottom: 1px solid #ddd;
+            z-index: 900;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .sub-nav a {
+            margin: 0 20px;
+            font-weight: 600;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .sub-nav a:hover {
+            color: var(--brand-navy);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+            scroll-margin-top: 180px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--brand-navy);
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        .section-desc {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Tech Distinction Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .tech-card {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 20px;
+            border-top: 5px solid var(--brand-navy);
+        }
+
+        .tech-card h3 {
+            font-size: 1.5rem;
+            color: var(--brand-navy);
+            margin-top: 0;
+        }
+
+        .tech-card i {
+            font-size: 2rem;
+            color: var(--brand-gold);
+            margin-bottom: 20px;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 18px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f1f5f9;
+            color: #475569;
+            font-weight: 700;
+        }
+
+        .highlight {
+            background: #f0f9ff;
+            font-weight: 600;
+            border-left: 2px solid var(--brand-gold);
+            border-right: 2px solid var(--brand-gold);
+        }
+
+        th.highlight {
+            background: var(--brand-navy);
+            color: white;
+            border-top: 5px solid var(--brand-gold);
+        }
+
+        /* Download */
+        .btn-download {
+            background: var(--brand-gold);
+            color: var(--brand-navy);
+            padding: 18px 40px;
+            border-radius: 10px;
+            font-weight: 800;
+            display: inline-flex;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        footer {
+            background: #0A192F;
+            color: #aaa;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        @media (max-width: 968px) {
+            nav { flex-direction: column; gap: 20px; }
+            .sub-nav { top: 180px; }
+            .tech-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLHLHFBM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <nav>
+        <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="accountingflow.html">AccountingFlow</a>
+            <a href="auditflow.html" class="active">AuditFlow</a>
+            <a href="company.html">Company</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div style="display:inline-block; color:var(--brand-gold); font-weight:800; margin-bottom:15px; letter-spacing: 2px;">INSIGHTRIX COMPLIANCE</div>
+        <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 900;">AuditFlow</h1>
+        <p style="margin-bottom: 40px; opacity: 0.8; font-size: 1.2rem;">Gemini 3.0 Pro 기반 자율 감사 시스템</p>
+
+        <a href="https://www.youtube.com/watch?v=M_gpQ_8xSTA" target="_blank" class="hero-image-wrapper">
+            <img src="auditflow_demo.gif" alt="Demo Video">
+        </a>
+    </div>
+
+    <div class="sub-nav">
+        <a href="#architecture">아키텍처</a>
+        <a href="#features">주요 기능</a>
+        <a href="#tech-diff">기술적 차별성</a>
+        <a href="#download">다운로드</a>
+    </div>
+
+    <section id="architecture">
+        <h2 class="section-title">System Architecture</h2>
+        <div style="text-align: center;">
+            <img src="diagram_image.png" alt="Architecture" style="max-width: 100%; border-radius: 15px; border: 1px solid #eee;">
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">* 민감 데이터는 로컬 Rust 엔진(PII Density Filter)에서 전처리됩니다.</p>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2 class="section-title">Key Features</h2>
+        <div style="display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap;">
+            <div style="flex:1; min-width:300px;">
+                <h3 style="font-size: 1.8rem; color: var(--brand-navy);">01. 자율 시나리오 생성 (ASG)</h3>
+                <p style="font-size: 1.1rem; color: #555;">AI가 과거 감사 데이터와 기업의 회계 패턴을 학습하여 리스크 발생 가능성이 높은 시나리오를 스스로 제안합니다.</p>
+            </div>
+            <div style="flex:1; min-width:300px;">
+                <img src="https://via.placeholder.com/500x300?text=Auto+Scenario" style="width:100%; border-radius:15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-diff">
+        <h2 class="section-title">Technical Distinction</h2>
+        <p class="section-desc">단순한 LLM 래퍼가 아닙니다. 감사 업무의 본질을 꿰뚫는 기술적 깊이를 확인하세요.</p>
+
+        <div class="tech-grid">
+            <div class="tech-card">
+                <i class="fas fa-brain"></i>
+                <h3>추론 기반 감사 (Reasoning)</h3>
+                <p>Gemini 3.0 Pro 엔진은 단순 키워드 검색을 넘어 복잡한 자금 흐름 사이의 인과관계를 추론합니다. 이를 통해 기존 시스템이 놓치던 지능적 횡령이나 오탐을 90% 이상 개선합니다.</p>
+            </div>
+            <div class="tech-card">
+                <i class="fas fa-coins"></i>
+                <h3>비용 효율성 (Cost)</h3>
+                <p>하이브리드 최적화 로직(Flash 모델과 Pro 모델의 자동 라우팅)을 통해 자체 GPU 서버 구축 대비 TCO를 획기적으로 절감하면서도 고성능 분석을 보장합니다.</p>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="20%">비교 항목</th>
+                        <th width="40%">자체 구축 (On-Premise)</th>
+                        <th width="40%" class="highlight">AuditFlow (SaaS)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>인프라 비용</strong></td>
+                        <td>고비용 (서버/GPU 관리 필수)</td>
+                        <td class="highlight">0원 (구독형 모델)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI 성능</strong></td>
+                        <td>제한적 (경량화 모델 사용)</td>
+                        <td class="highlight">최상위 모델 (Gemini 3.0 Pro)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>보안성</strong></td>
+                        <td>자체 관리 (보안 사고 책임)</td>
+                        <td class="highlight">Enterprise Grade 보안 인프라</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="download" style="text-align: center; background: var(--brand-navy); color: white; border-radius: 30px; padding: 80px 40px;">
+        <h2 style="margin-bottom: 30px; font-size: 2.5rem;">Start AuditFlow Now</h2>
+        <p style="margin-bottom: 40px; opacity: 0.8;">인사이트릭스의 감사 혁신을 지금 바로 경험해 보세요.</p>
+        <a href="#" class="btn-download"><i class="fas fa-download"></i> Windows Enterprise 다운로드</a>
+        
+        <div style="margin-top: 50px; background: white; padding: 15px; border-radius: 20px; height: 600px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdaceSg7sSHIbFXH9JLB06xQ5go0Kh-vubLm4E7xXt48kYX-w/viewform?embedded=true" width="100%" height="100%" frameborder="0">로드 중…</iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div style="margin-bottom: 20px;">
+            <img src="Insightrix.png" alt="Insightrix" style="height: 40px; filter: brightness(0) invert(1); opacity: 0.5;">
+        </div>
+        <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+

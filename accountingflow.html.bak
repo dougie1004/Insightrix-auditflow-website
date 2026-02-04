@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-PLHLHFBM');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccountingFlow | Insightrix AI Secretary</title>
+    <link rel="icon" href="Insightrix.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { 
+            --brand-navy: #0A192F; 
+            --brand-gold: #D4AF37; 
+            --text-dark: #1F2937; 
+            --bg-light: #F9FAFB; 
+            --text-gray: #6B7280;
+        }
+        body { font-family: 'Pretendard', sans-serif; margin: 0; padding: 0; color: var(--text-dark); line-height: 1.6; background: #fff; scroll-behavior: smooth; }
+        
+        /* Navigation (Insightrix Main 통합) */
+        nav { padding: 10px 40px; border-bottom: 1px solid #eee; position: sticky; top: 0; background: rgba(255, 255, 255, 0.98); z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 200px; width: auto; display: block; }
+        .nav-links { display: flex; gap: 30px; font-weight: 700; font-size: 1rem; }
+        .nav-links a { color: var(--brand-navy); text-decoration: none; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 140px 20px; background: var(--brand-navy); color: white; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; font-weight: 800; }
+        .hero h1 span { color: var(--brand-gold); }
+        .hero p { margin-bottom: 40px; opacity: 0.8; font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; }
+
+        .cta-button { background: var(--brand-gold); color: var(--brand-navy); padding: 12px 35px; border-radius: 8px; font-weight: bold; display: inline-block; transition: 0.3s; cursor: pointer; border: none; font-size: 1.1rem; }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
+
+        /* Product Cards */
+        .section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+        .product-card { display: flex; align-items: flex-start; gap: 50px; background: var(--bg-light); padding: 60px; border-radius: 30px; margin-bottom: 40px; }
+        .feature-icon { font-size: 2.5rem; color: var(--brand-gold); margin-bottom: 20px; }
+        
+        /* Pilot Form Section */
+        .form-section { background: var(--bg-light); padding: 100px 20px; border-radius: 40px; margin: 40px; }
+        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 50px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 25px; }
+        .form-label { display: block; font-weight: 700; margin-bottom: 8px; color: var(--brand-navy); }
+        .form-input { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+        .form-input:focus { outline: none; border-color: var(--brand-gold); }
+
+        footer { background: var(--brand-navy); color: #aaa; padding: 60px 40px; text-align: center; }
+
+        @media (max-width: 768px) {
+            .product-card { flex-direction: column; padding: 40px 20px; }
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLHLHFBM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <nav>
+        <a href="index.html" class="logo"><img src="Insightrix.png" alt="Insightrix Logo"></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="accountingflow.html" class="active">AccountingFlow</a> 
+            <a href="auditflow.html">AuditFlow</a>
+            <a href="company.html">Company</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>사장님의 밤이 편안해지는<br><span>AI 경영 비서</span>의 시작</h1>
+        <p>어려운 회계 공부는 이제 그만하세요. 20년 현장의 판단 기준을 담은 AI 비서가 당신의 질문에 답하고 꼼꼼하게 장부를 챙깁니다.</p>
+        <a href="#apply" class="cta-button">나만의 AI 비서 고용하기</a>
+    </div>
+
+    <section class="section">
+        <div class="product-card">
+            <div style="flex:1;">
+                <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                <h3 style="font-size: 1.8rem; color: var(--brand-navy); margin-bottom: 15px; font-weight: 800;">묻고 답하는 회계</h3>
+                <p style="color: var(--text-gray); font-size: 1.1rem;">"이번 달 밥값 얼마나 썼지?"라고 물어보세요. AI 비서가 즉시 브리핑하고 궁금증을 해결해 드립니다.</p>
+            </div>
+            <div style="flex:1;">
+                <div class="feature-icon"><i class="fas fa-magic"></i></div>
+                <h3 style="font-size: 1.8rem; color: var(--brand-navy); margin-bottom: 15px; font-weight: 800;">알아서 척척 정리</h3>
+                <p style="color: var(--text-gray); font-size: 1.1rem;">헷갈리는 계정 과목은 비서가 미리 골라둡니다. 사장님은 비서가 올린 보고서에 '승인' 버튼만 누르시면 끝납니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="apply" class="form-section">
+        <div class="form-container">
+            <h2 style="text-align: center; color: var(--brand-navy); margin-bottom: 10px; font-weight: 800;">파일럿 파트너 신청</h2>
+            <p style="text-align: center; color: var(--text-gray); margin-bottom: 40px;">20년 CPA 노하우가 담긴 AI 비서를 가장 먼저 만나보세요.</p>
+            
+            <form id="betaForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label">성함</label>
+                    <input type="text" id="userName" class="form-input" required placeholder="홍길동">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">회사명</label>
+                    <input type="text" id="companyName" class="form-input" required placeholder="(주)인사이트릭스">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">이메일 주소</label>
+                    <input type="email" id="userEmail" class="form-input" required placeholder="ceo@company.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">연간 매출 규모</label>
+                    <select id="businessScale" class="form-input">
+                        <option value="50억 미만">50억 미만</option>
+                        <option value="50억 ~ 300억" selected>50억 ~ 300억 (파일럿 우선 선정 대상)</option>
+                        <option value="300억 이상">300억 이상</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">회계 경리 인원</label>
+                    <select id="teamSize" class="form-input">
+                        <option value="본인 직접 관리">본인 직접 관리</option>
+                        <option value="재무 1-2명" selected>재무 1-2명</option>
+                        <option value="3명이상">3명이상</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="cta-button" style="width: 100%; margin-top: 10px;">AI 비서 도입 신청하기</button>
+                <p style="text-align:center; font-size:0.85rem; color:#999; margin-top:25px; line-height: 1.5;">
+                    * 생각은 AI 비서가, 최종 결정과 책임은 사장님이 하도록 설계되었습니다.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">인사이트릭스의 AI 엔진이 기업 경영의 미래를 혁신합니다.</p>
+        <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('userName').value;
+            const company = document.getElementById('companyName').value;
+            const email = document.getElementById('userEmail').value;
+            const scale = document.getElementById('businessScale').value;
+            const team = document.getElementById('teamSize').value;
+
+            // 구글 설문지 응답 전송용 URL
+            const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfR524Xby7aLSUdPcvn2xIaPuDqrCYWj4c4ZvOd7N9jzOO1xw/formResponse";
+
+            // 구글 폼 필드 ID 매핑 (설문지 구조 기반)
+            const formData = new FormData();
+            formData.append('entry.2005620554', name);    // 성함
+            formData.append('entry.1045781291', company); // 회사명
+            formData.append('entry.1166974658', email);   // 이메일
+            formData.append('entry.839337160', scale);    // 매출규모
+            formData.append('entry.1065040343', team);    // 회계 경리 인원
+
+            try {
+                // 데이터를 구글 서버로 전송
+                await fetch(GOOGLE_FORM_ACTION_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: formData
+                });
+
+                alert(name + " 사장님, 반갑습니다. AccountingFlow 팀이 곧 연락드리겠습니다.);
+                event.target.reset(); // 폼 초기화
+                
+            } catch (error) {
+                console.error('전송 오류:', error);
+                alert("신청 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
+            }
+        }
+    </script>
+</body>
+</html>

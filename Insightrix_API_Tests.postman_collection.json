@@ -1,0 +1,328 @@
+{
+    "info": {
+        "name": "Insightrix API Tests",
+        "description": "Test scenarios for payment confirmation and auto-update APIs",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Payment Confirmation API",
+            "item": [
+                {
+                    "name": "1. Success - Valid Payment",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"paymentKey\": \"test_payment_key_123\",\n  \"orderId\": \"order-{{$randomUUID}}\",\n  \"amount\": 39900,\n  \"serviceType\": \"accounting\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/api/confirm-payment",
+                            "host": [
+                                "{{BASE_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "confirm-payment"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "2. Idempotency - Duplicate Request",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"paymentKey\": \"test_payment_key_123\",\n  \"orderId\": \"order-duplicate-test\",\n  \"amount\": 39900,\n  \"serviceType\": \"accounting\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/api/confirm-payment",
+                            "host": [
+                                "{{BASE_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "confirm-payment"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Should return cached result\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "    var jsonData = pm.response.json();",
+                                    "    pm.expect(jsonData.message).to.include('cached');",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "3. Error - Missing Fields",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"paymentKey\": \"test_key\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/api/confirm-payment",
+                            "host": [
+                                "{{BASE_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "confirm-payment"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Should return 400 Bad Request\", function () {",
+                                    "    pm.response.to.have.status(400);",
+                                    "    var jsonData = pm.response.json();",
+                                    "    pm.expect(jsonData.error).to.eql('Missing required fields');",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "4. Error - Invalid Method (GET)",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{BASE_URL}}/api/confirm-payment",
+                            "host": [
+                                "{{BASE_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "confirm-payment"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Should return 405 Method Not Allowed\", function () {",
+                                    "    pm.response.to.have.status(405);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Auto-Update API",
+            "item": [
+                {
+                    "name": "1. Update Available - AccountingFlow",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{BASE_URL}}/api/updates?service=accounting&current_version=0.9.0",
+                            "host": [
+                                "{{BASE_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "updates"
+                            ],
+                            "query": [
+                                {
+                                    "key": "service",
+                                    "value": "accounting"
+                                },
+                                {
+                                    "key": "current_version",
+                                    "value": "0.9.0"
+                                }
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Should return update manifest\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "    var jsonData = pm.response.json();",
+                                    "    pm.expect(jsonData).to.have.property('version');",
+                                    "    pm.expect(jsonData).to.have.property('platforms');",
+                                    "    pm.expect(jsonData.platforms).to.have.property('windows-x86_64');",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "2. No Update - Latest Version",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{BASE_URL}}/api/updates?service=accounting&current_version=1.0.0",
+                            "host": [
+                                "{{BASE_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "updates"
+                            ],
+                            "query": [
+                                {
+                                    "key": "service",
+                                    "value": "accounting"
+                                },
+                                {
+                                    "key": "current_version",
+                                    "value": "1.0.0"
+                                }
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Should return 204 No Content\", function () {",
+                                    "    pm.response.to.have.status(204);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "3. Update Available - AuditFlow",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{BASE_URL}}/api/updates?service=audit&current_version=0.5.0",
+                            "host": [
+                                "{{BASE_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "updates"
+                            ],
+                            "query": [
+                                {
+                                    "key": "service",
+                                    "value": "audit"
+                                },
+                                {
+                                    "key": "current_version",
+                                    "value": "0.5.0"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Error Notification Test",
+            "item": [
+                {
+                    "name": "Trigger Error (Invalid Secret Key)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"paymentKey\": \"invalid_key\",\n  \"orderId\": \"order-error-test\",\n  \"amount\": 99999,\n  \"serviceType\": \"accounting\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{BASE_URL}}/api/confirm-payment",
+                            "host": [
+                                "{{BASE_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "confirm-payment"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Should trigger error notification\", function () {",
+                                    "    // Check Discord/Slack for error message",
+                                    "    pm.response.to.have.status(400);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "BASE_URL",
+            "value": "http://localhost:5173",
+            "type": "string"
+        }
+    ]
+}

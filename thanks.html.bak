@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신청 완료 | AccountingFlow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            word-break: keep-all;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at center, #eff6ff 0%, #ffffff 100%);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 hero-gradient min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-2xl w-full glass p-12 md:p-20 rounded-[3.5rem] shadow-2xl text-center" data-aos="zoom-in">
+        <div
+            class="w-24 h-24 bg-blue-600 text-white rounded-full flex items-center justify-center mb-10 mx-auto shadow-2xl shadow-blue-200">
+            <i class="fas fa-check text-4xl"></i>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-black mb-8 tracking-tighter text-gray-900 leading-tight">
+            베타테스트 신청이<br><span class="text-blue-600">완료되었습니다!</span>
+        </h1>
+
+        <p class="text-xl text-gray-500 mb-12 leading-relaxed font-medium">
+            AccountingFlow와 함께 더 나은 회계 환경을<br>만들어 주셔서 감사합니다. 담당자가 곧 연락드리겠습니다.
+        </p>
+
+        <div class="bg-blue-50 rounded-2xl p-6 mb-12 text-left border border-blue-100">
+            <h3 class="font-bold text-blue-800 mb-2 text-lg"><i class="fas fa-info-circle mr-2"></i> 향후 일정 안내</h3>
+            <ul class="text-blue-700 text-sm space-y-2 font-medium">
+                <li>• 영업일 기준 48시간 이내에 안내 메일을 드립니다.</li>
+                <li>• 베타테스터 전용 3개월 무료 쿠폰이 함께 발송됩니다.</li>
+                <li>• 1:1 도입 온보딩 세션 신청이 가능합니다.</li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="/"
+                class="bg-gray-900 text-white px-10 py-4 rounded-2xl font-black hover:bg-gray-800 transition-all shadow-xl">
+                홈으로 돌아가기
+            </a>
+        </div>
+
+        <p class="mt-16 text-xs text-gray-300 font-medium tracking-widest uppercase">
+            &copy; 2026 AccountingFlow Inc.
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+
+</html>
