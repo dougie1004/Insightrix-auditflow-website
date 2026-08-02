@@ -2,60 +2,110 @@
 
 @layer base {
   :root {
-    --color-brand-navy: #0A192F;
-    --color-brand-gold: #D4AF37;
-    --color-brand-teal: #64FFDA;
+    --color-brand-navy: #090d16;
+    --color-brand-gold: #fbbf24;
+    --color-brand-teal: #2dd4bf;
+    --color-brand-violet: #8b5cf6;
   }
   
   body {
     background-color: #030712;
-    color: #e2e8f0;
+    color: #f1f5f9;
     font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
 }
 
-/* Custom background glow */
-.bg-glow {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(10, 25, 47, 0.05) 50%, transparent 100%);
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
+/* Subtle dot-grid pattern */
+.bg-grid-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-/* Glassmorphism card utilities */
+/* Mesh glow blobs */
+.mesh-glow-1 {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+}
+
+.mesh-glow-2 {
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.06) 0%, transparent 70%);
+}
+
+.mesh-glow-3 {
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.05) 0%, transparent 60%);
+}
+
+/* Bento card styles */
+.bento-card {
+  background: rgba(10, 15, 30, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%, rgba(255, 255, 255, 0.01) 100%);
+  pointer-events: none;
+}
+
+.bento-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(251, 191, 36, 0.25);
+  background: rgba(15, 23, 42, 0.7);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 25px rgba(251, 191, 36, 0.02);
+}
+
+.bento-card-teal:hover {
+  border-color: rgba(45, 212, 191, 0.3);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 25px rgba(45, 212, 191, 0.03);
+}
+
+/* Dashboard Mockup Keyframe Animations */
+@keyframes barGrow {
+  0% { transform: scaleY(0.1); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes linePulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 5px rgba(251, 191, 36, 0.2); }
+  50% { text-shadow: 0 0 15px rgba(251, 191, 36, 0.6); }
+}
+
+.animate-bar-grow {
+  transform-origin: bottom;
+  animation: barGrow 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-line-pulse {
+  animation: linePulse 2s ease-in-out infinite;
+}
+
+.animate-text-glow {
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+/* Glass panel */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(10, 15, 30, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.glass-panel-hover:hover {
-  background: rgba(30, 41, 59, 0.8);
-  border-color: rgba(212, 175, 55, 0.3);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.05);
-}
-
-/* Subtle text glow */
-.text-glow {
-  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-}
-
-.text-glow-teal {
-  text-shadow: 0 0 25px rgba(100, 255, 218, 0.45);
-}
-
-/* Custom navigation styling */
+/* Hover active navigation border */
 .nav-link-active {
-  color: #D4AF37 !important;
-  border-bottom: 2px solid #D4AF37;
-}
+  color: #fbbf24 !important;
+  border-bottom: 2px solid #fbbf24;
+}
