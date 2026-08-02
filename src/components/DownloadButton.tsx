@@ -42,10 +42,10 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ service, variant = 'pri
         setFileSize(info.size);
     }, [os, service]);
 
-    const baseStyles = "inline-flex items-center justify-center px-8 py-4 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg group";
+    const baseStyles = "inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-amber-500/5 group";
     const variantStyles = variant === 'primary'
-        ? "bg-[#D4AF37] text-[#0A192F] hover:bg-white hover:text-[#0A192F]"
-        : "bg-white text-[#0A192F] hover:bg-[#D4AF37] border-2 border-[#D4AF37]/20";
+        ? "bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-slate-950"
+        : "bg-slate-900 text-slate-300 hover:text-white border border-slate-800";
 
     return (
         <div className="flex flex-col items-center gap-4">

@@ -1,11 +1,61 @@
 @import "tailwindcss";
 
-:root {
-  font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+@layer base {
+  :root {
+    --color-brand-navy: #0A192F;
+    --color-brand-gold: #D4AF37;
+    --color-brand-teal: #64FFDA;
+  }
+  
+  body {
+    background-color: #030712;
+    color: #e2e8f0;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
 }
 
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Custom background glow */
+.bg-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(10, 25, 47, 0.05) 50%, transparent 100%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
 }
+
+/* Glassmorphism card utilities */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.05);
+}
+
+/* Subtle text glow */
+.text-glow {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.text-glow-teal {
+  text-shadow: 0 0 25px rgba(100, 255, 218, 0.45);
+}
+
+/* Custom navigation styling */
+.nav-link-active {
+  color: #D4AF37 !important;
+  border-bottom: 2px solid #D4AF37;
+}

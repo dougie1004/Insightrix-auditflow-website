@@ -14,707 +14,400 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuditFlow | Insightrix AI Compliance</title>
     <link rel="icon" href="Insightrix.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --brand-navy: #0A192F;
-            --brand-gold: #D4AF37;
-            --text-dark: #1F2937;
-            --bg-light: #F9FAFB;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Pretendard', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Navigation 통합 스타일 */
-        nav {
-            padding: 16px 40px;
-            border-bottom: 1px solid #f1f5f9;
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.98);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .logo img {
-            height: 200px;
-            width: auto;
-            display: block;
-            margin-top: 20px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--brand-navy);
-            text-decoration: none;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--brand-gold);
-        }
-
-        /* Hero */
-        .hero-section {
-            background: #0A192F;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-            display: inline-block;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            max-width: 900px;
-            width: 100%;
-            transition: transform 0.3s;
-        }
-
-        .hero-image-wrapper:hover {
-            transform: translateY(-5px);
-        }
-
-        .hero-image-wrapper img {
-            width: 100%;
-            display: block;
-        }
-
-        /* Sub Nav */
-        .sub-nav {
-            position: sticky;
-            top: 100px;
-            /* 네비게이션 높이에 맞춰 조정 */
-            background: white;
-            border-bottom: 1px solid #ddd;
-            z-index: 900;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        .sub-nav a {
-            margin: 0 20px;
-            font-weight: 600;
-            color: #555;
-            font-size: 0.95rem;
-        }
-
-        .sub-nav a:hover {
-            color: var(--brand-navy);
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-            scroll-margin-top: 180px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--brand-navy);
-            font-size: 2.2rem;
-            font-weight: 800;
-        }
-
-        .section-desc {
-            text-align: center;
-            margin-bottom: 60px;
-            color: #666;
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Tech Distinction Grid */
-        .tech-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .tech-card {
-            background: var(--bg-light);
-            padding: 40px;
-            border-radius: 20px;
-            border-top: 5px solid var(--brand-navy);
-        }
-
-        .tech-card h3 {
-            font-size: 1.5rem;
-            color: var(--brand-navy);
-            margin-top: 0;
-        }
-
-        .tech-card i {
-            font-size: 2rem;
-            color: var(--brand-gold);
-            margin-bottom: 20px;
-        }
-
-        /* Tables */
-        .table-wrapper {
-            overflow-x: auto;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            border-radius: 15px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            min-width: 600px;
-        }
-
-        th,
-        td {
-            padding: 18px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        th {
-            background: #f1f5f9;
-            color: #475569;
-            font-weight: 700;
-        }
-
-        .highlight {
-            background: #f0f9ff;
-            font-weight: 600;
-            border-left: 2px solid var(--brand-gold);
-            border-right: 2px solid var(--brand-gold);
-        }
-
-        th.highlight {
-            background: var(--brand-navy);
-            color: white;
-            border-top: 5px solid var(--brand-gold);
-        }
-
-        /* Unused Download Styles
-        .btn-download {
-            background: var(--brand-gold);
-            color: var(--brand-navy);
-            padding: 18px 40px;
-            border-radius: 10px;
-            font-weight: 800;
-            display: inline-flex;
-            gap: 10px;
-            transition: 0.3s;
-        }
-
-        .btn-download:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.1);
-        }
-        */
-
-        footer {
-            background: #0A192F;
-            color: #aaa;
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        @media (max-width: 968px) {
-            nav {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .sub-nav {
-                top: 180px;
-            }
-
-            .tech-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* New Section Lists */
-        .structured-list {
-            max-width: 850px;
-            margin: 0 auto;
-            counter-reset: item;
-            list-style: none;
-            padding: 0;
-        }
-
-        .structured-list li {
-            position: relative;
-            margin-bottom: 25px;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            border: 1px solid #f1f5f9;
-            transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .structured-list li:hover {
-            transform: translateX(10px);
-            border-color: var(--brand-gold);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .structured-list li::before {
-            counter-increment: item;
-            content: counter(item);
-            width: 35px;
-            height: 35px;
-            background: var(--brand-navy);
-            color: var(--brand-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            flex-shrink: 0;
-        }
-
-        .negative-list {
-            max-width: 800px;
-            margin: 0 auto;
-            list-style: none;
-            padding: 0;
-        }
-
-        .negative-list li {
-            padding: 20px;
-            border-bottom: 1px solid #f1f5f9;
-            color: #475569;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .negative-list li::before {
-            content: '×';
-            color: #ef4444;
-            font-size: 1.5rem;
-            font-weight: 800;
-        }
-
-        .artifact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .artifact-card {
-            padding: 25px;
-            background: white;
-            border: 1px solid #f1f5f9;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-weight: 700;
-            color: var(--brand-navy);
-        }
-
-        .artifact-card i {
-            color: var(--brand-gold);
-            font-size: 1.2rem;
-        }
-
-        /* Responsibility Matrix */
-        .matrix-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid #f1f5f9;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-        }
-
-        .matrix-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .matrix-table th {
-            background: var(--brand-navy);
-            color: white;
-            padding: 20px;
-            font-size: 1.1rem;
-        }
-
-        .matrix-table td {
-            padding: 15px 25px;
-            border-bottom: 1px solid #f1f5f9;
-            font-weight: 600;
-        }
-
-        .matrix-row-title {
-            background: #f8fafc;
-            width: 30%;
-            color: var(--brand-navy);
-            border-right: 1px solid #f1f5f9;
-        }
-
-        .check-icon {
-            color: #10b981;
-            font-size: 1.2rem;
-        }
-
-        .cross-icon {
-            color: #94a3b8;
-            font-size: 1.2rem;
-            opacity: 0.3;
-        }
-
-        /* Business Value Cards */
-        .value-v-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 950px;
-            margin: 0 auto;
-        }
-
-        .value-v-card {
-            background: #F9FAFB;
-            padding: 35px;
-            border-radius: 24px;
-            border: 1px solid #f1f5f9;
-        }
-
-        .value-v-card h4 {
-            color: var(--brand-navy);
-            font-size: 1.3rem;
-            margin: 0 0 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .value-v-card p {
-            font-size: 0.95rem;
-            color: #64748b;
-            line-height: 1.7;
-            margin: 0;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/src/index.css">
 </head>
 
-<body>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-amber-500/30 selection:text-amber-200">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLHLHFBM" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
-    <nav>
-        <a href="/index.html" class="logo"><img src="/Insightrix.png" alt="Insightrix Logo"></a>
-        <div class="nav-links">
-            <a href="/index.html">Home</a>
-            <a href="/accountingflow.html">AccountingFlow</a>
-            <a href="/auditflow.html" class="active">AuditFlow</a>
-            <a href="/company.html">Company</a>
-            <a href="/contact.html">Contact</a>
-            <a href="/app.html">Pricing & Download</a>
+
+    <!-- Sticky Glassmorphic Navbar -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/85 border-b border-slate-900 px-6 md:px-12 py-4 flex justify-between items-center transition-all duration-300">
+        <a href="/index.html" class="flex items-center gap-2 group">
+            <img src="/Insightrix.png" alt="Insightrix Logo" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+            <span class="font-extrabold text-lg tracking-wider bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 bg-clip-text text-transparent">INSIGHTRIX</span>
+        </a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="/index.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">Home</a>
+            <a href="/accountingflow.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">AccountingFlow</a>
+            <a href="/auditflow.html" class="text-sm font-semibold text-amber-400 border-b-2 border-amber-400 pb-1">AuditFlow</a>
+            <a href="/company.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">Company</a>
+            <a href="/contact.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">Contact</a>
+            <a href="/app.html" class="bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs tracking-tight transition-all duration-300 shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 hover:-translate-y-0.5">Pricing & Download</a>
         </div>
+        <!-- Mobile Nav Trigger -->
+        <button class="md:hidden text-slate-400 hover:text-white focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
     </nav>
 
-    <div class="hero-section" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-        <div
-            style="display:inline-block; color:var(--brand-gold); font-weight:800; margin-bottom:15px; letter-spacing: 2px;">
-            INSIGHTRIX AUDIT INFRASTRUCTURE</div>
-        <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 900;">AuditFlow</h1>
-        <p style="margin-bottom: 40px; opacity: 0.85; font-size: 1.2rem;">
-            AuditFlow는 AI가 결론을 내리지 않는 감사 시스템입니다.<br>
-            모든 분석은 규칙·근거·재현 가능성 위에서 이루어집니다.
-        </p>
-
-        <!-- 데모 섹션 제거됨 -->
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-[69px] left-0 w-full bg-slate-950 border-b border-slate-900 py-6 px-8 flex flex-col gap-4 z-40 transition-all duration-300">
+        <a href="/index.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">Home</a>
+        <a href="/accountingflow.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">AccountingFlow</a>
+        <a href="/auditflow.html" class="text-base font-bold text-amber-400">AuditFlow</a>
+        <a href="/company.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">Company</a>
+        <a href="/contact.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">Contact</a>
+        <a href="/app.html" class="bg-amber-500 text-slate-950 font-bold px-4 py-3 rounded-lg text-center text-sm shadow-md">Pricing & Download</a>
     </div>
 
-
-
-    <!-- Section ①: Audit Judgment Pipeline -->
-    <section id="pipeline" style="background: var(--bg-light);">
-        <h2 class="section-title">Audit Judgment Pipeline</h2>
-        <p class="section-desc">
-            AuditFlow는 단순히 이상을 탐지하지 않습니다.<br>
-            감사인의 판단 과정을 단계별로 고정합니다.
-        </p>
-
-        <ol class="structured-list">
-            <li><strong>Data Intake</strong> – 원천 데이터 수집 및 비식별화</li>
-            <li><strong>Rule Matching</strong> – 사전 정의된 감사 규칙과의 정합성 검증</li>
-            <li><strong>Scenario Construction</strong> – 규칙 위반 가능 시나리오 구성</li>
-            <li><strong>Evidence Binding</strong> – 데이터·규칙·판단 경로 연결</li>
-            <li><strong>Human Judgment</strong> – 감사인의 최종 판단</li>
-            <li><strong>Replay & Trace</strong> – 동일 입력에 대한 동일 판단 재현</li>
-        </ol>
-    </section>
-
-    <!-- Section: Audit Constitution -->
-    <section id="constitution" style="background: white;">
-        <h2 class="section-title">Audit Constitution</h2>
-        <p class="section-desc">
-            AuditFlow는 유연한 AI가 아니라,<br>
-            변경 이력이 기록되는 감사 헌법 위에서 작동합니다.
-        </p>
-
-        <ul class="structured-list">
-            <li><strong>No Silent Override</strong> – 모든 규칙 변경은 기록됩니다.</li>
-            <li><strong>No Black Box</strong> – 설명 불가능한 판단은 생성되지 않습니다.</li>
-            <li><strong>No Retroactive Change</strong> – 과거 판단은 사후 변경되지 않습니다.</li>
-            <li><strong>Human Accountability</strong> – 최종 책임은 항상 감사인에게 귀속됩니다.</li>
-        </ul>
-    </section>
-
-    <!-- New Section: Division of Responsibility -->
-    <section id="matrix" style="background: white;">
-        <h2 class="section-title">Division of Responsibility</h2>
-        <p class="section-desc">AuditFlow는 인간의 고유 영역을 침범하지 않으면서,<br>판단에 필요한 가장 무거운 "증명 책임"의 인프라를 전담합니다.</p>
-
-        <div class="matrix-container">
-            <table class="matrix-table">
-                <thead>
-                    <tr>
-                        <th class="matrix-row-title">감사 단계</th>
-                        <th>인간 (감수인)</th>
-                        <th>AuditFlow</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="matrix-row-title">감사 기준 정의</td>
-                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
-                        <td><i class="fas fa-times-circle cross-icon"></i></td>
-                    </tr>
-                    <tr>
-                        <td class="matrix-row-title">이상 여부 최종 판단</td>
-                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
-                        <td><i class="fas fa-times-circle cross-icon"></i></td>
-                    </tr>
-                    <tr>
-                        <td class="matrix-row-title">법적 감사 의견 표명</td>
-                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
-                        <td><i class="fas fa-times-circle cross-icon"></i></td>
-                    </tr>
-                    <tr>
-                        <td class="matrix-row-title">위반 시나리오 자동 생성</td>
-                        <td><i class="fas fa-times-circle cross-icon"></i></td>
-                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
-                    </tr>
-                    <tr>
-                        <td class="matrix-row-title">감증 근거 자동 정리</td>
-                        <td><i class="fas fa-times-circle cross-icon"></i></td>
-                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
-                    </tr>
-                    <tr>
-                        <td class="matrix-row-title">과거 판단 과정 완벽 재현</td>
-                        <td><i class="fas fa-times-circle cross-icon"></i></td>
-                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
-                    </tr>
-                    <tr>
-                        <td class="matrix-row-title">설명 책임 구조화 (Trail)</td>
-                        <td><i class="fas fa-times-circle cross-icon"></i></td>
-                        <td><i class="fas fa-check-circle check-icon"></i> 전담</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section id="features">
-        <h2 class="section-title">Key Features</h2>
-        <div class="tech-grid" style="margin-bottom: 0;">
-            <div
-                style="background: white; padding: 40px; border-radius: 20px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <h3 style="font-size: 1.5rem; color: var(--brand-navy); margin-top: 0;">01. Rule-bound Scenario
-                    Generation</h3>
-                <p style="font-size: 1rem; color: #555; margin-bottom: 0;">
-                    통계적 이상이 아닌, 사전 정의된 감사 규칙 위반 가능성만을 시나리오로 생성합니다.
-                </p>
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden py-20 md:py-28 px-6 text-center flex flex-col items-center justify-center border-b border-slate-900">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.06)_0%,transparent_60%)] pointer-events-none"></div>
+        <div class="relative z-10 max-w-4xl mx-auto space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-amber-400 tracking-wider uppercase mb-2">
+                <i class="fa-solid fa-file-shield text-[10px]"></i> Verifiable Compliance Audit Engine
             </div>
-            <div
-                style="background: white; padding: 40px; border-radius: 20px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <h3 style="font-size: 1.5rem; color: var(--brand-navy); margin-top: 0;">02. Evidence-first Audit Trail
-                </h3>
-                <p style="font-size: 1rem; color: #555; margin-bottom: 0;">
-                    모든 시나리오는 원천 데이터, 감지 규칙, 시스템의 판단 경로가 하나로 묶여 관리됩니다.
-                </p>
-            </div>
-        </div>
-        <div
-            style="margin-top: 30px; background: white; padding: 40px; border-radius: 20px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px rgba(0,0,0,0.02); text-align: center; max-width: 100%;">
-            <h3 style="font-size: 1.5rem; color: var(--brand-navy); margin-top: 0;">03. Judgment Replay Engine</h3>
-            <p style="font-size: 1rem; color: #555; margin-bottom: 0;">
-                과거의 특정 시점으로 돌아가 동일한 데이터에 대해 시스템이 왜 그런 시나리오를 생성했는지 완벽하게 재현합니다.
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight text-white font-glow">
+                감사인에게 필요한 것은 AI의 예측이 아닌,<br>
+                <span class="bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 bg-clip-text text-transparent text-glow">흔들리지 않는 입증 책임의 증거</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                AuditFlow는 통계적 수치에 의존하는 이상 행동 점수만을 나열하지 않습니다. 법적 기준과 감사 규칙 위반에 부합하는 명확한 타임라인 증거(Trail)를 제공합니다.
             </p>
         </div>
-    </section>
+    </header>
 
-    <section id="tech-diff">
-        <h2 class="section-title">Technical Distinction</h2>
-        <p class="section-desc">단순한 LLM 래퍼가 아닙니다. 감사 업무의 본질을 꿰뚫는 기술적 깊이를 확인하세요.</p>
+    <!-- Sub Navigation for sections -->
+    <div class="sticky top-[69px] z-30 bg-slate-950/90 border-b border-slate-900/60 backdrop-blur-sm py-3.5 hidden md:block">
+        <div class="max-w-7xl mx-auto px-12 flex justify-center gap-8 text-xs font-bold text-slate-400 uppercase tracking-wider">
+            <a href="#pipeline" class="hover:text-amber-400 transition-colors">Pipeline</a>
+            <a href="#constitution" class="hover:text-amber-400 transition-colors">Constitution</a>
+            <a href="#matrix" class="hover:text-amber-400 transition-colors">Responsibility</a>
+            <a href="#features" class="hover:text-amber-400 transition-colors">Features</a>
+            <a href="#tech-diff" class="hover:text-amber-400 transition-colors">Distinction</a>
+            <a href="#outputs" class="hover:text-amber-400 transition-colors">Outputs</a>
+            <a href="#business-value" class="hover:text-amber-400 transition-colors">Proof Power</a>
+        </div>
+    </div>
 
-        <div class="tech-grid">
-            <div class="tech-card">
-                <i class="fas fa-brain"></i>
-                <h3>규칙 기반 판단 구조 (Constitutional Audit)</h3>
-                <p>
-                    AuditFlow의 모든 분석은 사전에 정의된 감사 규칙을 기준으로 수행됩니다.<br>
-                    통계적으로 수상하더라도, 규칙 위반이 없으면 ‘문제 없음’으로 처리됩니다.<br>
-                    이는 감사인의 법적 책임 구조를 그대로 존중하기 위함입니다.
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 md:px-12 py-16 space-y-24">
+        
+        <!-- Section: Audit Judgment Pipeline -->
+        <section id="pipeline" class="scroll-mt-36 space-y-12">
+            <div class="text-center max-w-xl mx-auto space-y-4">
+                <h2 class="text-3xl font-extrabold text-white">Audit Judgment Pipeline</h2>
+                <p class="text-sm text-slate-400 leading-relaxed">AuditFlow는 단순히 이상을 기계적으로 경고하지 않고 감사인의 엄밀한 판단 파이프라인을 그대로 모방합니다.</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-3 relative overflow-hidden group">
+                    <span class="absolute right-4 top-4 text-4xl font-black text-slate-800/40 select-none">01</span>
+                    <h3 class="text-lg font-bold text-white">Data Intake</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">회계 장부의 로우데이터를 수집하고 규정에 맞는 비식별화 및 정규화를 자동으로 거칩니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-3 relative overflow-hidden group">
+                    <span class="absolute right-4 top-4 text-4xl font-black text-slate-800/40 select-none">02</span>
+                    <h3 class="text-lg font-bold text-white">Rule Matching</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">설정된 감사 헌법(Ruleset) 규칙 모음을 원장의 각 전표와 거래 관계에 밀착 매칭합니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-3 relative overflow-hidden group">
+                    <span class="absolute right-4 top-4 text-4xl font-black text-slate-800/40 select-none">03</span>
+                    <h3 class="text-lg font-bold text-white">Scenario Construction</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">단순 오류와 악의적 규칙 위반 가능성을 식별해 구체적 정황 시나리오로 변환합니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-3 relative overflow-hidden group">
+                    <span class="absolute right-4 top-4 text-4xl font-black text-slate-800/40 select-none">04</span>
+                    <h3 class="text-lg font-bold text-white">Evidence Binding</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">시나리오의 트리거가 된 증빙 데이터, 탐지 룰, 감사 논리 경로를 하나의 타임라인으로 묶습니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-3 relative overflow-hidden group">
+                    <span class="absolute right-4 top-4 text-4xl font-black text-slate-800/40 select-none">05</span>
+                    <h3 class="text-lg font-bold text-white">Human Judgment</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">시스템이 정리한 증거를 바탕으로 감사인이 법적 책임 하에 최종적인 감사 여부를 판단합니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-3 relative overflow-hidden group">
+                    <span class="absolute right-4 top-4 text-4xl font-black text-slate-800/40 select-none">06</span>
+                    <h3 class="text-lg font-bold text-white">Replay & Trace</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">추후 재조사나 감리 요구 시, 동일한 데이터와 버전 규칙에서 어떻게 동일한 결과가 나왔는지 완벽히 재현합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Audit Constitution -->
+        <section id="constitution" class="scroll-mt-36 space-y-8 max-w-4xl mx-auto">
+            <div class="text-center max-w-xl mx-auto space-y-3">
+                <h2 class="text-3xl font-extrabold text-white">Audit Constitution</h2>
+                <p class="text-sm text-slate-400">AuditFlow는 임의로 업데이트되는 AI의 독단이 아니라, 기록이 유지되는 '헌법' 위에서 수행됩니다.</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-2">
+                    <h3 class="text-base font-bold text-amber-400 flex items-center gap-2"><i class="fa-solid fa-lock text-xs"></i> No Silent Override</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">감사 매칭 규칙에 적용되는 모든 정책 변경 사항은 완벽한 버전 기록이 원장에 영구 보관됩니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-2">
+                    <h3 class="text-base font-bold text-amber-400 flex items-center gap-2"><i class="fa-solid fa-eye text-xs"></i> No Black Box</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">추론의 불투명성이 존재하는 블랙박스식 AI 결론은 수용하지 않습니다. 모든 위반 정황은 인과관계로 설명됩니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-2">
+                    <h3 class="text-base font-bold text-amber-400 flex items-center gap-2"><i class="fa-solid fa-calendar-xmark text-xs"></i> No Retroactive Change</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">한 번 내려진 과거의 감사 증거 판단 기록은 소급 적용되어 유실되거나 자동 수정되지 않습니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-2">
+                    <h3 class="text-base font-bold text-amber-400 flex items-center gap-2"><i class="fa-solid fa-user-shield text-xs"></i> Human Accountability</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">외부 법적 감사 및 판단의 권리와 의무는 오직 최종 판단자인 전문 감사인에게만 귀속됩니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Division of Responsibility -->
+        <section id="matrix" class="scroll-mt-36 space-y-8 max-w-4xl mx-auto">
+            <div class="text-center max-w-xl mx-auto space-y-3">
+                <h2 class="text-3xl font-extrabold text-white">Division of Responsibility</h2>
+                <p class="text-sm text-slate-400">인간 고유의 판단 영역을 존중하며, 무거운 추적 및 증거 정리에 걸리는 에너지를 전담 지원합니다.</p>
+            </div>
+            
+            <div class="overflow-x-auto rounded-2xl border border-slate-900">
+                <table class="w-full text-sm text-left text-slate-300">
+                    <thead class="bg-slate-900/60 text-slate-200 text-xs uppercase tracking-wider">
+                        <tr>
+                            <th class="py-4 px-6 border-b border-slate-800">감사 단계</th>
+                            <th class="py-4 px-6 border-b border-slate-800 text-center">인간 (감수인)</th>
+                            <th class="py-4 px-6 border-b border-slate-800 text-center text-amber-400 bg-amber-500/5">AuditFlow</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-900 bg-slate-950/20">
+                        <tr>
+                            <td class="py-4 px-6 font-bold text-slate-200">감사 기준 정의</td>
+                            <td class="py-4 px-6 text-center text-emerald-400"><i class="fa-solid fa-circle-check mr-1"></i> 전담</td>
+                            <td class="py-4 px-6 text-center text-slate-700"><i class="fa-solid fa-circle-minus"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-bold text-slate-200">이상 여부 최종 판정</td>
+                            <td class="py-4 px-6 text-center text-emerald-400"><i class="fa-solid fa-circle-check mr-1"></i> 전담</td>
+                            <td class="py-4 px-6 text-center text-slate-700"><i class="fa-solid fa-circle-minus"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-bold text-slate-200">법적 감사 의견 표명</td>
+                            <td class="py-4 px-6 text-center text-emerald-400"><i class="fa-solid fa-circle-check mr-1"></i> 전담</td>
+                            <td class="py-4 px-6 text-center text-slate-700"><i class="fa-solid fa-circle-minus"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-bold text-slate-200">위반 시나리오 자동 생성</td>
+                            <td class="py-4 px-6 text-center text-slate-700"><i class="fa-solid fa-circle-minus"></i></td>
+                            <td class="py-4 px-6 text-center text-amber-400 bg-amber-500/5"><i class="fa-solid fa-circle-check mr-1"></i> 전담</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-bold text-slate-200">감증 근거 자동 정리</td>
+                            <td class="py-4 px-6 text-center text-slate-700"><i class="fa-solid fa-circle-minus"></i></td>
+                            <td class="py-4 px-6 text-center text-amber-400 bg-amber-500/5"><i class="fa-solid fa-circle-check mr-1"></i> 전담</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-bold text-slate-200">과거 판단 과정 완벽 재현</td>
+                            <td class="py-4 px-6 text-center text-slate-700"><i class="fa-solid fa-circle-minus"></i></td>
+                            <td class="py-4 px-6 text-center text-amber-400 bg-amber-500/5"><i class="fa-solid fa-circle-check mr-1"></i> 전담</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-bold text-slate-200">설명 책임 구조화 (Trail)</td>
+                            <td class="py-4 px-6 text-center text-slate-700"><i class="fa-solid fa-circle-minus"></i></td>
+                            <td class="py-4 px-6 text-center text-amber-400 bg-amber-500/5"><i class="fa-solid fa-circle-check mr-1"></i> 전담</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section: Key Features -->
+        <section id="features" class="scroll-mt-36 space-y-8 max-w-4xl mx-auto">
+            <div class="text-center max-w-xl mx-auto space-y-3">
+                <h2 class="text-3xl font-extrabold text-white">Key Features</h2>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-6">
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-3">
+                    <div class="text-xs font-bold text-amber-400 uppercase tracking-widest">01</div>
+                    <h3 class="text-base font-bold text-white">Rule-bound Scenario</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">통계적 유추가 아닌 헌법화된 엄밀 규칙만을 기준 삼아 타깃 위반 시나리오를 구성합니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-3">
+                    <div class="text-xs font-bold text-amber-400 uppercase tracking-widest">02</div>
+                    <h3 class="text-base font-bold text-white">Evidence-first Audit Trail</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">모든 시나리오 추론은 원천 증거와 규칙 조건이 블록 체인 형태로 결합해 신뢰성을 유지합니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 border border-slate-900 space-y-3">
+                    <div class="text-xs font-bold text-amber-400 uppercase tracking-widest">03</div>
+                    <h3 class="text-base font-bold text-white">Judgment Replay</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">분석 당시의 환경을 완벽 복구하여 외부 검증 기관의 심사 질문에 기민하게 대처합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Technical Distinction -->
+        <section id="tech-diff" class="scroll-mt-36 space-y-10 max-w-4xl mx-auto">
+            <div class="text-center max-w-xl mx-auto space-y-3">
+                <h2 class="text-3xl font-extrabold text-white">Technical Distinction</h2>
+                <p class="text-sm text-slate-400">감사의 핵심 과제를 수행하는 차별화된 기술력의 깊이를 직접 확인해보십시오.</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 gap-8">
+                <div class="glass-panel rounded-2xl p-8 border border-slate-900 space-y-4">
+                    <div class="h-10 w-10 bg-amber-500/10 border border-amber-500/20 rounded-lg flex items-center justify-center text-amber-400 text-lg">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">규칙 기반 판단 구조 (Constitutional Audit)</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        AuditFlow는 LLM 등의 생성 편향에 흔들리지 않으며, 명시된 위반 사항이 발견되지 않은 단순 이상값은 안전하게 보고에서 조율합니다. 이는 감사인이 무리한 판단 리스크를 짊어지지 않도록 하는 핵심 보호 장치입니다.
+                    </p>
+                </div>
+                
+                <div class="glass-panel rounded-2xl p-8 border border-slate-900 space-y-4">
+                    <div class="h-10 w-10 bg-amber-500/10 border border-amber-500/20 rounded-lg flex items-center justify-center text-amber-400 text-lg">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">예측 및 통제 가능한 연산 비용</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        수억 건에 달하는 초대형 원장을 순회 연산할 때에도 AI 모델 인출 횟수가 아닌 규칙 연산 복잡도에 비례하도록 설계되어, 검증 인프라 운용에 따른 예산 계획이 일정하게 제어됩니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="overflow-x-auto rounded-2xl border border-slate-900 mt-6">
+                <table class="w-full text-sm text-left text-slate-300">
+                    <thead class="bg-slate-900/60 text-slate-200 text-xs uppercase tracking-wider">
+                        <tr>
+                            <th class="py-4 px-6 border-b border-slate-800">비교 항목</th>
+                            <th class="py-4 px-6 border-b border-slate-800 text-center">자체 구축 (On-Premise)</th>
+                            <th class="py-4 px-6 border-b border-slate-800 text-center text-amber-400 bg-amber-500/5">AuditFlow (SaaS)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-900 bg-slate-950/20">
+                        <tr>
+                            <td class="py-4 px-6 font-semibold text-slate-200">판단 구조</td>
+                            <td class="py-4 px-6 text-center text-slate-500">코드/모델 비선형 조합</td>
+                            <td class="py-4 px-6 text-center text-amber-400 bg-amber-500/5 font-bold">감사 규칙 기반 고정</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-semibold text-slate-200">재현 가능성</td>
+                            <td class="py-4 px-6 text-center text-slate-500">낮음 (매 호출마다 가변)</td>
+                            <td class="py-4 px-6 text-center text-amber-400 bg-amber-500/5 font-bold">동일 입력 = 동일 결과</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-semibold text-slate-200">감사 대응</td>
+                            <td class="py-4 px-6 text-center text-slate-500">추가 수동 분석 소요</td>
+                            <td class="py-4 px-6 text-center text-amber-400 bg-amber-500/5 font-bold">Trail 타임라인 자동 생성</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-semibold text-slate-200">책임 소재</td>
+                            <td class="py-4 px-6 text-center text-slate-500">엔지니어/시스템 모호성</td>
+                            <td class="py-4 px-6 text-center text-amber-400 bg-amber-500/5 font-bold">감사인 중심 구조</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section: Output Artifacts -->
+        <section id="outputs" class="scroll-mt-36 space-y-8 max-w-4xl mx-auto">
+            <div class="text-center max-w-xl mx-auto space-y-3">
+                <h2 class="text-3xl font-extrabold text-white">Audit Outputs</h2>
+                <p class="text-sm text-slate-400">AuditFlow의 연산 결과는 불안정한 점수 평가서가 아닌 실무용 구조화 문서 뭉치로 반환됩니다.</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="glass-panel rounded-xl p-5 border border-slate-900 flex items-center gap-4">
+                    <div class="text-amber-400 text-lg"><i class="fa-solid fa-file-invoice"></i></div>
+                    <div class="text-sm font-semibold text-slate-200">Rule-based Risk Scenario List</div>
+                </div>
+                <div class="glass-panel rounded-xl p-5 border border-slate-900 flex items-center gap-4">
+                    <div class="text-amber-400 text-lg"><i class="fa-solid fa-link"></i></div>
+                    <div class="text-sm font-semibold text-slate-200">Evidence-linked Audit Trail</div>
+                </div>
+                <div class="glass-panel rounded-xl p-5 border border-slate-900 flex items-center gap-4">
+                    <div class="text-amber-400 text-lg"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <div class="text-sm font-semibold text-slate-200">Judgment Replay Log</div>
+                </div>
+                <div class="glass-panel rounded-xl p-5 border border-slate-900 flex items-center gap-4">
+                    <div class="text-amber-400 text-lg"><i class="fa-solid fa-list-check"></i></div>
+                    <div class="text-sm font-semibold text-slate-200">Flagged & Reviewed Classifications</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: The Power of Proof -->
+        <section id="business-value" class="scroll-mt-36 space-y-10 max-w-4xl mx-auto">
+            <div class="text-center max-w-xl mx-auto space-y-3">
+                <h2 class="text-3xl font-extrabold text-white">The Power of Proof</h2>
+                <p class="text-sm text-slate-400">AuditFlow는 단순 효율성 도구를 넘어, 규제 및 분쟁 상황에서 당신의 재무 무결성을 입증합니다.</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div class="glass-panel rounded-2xl p-8 border border-slate-900 space-y-3">
+                    <h4 class="text-base font-bold text-white flex items-center gap-2"><i class="fa-solid fa-scale-balanced text-amber-400"></i> 소송 및 분쟁 사후 조율</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">수년 후에 발생할지 모르는 거래 감리 및 주주 소송 조건에서도, 해당 전표 당시 적용되었던 감사 결정 파이프라인을 그대로 역추적하여 법적 소명을 지원합니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-8 border border-slate-900 space-y-3">
+                    <h4 class="text-base font-bold text-white flex items-center gap-2"><i class="fa-solid fa-building-columns text-amber-400"></i> 규제 감독기관 공식 소명</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">감독 당국의 데이터 대조 및 질의 상황에 맞추어 검증에 대입된 수학적 매칭 로그와 원천 증빙을 하나의 구조화 파일로 내보내 불필요한 행정 비용을 최소화합니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-8 border border-slate-900 space-y-3">
+                    <h4 class="text-base font-bold text-white flex items-center gap-2"><i class="fa-solid fa-check-double text-amber-400"></i> 법인 전체 감사 품질 상향 평준화</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">담당 파트너나 실무 회계사의 숙련 편차와 상관없이 법인 전체적으로 고정된 수준의 고정 감사 검증 필터를 거침으로써 휴먼 에러 가능성을 극적으로 통제합니다.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-8 border border-slate-900 space-y-3">
+                    <h4 class="text-base font-bold text-white flex items-center gap-2"><i class="fa-solid fa-arrows-spin text-amber-400"></i> 내부 품질 관리 통제 (QCR)</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">감사 과정에 반영된 판단 근거들이 모두 일목요연한 디지털 로그로 자동 기록 및 인덱싱 처리되어 사후 품질 통제 심사(QCR)에 투입되는 내부 리소스를 큰 폭으로 감축시킵니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: What AuditFlow Never Does -->
+        <section id="never" class="scroll-mt-36 glass-panel rounded-3xl p-8 md:p-12 border border-slate-900 space-y-8 max-w-4xl mx-auto">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl font-extrabold text-white tracking-tight">What AuditFlow Never Does</h3>
+                <p class="text-xs text-amber-400 font-semibold tracking-wider uppercase">감사인의 법적 안전을 지키기 위한 절대 규칙</p>
+            </div>
+            <div class="h-px bg-slate-900"></div>
+            <ul class="grid sm:grid-cols-2 gap-4">
+                <li class="flex items-center gap-3 text-slate-300 font-semibold text-sm">
+                    <span class="h-5 w-5 rounded-full bg-red-500/15 flex items-center justify-center text-red-400 text-xs font-black">×</span>
+                    감사 의견 보고서의 자동 임의 생성 차단
+                </li>
+                <li class="flex items-center gap-3 text-slate-300 font-semibold text-sm">
+                    <span class="h-5 w-5 rounded-full bg-red-500/15 flex items-center justify-center text-red-400 text-xs font-black">×</span>
+                    위법 여부에 관한 종결적 법률 판단 대행 불가
+                </li>
+                <li class="flex items-center gap-3 text-slate-300 font-semibold text-sm">
+                    <span class="h-5 w-5 rounded-full bg-red-500/15 flex items-center justify-center text-red-400 text-xs font-black">×</span>
+                    단순 통계 기하 확률에 기반한 추론 경고 남용 방지
+                </li>
+                <li class="flex items-center gap-3 text-slate-300 font-semibold text-sm">
+                    <span class="h-5 w-5 rounded-full bg-red-500/15 flex items-center justify-center text-red-400 text-xs font-black">×</span>
+                    설명 추적 불가 방식(Black Box)의 연산 개입 전면 제한
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-16 px-6 md:px-12 mt-12 text-center md:text-left">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-6 space-y-4">
+                <div class="flex justify-center md:justify-start items-center gap-2">
+                    <img src="/Insightrix.png" alt="Insightrix Logo" class="h-7 w-auto filter brightness-90">
+                    <span class="font-bold tracking-wider text-slate-300 text-sm">INSIGHTRIX</span>
+                </div>
+                <p class="text-xs text-slate-500 max-w-sm">
+                    Insightrix는 인공지능이 인간의 영역을 지배적으로 판단하지 않는 안전하고 검증 가능한 투명 금융 엔지니어링 생태계를 만듭니다.
                 </p>
             </div>
-            <div class="tech-card">
-                <i class="fas fa-coins"></i>
-                <h3>재현 가능한 비용 구조</h3>
-                <p>
-                    AuditFlow는 분석 결과뿐 아니라 비용 구조도 예측 가능합니다.<br>
-                    대량 데이터 분석 시에도 결과 품질과 비용이 출렁이지 않도록 설계되었습니다.
-                </p>
+            <div class="md:col-span-6 flex flex-wrap justify-center md:justify-end gap-6 text-xs text-slate-400 font-medium">
+                <a href="/index.html" class="hover:text-amber-400 transition-colors">Home</a>
+                <a href="/accountingflow.html" class="hover:text-amber-400 transition-colors">AccountingFlow</a>
+                <a href="/auditflow.html" class="hover:text-amber-400 transition-colors">AuditFlow</a>
+                <a href="/company.html" class="hover:text-amber-400 transition-colors">Company</a>
+                <a href="/contact.html" class="hover:text-amber-400 transition-colors">Contact</a>
+                <a href="/app.html" class="hover:text-amber-400 transition-colors">Pricing</a>
             </div>
         </div>
-
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th width="20%">비교 항목</th>
-                        <th width="40%">자체 구축 (On-Premise)</th>
-                        <th width="40%" class="highlight">AuditFlow (SaaS)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>판단 구조</strong></td>
-                        <td>코드/모델 혼합</td>
-                        <td class="highlight">규칙 기반 고정</td>
-                    </tr>
-                    <tr>
-                        <td><strong>재현 가능성</strong></td>
-                        <td>낮음</td>
-                        <td class="highlight">동일 입력 → 동일 결과</td>
-                    </tr>
-                    <tr>
-                        <td><strong>감사 대응</strong></td>
-                        <td>추가 설명 필요</td>
-                        <td class="highlight">Trail 자동 생성</td>
-                    </tr>
-                    <tr>
-                        <td><strong>책임 소재</strong></td>
-                        <td>불명확</td>
-                        <td class="highlight">감사인 중심</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="max-w-7xl mx-auto border-t border-slate-900/60 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-[11px] text-slate-600 gap-4">
+            <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
+            <p>본 플랫폼의 시스템 검증 기능은 특허 기술 및 독자적인 분산 Ledger 추적 기술을 기반으로 작동합니다.</p>
         </div>
-    </section>
-
-    <!-- Section ③: Output Artifacts -->
-    <section id="outputs" style="background: white;">
-        <h2 class="section-title">Audit Outputs</h2>
-        <p class="section-desc">
-            AuditFlow의 결과는 ‘점수’가 아니라<br>
-            감사인이 바로 사용할 수 있는 구조화된 산출물입니다.
-        </p>
-
-        <div class="artifact-grid">
-            <div class="artifact-card"><i class="fas fa-file-invoice"></i> Rule-based Risk Scenario List</div>
-            <div class="artifact-card"><i class="fas fa-link"></i> Evidence-linked Audit Trail</div>
-            <div class="artifact-card"><i class="fas fa-history"></i> Judgment Replay Log</div>
-            <div class="artifact-card"><i class="fas fa-tasks"></i> Dismissed / Manual Review / Flagged 분류 결과</div>
-        </div>
-    </section>
-
-    <!-- New Section: Why AuditFlow (The Power of Proof) -->
-    <section id="business-value" style="background: white;">
-        <h2 class="section-title">The Power of Proof</h2>
-        <p class="section-desc">AuditFlow는 단순한 편의 도구가 아닙니다.<br>감사인이 자신의 판단을 "증명"할 수 있게 함으로써 경제적·법적 리스크를 방어합니다.</p>
-
-        <div class="value-v-grid">
-            <div class="value-v-card">
-                <h4><i class="fas fa-balance-scale"></i> 소송 및 분쟁 대응</h4>
-                <p>수년 후 발생할 수 있는 감리 및 소송 상황에서, 당시의 판단 근거와 데이터 경로를 원클릭으로 재현하여 입증 책임을 다합니다.</p>
-            </div>
-            <div class="value-v-card">
-                <h4><i class="fas fa-university"></i> 감독기관 질의 대응</h4>
-                <p>금융감독원 등 규제 기관의 철저한 소명 요구에 대해, 수정 불가능한 감사 Trail과 룰 매칭 로그를 바탕으로 객관적인 대응을 지원합니다.</p>
-            </div>
-            <div class="value-v-card">
-                <h4><i class="fas fa-check-double"></i> 감사 품질의 일관성</h4>
-                <p>법인 내 파트너 간, 혹은 프로젝트 간 판단 기준의 편차를 줄여 전체 조직의 감사 품질을 상향 평준화하고 에러율을 혁신적으로 낮춥니다.</p>
-            </div>
-            <div class="value-v-card">
-                <h4><i class="fas fa-history"></i> 내부 품질 관리(QCR)</h4>
-                <p>판단 과정이 블랙박스가 아닌 투명한 로그로 남으므로, 사후적인 품질 검토(Quality Control Review) 비용을 80% 이상 절감합니다.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section ②: What AuditFlow Never Does -->
-    <section id="never" style="background: var(--bg-light); border-top: 1px solid #f1f5f9;">
-        <h2 class="section-title">What AuditFlow Never Does</h2>
-        <p class="section-desc">기술적 한계가 아니라, 감사인의 책임을 존중하기 위한 의도적 제약입니다.</p>
-        <ul class="negative-list">
-            <li>감사 의견을 자동 생성하지 않습니다.</li>
-            <li>위법 여부를 판정하지 않습니다.</li>
-            <li>통계적 이상만으로 결론을 내리지 않습니다.</li>
-            <li>책임 소재가 불분명한 자동화를 제공하지 않습니다.</li>
-        </ul>
-    </section>
-
-
-
-    <footer>
-        <div style="margin-bottom: 20px;">
-            <img src="./Insightrix.png" alt="Insightrix Logo"
-                style="height: 35px; filter: brightness(0) invert(1); opacity: 0.8;">
-        </div>
-        <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
-        <p style="font-size:0.85rem; color:#999; margin-top: 10px;">
-            AuditFlow는 감사인의 판단을 대체하지 않습니다.<br>
-            판단이 가능하도록 구조를 제공합니다.
-        </p>
     </footer>
-
 </body>
 
 </html>

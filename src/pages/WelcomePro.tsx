@@ -12,19 +12,14 @@ const WelcomePro = () => {
     const orderId = searchParams.get('orderId') || '';
 
     useEffect(() => {
-        // Try to open app via deep link
         const deepLinkUrl = `accountingflow://payment/success?orderId=${orderId}&plan=${plan}`;
-
-        // Attempt to trigger deep link
         window.location.href = deepLinkUrl;
 
-        // Fallback countdown for manual action
         if (autoRedirect) {
             const timer = setInterval(() => {
                 setCountdown((prev) => {
                     if (prev <= 1) {
                         clearInterval(timer);
-                        // Try deep link again
                         window.location.href = deepLinkUrl;
                         return 0;
                     }
@@ -41,103 +36,102 @@ const WelcomePro = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center p-4">
-            <div className="max-w-2xl w-full">
-                {/* Success Animation */}
-                <div className="bg-white rounded-[3rem] shadow-2xl p-12 text-center relative overflow-hidden">
-                    {/* Decorative elements */}
-                    <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+        <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4 selection:bg-amber-500/30 selection:text-amber-200 relative overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber-500/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-                    <div className="absolute -top-20 -right-20 w-40 h-40 bg-indigo-100 rounded-full opacity-20 blur-3xl"></div>
-                    <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-100 rounded-full opacity-20 blur-3xl"></div>
+            <div className="max-w-2xl w-full relative z-10">
+                {/* Success Animation */}
+                <div className="glass-panel rounded-3xl shadow-2xl p-8 md:p-12 text-center relative overflow-hidden border border-slate-900">
+                    {/* Decorative elements */}
+                    <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-amber-500 via-yellow-200 to-amber-500"></div>
 
                     {/* Success Icon */}
-                    <div className="relative mb-8">
-                        <div className="w-24 h-24 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full mx-auto flex items-center justify-center shadow-xl animate-bounce">
-                            <CheckCircle className="w-14 h-14 text-white" strokeWidth={3} />
+                    <div className="relative mb-6">
+                        <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full mx-auto flex items-center justify-center shadow-xl animate-bounce">
+                            <CheckCircle className="w-12 h-12 text-white" strokeWidth={3} />
                         </div>
-                        <div className="absolute -top-2 -right-2 animate-ping">
-                            <Sparkles className="w-8 h-8 text-yellow-400" />
-                        </div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none"></div>
                     </div>
 
                     {/* Main Message */}
-                    <h1 className="text-4xl font-black text-slate-900 mb-4 tracking-tight">
+                    <h1 className="text-3xl font-extrabold text-white mb-3 tracking-tight">
                         🎉 구독이 완료되었습니다!
                     </h1>
-                    <p className="text-xl text-slate-600 mb-8">
-                        <span className="font-bold text-indigo-600">{plan}</span> 플랜이 성공적으로 활성화되었습니다.
+                    <p className="text-base text-slate-400 mb-8">
+                        <span className="font-bold text-amber-400 text-glow">{plan}</span> 플랜이 성공적으로 활성화되었습니다.
                     </p>
 
                     {/* Order Info */}
-                    <div className="bg-slate-50 rounded-2xl p-6 mb-8 border border-slate-200">
-                        <div className="flex items-center justify-between text-sm">
-                            <span className="text-slate-500 font-medium">주문 번호</span>
-                            <span className="font-mono font-bold text-slate-900">{orderId}</span>
+                    <div className="bg-slate-900/60 rounded-xl p-4 mb-6 border border-slate-900">
+                        <div className="flex items-center justify-between text-xs md:text-sm">
+                            <span className="text-slate-500 font-semibold">주문 번호</span>
+                            <span className="font-mono font-bold text-slate-200">{orderId}</span>
                         </div>
                     </div>
 
                     {/* App Return Instructions */}
-                    <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 mb-8 border-2 border-indigo-200">
-                        <Rocket className="w-12 h-12 text-indigo-600 mx-auto mb-4" />
-                        <h3 className="text-xl font-bold text-slate-900 mb-3">이제 앱으로 돌아가세요</h3>
-                        <p className="text-slate-600 mb-6 leading-relaxed">
-                            AccountingFlow 앱이 자동으로 열립니다. <br />
+                    <div className="bg-amber-500/5 rounded-2xl p-6 md:p-8 mb-8 border border-amber-500/15">
+                        <Rocket className="w-10 h-10 text-amber-400 mx-auto mb-3" />
+                        <h3 className="text-lg font-bold text-white mb-2">이제 앱으로 돌아가세요</h3>
+                        <p className="text-xs md:text-sm text-slate-400 mb-6 leading-relaxed">
+                            AccountingFlow 데스크톱 앱이 자동으로 실행됩니다. <br />
                             {countdown > 0 && (
-                                <span className="text-indigo-600 font-bold">{countdown}초 후 자동 실행...</span>
+                                <span className="text-amber-400 font-bold">{countdown}초 후 자동 연동...</span>
                             )}
                         </p>
 
                         <button
                             onClick={handleOpenApp}
-                            className="w-full bg-indigo-600 text-white py-4 px-8 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg shadow-indigo-200"
+                            className="w-full bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-slate-950 py-3.5 px-8 rounded-xl font-bold text-sm transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-amber-500/10"
                         >
-                            <Download className="w-6 h-6" />
+                            <Download className="w-4 h-4" />
                             앱 열기
-                            <ArrowRight className="w-5 h-5" />
+                            <ArrowRight className="w-4 h-4" />
                         </button>
 
                         <button
                             onClick={() => setAutoRedirect(false)}
-                            className="mt-3 text-sm text-slate-500 hover:text-slate-700 underline"
+                            className="mt-3 text-xs text-slate-500 hover:text-slate-400 underline font-semibold"
                         >
                             자동 실행 취소
                         </button>
                     </div>
 
                     {/* Next Steps */}
-                    <div className="text-left space-y-4">
-                        <h4 className="font-bold text-slate-900 text-lg mb-4">✨ 다음 단계</h4>
+                    <div className="text-left space-y-3">
+                        <h4 className="font-bold text-slate-200 text-sm mb-3">✨ 다음 단계</h4>
 
-                        <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-slate-200 hover:border-indigo-300 transition-all">
-                            <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0">
-                                <span className="font-black text-indigo-600">1</span>
+                        <div className="flex items-start gap-3 p-4 bg-slate-900/30 rounded-xl border border-slate-900 hover:border-slate-800 transition-all">
+                            <div className="w-6 h-6 bg-slate-900 border border-slate-800 rounded flex items-center justify-center shrink-0">
+                                <span className="font-bold text-xs text-amber-400">1</span>
                             </div>
                             <div>
-                                <h5 className="font-bold text-slate-900 mb-1">앱에서 라이선스 확인</h5>
-                                <p className="text-sm text-slate-600">Settings 메뉴에서 활성화된 플랜을 확인하세요.</p>
+                                <h5 className="font-bold text-xs text-slate-200 mb-0.5">앱에서 라이선스 확인</h5>
+                                <p className="text-[11px] text-slate-400">Settings 메뉴에서 활성화된 플랜을 확인하세요.</p>
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-slate-200 hover:border-indigo-300 transition-all">
-                            <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0">
-                                <span className="font-black text-indigo-600">2</span>
+                        <div className="flex items-start gap-3 p-4 bg-slate-900/30 rounded-xl border border-slate-900 hover:border-slate-800 transition-all">
+                            <div className="w-6 h-6 bg-slate-900 border border-slate-800 rounded flex items-center justify-center shrink-0">
+                                <span className="font-bold text-xs text-amber-400">2</span>
                             </div>
                             <div>
-                                <h5 className="font-bold text-slate-900 mb-1">프리미엄 기능 사용</h5>
-                                <p className="text-sm text-slate-600">AI 분석, 실시간 세무 알림 등 모든 기능을 자유롭게 이용하세요.</p>
+                                <h5 className="font-bold text-xs text-slate-200 mb-0.5">프리미엄 기능 즉시 개방</h5>
+                                <p className="text-[11px] text-slate-400">분개 자동 매핑, 대용량 분석 등 모든 프로 기능을 제한 없이 사용하세요.</p>
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-slate-200 hover:border-indigo-300 transition-all">
-                            <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0">
-                                <span className="font-black text-indigo-600">3</span>
+                        <div className="flex items-start gap-3 p-4 bg-slate-900/30 rounded-xl border border-slate-900 hover:border-slate-800 transition-all">
+                            <div className="w-6 h-6 bg-slate-900 border border-slate-800 rounded flex items-center justify-center shrink-0">
+                                <span className="font-bold text-xs text-amber-400">3</span>
                             </div>
                             <div>
-                                <h5 className="font-bold text-slate-900 mb-1">도움이 필요하신가요?</h5>
-                                <p className="text-sm text-slate-600">
-                                    <a href="/contact" className="text-indigo-600 hover:underline font-medium">
-                                        고객 지원팀에 문의하기 →
+                                <h5 className="font-bold text-xs text-slate-200 mb-0.5">문의 사항 접수</h5>
+                                <p className="text-[11px] text-slate-400">
+                                    도입 지원팀에 상담이 필요하시면{' '}
+                                    <a href="/contact" className="text-amber-400 hover:underline font-semibold">
+                                        고객 지원 문의 바로가기 →
                                     </a>
                                 </p>
                             </div>
@@ -145,27 +139,27 @@ const WelcomePro = () => {
                     </div>
 
                     {/* Troubleshooting */}
-                    <div className="mt-8 pt-6 border-t border-slate-200">
-                        <details className="text-left">
-                            <summary className="cursor-pointer text-sm font-bold text-slate-600 hover:text-slate-900">
-                                앱이 자동으로 열리지 않나요?
+                    <div className="mt-6 pt-6 border-t border-slate-900">
+                        <details className="text-left group">
+                            <summary className="cursor-pointer text-xs font-bold text-slate-500 hover:text-slate-400 select-none">
+                                앱이 자동으로 실행되지 않나요?
                             </summary>
-                            <div className="mt-4 text-sm text-slate-600 space-y-2 bg-slate-50 p-4 rounded-xl">
-                                <p>1. 위의 "앱 열기" 버튼을 직접 클릭해보세요.</p>
-                                <p>2. 브라우저에서 "AccountingFlow 열기" 팝업이 나타나면 허용을 클릭하세요.</p>
-                                <p>3. 그래도 안 되면 앱을 수동으로 실행한 후 Settings → Subscription에서 라이선스를 확인하세요.</p>
+                            <div className="mt-3 text-xs text-slate-400 space-y-1.5 bg-slate-900/60 p-4 rounded-xl border border-slate-900">
+                                <p>1. 상단의 "앱 열기" 버튼을 직접 탭해 보십시오.</p>
+                                <p>2. 브라우저 주소창 팝업 승인에서 "프로그램 실행 요청"을 허용했는지 검토해 주십시오.</p>
+                                <p>3. 지속적으로 불가 시 앱을 직접 수동 기동하신 후 Settings → Subscription 메뉴를 새로고침 하시면 됩니다.</p>
                             </div>
                         </details>
                     </div>
                 </div>
 
                 {/* Back to Home */}
-                <div className="text-center mt-8">
+                <div className="text-center mt-6">
                     <button
                         onClick={() => navigate('/')}
-                        className="text-slate-500 hover:text-slate-700 font-medium text-sm flex items-center gap-2 mx-auto"
+                        className="text-slate-500 hover:text-slate-400 font-semibold text-xs flex items-center gap-1.5 mx-auto transition-colors"
                     >
-                        <ExternalLink className="w-4 h-4" />
+                        <ExternalLink className="w-3.5 h-3.5" />
                         웹사이트 홈으로 돌아가기
                     </button>
                 </div>

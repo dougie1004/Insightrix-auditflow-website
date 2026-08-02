@@ -14,178 +14,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 Page Not Found | Insightrix</title>
     <link rel="icon" href="Insightrix.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --brand-navy: #0A192F;
-            --brand-gold: #D4AF37;
-            --text-dark: #1F2937;
-            --bg-light: #F9FAFB;
-        }
-
-        body {
-            font-family: 'Pretendard', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--brand-navy);
-            background: var(--bg-light);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        nav {
-            padding: 16px 40px;
-            border-bottom: 1px solid #f1f5f9;
-            background: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 200px;
-            width: auto;
-            display: block;
-            margin-top: 20px;
-        }
-
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .error-code {
-            font-size: 10rem;
-            font-weight: 900;
-            color: var(--brand-navy);
-            line-height: 1;
-            margin-bottom: 0;
-            opacity: 0.1;
-            position: absolute;
-            z-index: 0;
-        }
-
-        .error-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        h1 span {
-            color: var(--brand-gold);
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            font-weight: 600;
-            line-height: 1.7;
-        }
-
-        .cta-button {
-            background: var(--brand-navy);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 12px;
-            font-weight: 800;
-            text-decoration: none;
-            transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 20px rgba(10, 25, 47, 0.15);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            background: var(--brand-gold);
-            color: var(--brand-navy);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
-        }
-
-        footer {
-            padding: 40px;
-            text-align: center;
-            color: #94a3b8;
-            font-size: 0.9rem;
-            border-top: 1px solid #f1f5f9;
-            background: white;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/src/index.css">
 </head>
 
-<body>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-amber-500/30 selection:text-amber-200">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLHLHFBM" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
-    <nav>
-        <a href="/index.html" class="logo"><img src="/Insightrix.png" alt="Insightrix Logo"></a>
-        <div class="nav-links">
-            <a href="/index.html">Home</a>
-            <a href="/accountingflow.html">AccountingFlow</a>
-            <a href="/auditflow.html">AuditFlow</a>
-            <a href="/company.html">Company</a>
-            <a href="/contact.html">Contact</a>
-            <a href="/app.html">Pricing & Download</a>
+    <!-- Sticky Glassmorphic Navbar -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/85 border-b border-slate-900 px-6 md:px-12 py-4 flex justify-between items-center transition-all duration-300">
+        <a href="/index.html" class="flex items-center gap-2 group">
+            <img src="/Insightrix.png" alt="Insightrix Logo" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+            <span class="font-extrabold text-lg tracking-wider bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 bg-clip-text text-transparent">INSIGHTRIX</span>
+        </a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="/index.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">Home</a>
+            <a href="/accountingflow.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">AccountingFlow</a>
+            <a href="/auditflow.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">AuditFlow</a>
+            <a href="/company.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">Company</a>
+            <a href="/contact.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">Contact</a>
+            <a href="/app.html" class="bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs tracking-tight transition-all duration-300 shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 hover:-translate-y-0.5">Pricing & Download</a>
         </div>
+        <!-- Mobile Nav Trigger -->
+        <button class="md:hidden text-slate-400 hover:text-white focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
     </nav>
-    <style>
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
 
-        .nav-links a {
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--brand-navy);
-            text-decoration: none;
-            transition: 0.2s;
-        }
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-[69px] left-0 w-full bg-slate-950 border-b border-slate-900 py-6 px-8 flex flex-col gap-4 z-40 transition-all duration-300">
+        <a href="/index.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">Home</a>
+        <a href="/accountingflow.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">AccountingFlow</a>
+        <a href="/auditflow.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">AuditFlow</a>
+        <a href="/company.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">Company</a>
+        <a href="/contact.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">Contact</a>
+        <a href="/app.html" class="bg-amber-500 text-slate-950 font-bold px-4 py-3 rounded-lg text-center text-sm shadow-md">Pricing & Download</a>
+    </div>
 
-        .nav-links a:hover {
-            color: var(--brand-gold);
-        }
+    <!-- Error Hero Section -->
+    <div class="flex-grow flex flex-col items-center justify-center text-center px-6 relative py-20">
+        <!-- Radial Glow Background -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.04)_0%,transparent_60%)] pointer-events-none"></div>
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
-
-    <div class="container">
-        <div class="error-code">404</div>
-        <div class="error-content">
-            <h1>Lost in the <span>Audit Trail?</span></h1>
-            <p>
-                찾으시는 페이지가 기록에서 누락되었습니다.<br>
-                삭제되었거나 잘못된 경로일 수 있습니다.
+        <div class="relative z-10 space-y-6 max-w-lg mx-auto">
+            <div class="text-7xl md:text-9xl font-black text-slate-800 tracking-wider">404</div>
+            <h1 class="text-2xl md:text-4xl font-extrabold text-white">Lost in the <span class="text-amber-400 text-glow">Audit Trail?</span></h1>
+            <p class="text-sm md:text-base text-slate-400 leading-relaxed font-semibold">
+                찾으시는 페이지의 경로가 기록에서 누락되었습니다.<br>
+                삭제되었거나 잘못 입력된 주소일 수 있으니 감사 헌법을 다시 검토해 주십시오.
             </p>
-            <a href="/index.html" class="cta-button">
-                <i class="fas fa-home"></i> 홈으로 돌아가기
-            </a>
+            <div class="pt-4">
+                <a href="/index.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-slate-950 font-bold px-8 py-3.5 rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/10 hover:shadow-amber-500/20 text-sm">
+                    <i class="fa-solid fa-house"></i> 홈으로 돌아가기
+                </a>
+            </div>
         </div>
     </div>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 px-6 md:px-12 text-center text-xs text-slate-600">
         <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
     </footer>
 </body>
