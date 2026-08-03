@@ -1,0 +1,13 @@
+{
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/accountingflow.html", "destination": "/accountingflow", "permanent": true },
+    { "source": "/auditflow.html", "destination": "/auditflow", "permanent": true },
+    { "source": "/company.html", "destination": "/company", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/app.html", "destination": "/pricing", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
