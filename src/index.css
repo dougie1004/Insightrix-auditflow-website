@@ -27,15 +27,9 @@ main { overflow: clip; }
 
 .site-header { position: sticky; top: 0; z-index: 100; height: 76px; background: rgba(247,248,245,.88); border-bottom: 1px solid rgba(7,25,45,.08); backdrop-filter: blur(18px); }
 .nav-shell { max-width: 1320px; height: 100%; margin: auto; padding: 0 34px; display: flex; align-items: center; justify-content: space-between; }
-.brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 800; font-size: 16px; letter-spacing: .08em; line-height: 1; }
-.brand small { display: block; margin-top: 5px; color: #798595; font-size: 7px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
-.brand-mark { width: 34px; height: 34px; position: relative; display: inline-block; border-radius: 9px; background: var(--ink); overflow: hidden; transform: rotate(0); }
-.brand-mark:before, .brand-mark:after, .brand-mark i, .brand-mark b { content: ''; position: absolute; display: block; background: white; border-radius: 10px; transform: rotate(45deg); }
-.brand-mark:before { width: 6px; height: 31px; left: 14px; top: 1px; }
-.brand-mark:after { width: 6px; height: 14px; left: 9px; top: 3px; }
-.brand-mark i { width: 6px; height: 14px; right: 8px; bottom: 3px; }
-.brand-mark b { width: 5px; height: 5px; left: 5px; bottom: 6px; }
-.brand-mark em { width: 5px; height: 5px; position: absolute; right: 5px; top: 6px; border-radius: 50%; background: var(--cyan); }
+.brand { display: inline-flex; align-items: center; }
+.brand-logo-frame { width: 168px; height: 58px; display:block; overflow:hidden; position:relative; }
+.brand-logo-frame img { width:100%; height:100%; object-fit:cover; transform:scale(1.37); }
 .nav-links { display: flex; align-items: center; gap: 30px; font-size: 13px; font-weight: 700; }
 .nav-links > a { color: #536174; transition: .2s ease; }
 .nav-links > a:hover, .nav-links > a.active { color: var(--ink); }
@@ -105,7 +99,18 @@ main { overflow: clip; }
 .product-card:hover { transform: translateY(-5px); box-shadow: 0 24px 50px rgba(7,25,45,.1); }
 .card-kicker { display:flex; align-items:center; gap:10px; color:var(--blue); font-size:10px; font-weight:800; letter-spacing:.14em; }
 .product-card.audit .card-kicker { color:#0795a7; }
-.product-card h3 { margin: 32px 0 14px; font-size: 36px; letter-spacing:-.04em; }
+.product-logo { display:block; position:relative; overflow:hidden; background:#fff; }
+.product-logo img { width:100%; height:100%; object-fit:cover; display:block; }
+.product-logo.card { margin:20px 0 12px; height:92px; }
+.product-logo.accounting.card { width:330px; max-width:90%; }
+.product-logo.accounting.card img { transform:scale(1.16); }
+.product-logo.audit.card { width:260px; max-width:82%; }
+.product-logo.audit.card img { transform:scale(1.12); }
+.product-logo.hero { margin:18px 0 -4px; height:92px; }
+.product-logo.accounting.hero { width:390px; max-width:90%; }
+.product-logo.accounting.hero img { transform:scale(1.12); }
+.product-logo.audit.hero { width:300px; max-width:82%; }
+.product-logo.audit.hero img { transform:scale(1.1); }
 .product-card > p { color:var(--muted); line-height:1.8; min-height: 90px; }
 .product-card ul, .responsibility-grid ul, .founder-card ul { list-style:none; padding:0; margin:30px 0; display:grid; gap:13px; }
 .product-card li, .responsibility-grid li, .founder-card li { display:flex; gap:10px; align-items:center; font-size:14px; font-weight:600; }
@@ -260,8 +265,7 @@ input:focus, select:focus, textarea:focus { border-color:var(--blue); box-shadow
 .download-section .text-slate-200 { color:white!important; }
 
 .site-footer { padding:70px max(34px,calc((100vw - 1220px)/2)) 28px; background:#051524; color:white; }
-.site-footer .brand-mark { background:white; }
-.site-footer .brand-mark:before, .site-footer .brand-mark:after, .site-footer .brand-mark i, .site-footer .brand-mark b { background:var(--ink); }
+.site-footer .brand-logo-frame { background:white; border-radius:4px; }
 .footer-main { display:grid; grid-template-columns:2fr 1fr 1.2fr; gap:80px; padding-bottom:60px; }
 .footer-main > div { display:flex; flex-direction:column; align-items:flex-start; gap:13px; }
 .footer-main > div:first-child p { max-width:400px; color:#93a3b3; line-height:1.7; font-size:14px; }
@@ -318,7 +322,9 @@ input:focus, select:focus, textarea:focus { border-color:var(--blue); box-shadow
 }
 
 @media (max-width: 560px) {
-  .brand { font-size:14px; }
+  .brand-logo-frame { width:138px; height:50px; }
+  .product-logo.hero { height:76px; margin-bottom:0; }
+  .product-logo.card { height:76px; }
   .hero h1, .company-hero h1 { font-size:38px; }
   .hero-actions { flex-direction:column; align-items:stretch; }
   .hero-actions .button { width:100%; }

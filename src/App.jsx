@@ -7,6 +7,9 @@ import {
 } from 'lucide-react';
 import PricingSection from './components/PricingSection';
 import WelcomePro from './pages/WelcomePro';
+import accountingFlowLogo from './assets/accountingflow-logo.png';
+import auditFlowLogo from './assets/auditflow-logo.png';
+import insightrixLogo from './assets/insightrix-logo.png';
 
 const navItems = [
   ['Platform', '/'],
@@ -23,9 +26,15 @@ function ScrollToTop() {
 
 function Brand() {
   return <Link className="brand" to="/" aria-label="Insightrix 홈">
-    <span className="brand-mark" aria-hidden="true"><i /><b /><em /></span>
-    <span>INSIGHTRIX<small>Financial Intelligence</small></span>
+    <span className="brand-logo-frame"><img src={insightrixLogo} alt="Insightrix" /></span>
   </Link>;
+}
+
+function ProductLogo({ type, location = 'card' }) {
+  const audit = type === 'audit';
+  return <span className={`product-logo ${audit ? 'audit' : 'accounting'} ${location}`}>
+    <img src={audit ? auditFlowLogo : accountingFlowLogo} alt={audit ? 'AuditFlow' : 'AccountingFlow'} />
+  </span>;
 }
 
 function Header() {
@@ -96,8 +105,8 @@ function Home() {
     <section className="section-shell product-intro">
       <div className="section-heading"><Pill>One platform, two critical workflows</Pill><h2>회계에서 감사까지.<br />신뢰할 수 있는 하나의 구조.</h2><p>숫자를 만드는 과정과 그 숫자를 검증하는 과정을 같은 원칙으로 연결합니다.</p></div>
       <div className="product-cards">
-        <article className="product-card accounting"><div className="card-kicker"><BookOpenCheck /> ACCOUNTING INTELLIGENCE</div><h3>AccountingFlow</h3><p>증빙 인식부터 전표 제안과 검증까지. 모든 숫자가 언제든 설명 가능한 상태로 유지되도록 설계된 회계 인프라입니다.</p><ul><li><Check /> 복식부기 규칙 기반 검증</li><li><Check /> 증빙–전표 연결과 추적</li><li><Check /> 사용자 승인 중심 워크플로</li></ul><ArrowLink to="/accountingflow">AccountingFlow 알아보기</ArrowLink></article>
-        <article className="product-card audit"><div className="card-kicker"><Scale /> AUDIT INTELLIGENCE</div><h3>AuditFlow</h3><p>감사인의 결론을 대신하지 않고, 규칙·근거·판단 경로를 하나로 묶어 증명 가능한 감사 구조를 제공합니다.</p><ul><li><Check /> 규칙 기반 위험 시나리오</li><li><Check /> 증거 연결형 Audit Trail</li><li><Check /> 판단 과정 재현</li></ul><ArrowLink to="/auditflow">AuditFlow 알아보기</ArrowLink></article>
+        <article className="product-card accounting"><div className="card-kicker"><BookOpenCheck /> ACCOUNTING INTELLIGENCE</div><ProductLogo type="accounting" /><p>증빙 인식부터 전표 제안과 검증까지. 모든 숫자가 언제든 설명 가능한 상태로 유지되도록 설계된 회계 인프라입니다.</p><ul><li><Check /> 복식부기 규칙 기반 검증</li><li><Check /> 증빙–전표 연결과 추적</li><li><Check /> 사용자 승인 중심 워크플로</li></ul><ArrowLink to="/accountingflow">AccountingFlow 알아보기</ArrowLink></article>
+        <article className="product-card audit"><div className="card-kicker"><Scale /> AUDIT INTELLIGENCE</div><ProductLogo type="audit" /><p>감사인의 결론을 대신하지 않고, 규칙·근거·판단 경로를 하나로 묶어 증명 가능한 감사 구조를 제공합니다.</p><ul><li><Check /> 규칙 기반 위험 시나리오</li><li><Check /> 증거 연결형 Audit Trail</li><li><Check /> 판단 과정 재현</li></ul><ArrowLink to="/auditflow">AuditFlow 알아보기</ArrowLink></article>
       </div>
     </section>
 
@@ -140,7 +149,7 @@ function AccountingFlow() {
     } catch { window.alert('신청 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.'); }
   };
   return <>
-    <ProductHero eyebrow="Accounting intelligence" title={<>편한 회계가 아니라,<br /><em>CFO가 신뢰하는 회계 인프라.</em></>} description="AccountingFlow는 결론을 대신 내리지 않습니다. 모든 숫자가 언제든 설명 가능한 상태로 유지되도록 설계되었습니다." cta="파일럿 신청하기" target="#pilot"><ProductVisual type="accounting" /></ProductHero>
+    <ProductHero eyebrow="Accounting intelligence" logoType="accounting" title={<>편한 회계가 아니라,<br /><em>CFO가 신뢰하는 회계 인프라.</em></>} description="AccountingFlow는 결론을 대신 내리지 않습니다. 모든 숫자가 언제든 설명 가능한 상태로 유지되도록 설계되었습니다." cta="파일럿 신청하기" target="#pilot"><ProductVisual type="accounting" /></ProductHero>
     <section className="section-shell split-intro"><div><Pill>From transaction to trust</Pill><h2>질문에 답하기 전에,<br />먼저 근거를 정리합니다.</h2></div><div><p>“이번 달 비용이 왜 늘었지?”라는 질문에 AccountingFlow는 숫자만 말하지 않습니다.</p><p>전표 → 계정 → 증빙 → 처리 흐름을 먼저 정리해 보여주고, CFO가 직접 판단할 수 있는 상태를 만듭니다.</p></div></section>
     <FeatureGrid items={accountingFeatures} />
     <section className="section-shell boundary-section"><div><Pill>Intentional boundaries</Pill><h2>AccountingFlow가<br />자동화하지 않는 것.</h2><p>편의를 위해 기준을 낮추지 않습니다. 빠른 회계보다 나중에 설명 가능한 회계를 선택합니다.</p></div><div className="boundary-list">{['증빙 없는 전표를 자동 확정하지 않습니다.','CFO 확인 없이 계정과목을 변경하지 않습니다.','설명할 수 없는 분개를 생성하지 않습니다.','리스크가 있는 처리를 조용히 넘기지 않습니다.'].map((x,i)=><div key={x}><span>0{i+1}</span><p>{x}</p></div>)}</div></section>
@@ -159,7 +168,7 @@ function AuditFlow() {
   usePageMeta('AuditFlow | Insightrix', 'AI가 결론을 내리지 않는 증거 중심 감사 인프라.');
   const steps = [['01','Data intake','원천 데이터 수집 및 비식별화'],['02','Rule matching','사전 정의된 감사 규칙과 정합성 검증'],['03','Scenario construction','규칙 위반 가능 시나리오 구성'],['04','Evidence binding','데이터·규칙·판단 경로 연결'],['05','Human judgment','감사인의 최종 판단'],['06','Replay & trace','동일 입력과 기준에 대한 과정 재현']];
   return <>
-    <ProductHero eyebrow="Audit intelligence" title={<>감사인의 판단을 대신하지 않고,<br /><em>그 판단을 증명합니다.</em></>} description="AuditFlow의 모든 분석은 규칙·근거·재현 가능성 위에서 이루어집니다. AI가 결론을 내리지 않는 감사 시스템입니다." cta="도입 상담하기" target="/contact"><ProductVisual type="audit" /></ProductHero>
+    <ProductHero eyebrow="Audit intelligence" logoType="audit" title={<>감사인의 판단을 대신하지 않고,<br /><em>그 판단을 증명합니다.</em></>} description="AuditFlow의 모든 분석은 규칙·근거·재현 가능성 위에서 이루어집니다. AI가 결론을 내리지 않는 감사 시스템입니다." cta="도입 상담하기" target="/contact"><ProductVisual type="audit" /></ProductHero>
     <section className="section-shell pipeline"><div className="section-heading left"><Pill>Audit judgment pipeline</Pill><h2>탐지에서 끝나지 않는<br />감사 판단의 전체 경로.</h2><p>감사인의 판단 과정을 여섯 단계로 구조화하고 각 단계의 근거를 보존합니다.</p></div><div className="pipeline-list">{steps.map(([n,t,d])=><div key={n}><span>{n}</span><section><h3>{t}</h3><p>{d}</p></section><ChevronRight /></div>)}</div></section>
     <FeatureGrid items={auditFeatures} />
     <section className="dark-section compact"><div className="dark-copy"><Pill>Audit constitution</Pill><h2>변경 이력이 남는<br />감사의 헌법.</h2><p>유연한 AI보다 책임질 수 있는 기준을 우선합니다.</p></div><div className="constitution-grid">{[['No silent override','모든 규칙 변경은 기록됩니다.'],['No black box','설명 불가능한 판단은 생성하지 않습니다.'],['No retroactive change','과거 판단은 사후 변경되지 않습니다.'],['Human accountability','최종 책임은 항상 감사인에게 귀속됩니다.']].map(([t,d])=><div key={t}><ShieldCheck/><h3>{t}</h3><p>{d}</p></div>)}</div></section>
@@ -169,9 +178,9 @@ function AuditFlow() {
   </>;
 }
 
-function ProductHero({ eyebrow, title, description, cta, target, children }) {
+function ProductHero({ eyebrow, logoType, title, description, cta, target, children }) {
   const internalAnchor = target.startsWith('#');
-  return <section className="hero product-hero"><div className="hero-copy"><Pill>{eyebrow}</Pill><h1>{title}</h1><p>{description}</p>{internalAnchor?<a className="button primary" href={target}>{cta}<ArrowRight size={18}/></a>:<Link className="button primary" to={target}>{cta}<ArrowRight size={18}/></Link>}</div><div className="hero-media">{children}</div></section>;
+  return <section className="hero product-hero"><div className="hero-copy"><Pill>{eyebrow}</Pill>{logoType && <ProductLogo type={logoType} location="hero" />}<h1>{title}</h1><p>{description}</p>{internalAnchor?<a className="button primary" href={target}>{cta}<ArrowRight size={18}/></a>:<Link className="button primary" to={target}>{cta}<ArrowRight size={18}/></Link>}</div><div className="hero-media">{children}</div></section>;
 }
 
 function FeatureGrid({ items }) { return <section className="section-shell feature-section"><div className="section-heading"><Pill>Built for accountable work</Pill><h2>빠른 답보다 중요한<br />검증 가능한 과정.</h2></div><div className="feature-grid">{items.map(([Icon,title,text],i)=><article key={title}><span>0{i+1}</span><Icon/><h3>{title}</h3><p>{text}</p></article>)}</div></section>; }
