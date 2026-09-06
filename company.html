@@ -12,225 +12,92 @@
         })(window, document, 'script', 'dataLayer', 'GTM-PLHLHFBM');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Insightrix | Corporate Profile</title>
+    <title>Company | Insightrix Financial AI Philosophy</title>
     <link rel="icon" href="Insightrix.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/src/index.css">
 </head>
 
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-amber-500/30 selection:text-amber-200">
+<body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col bg-grid-dots selection:bg-sky-500/30 selection:text-sky-200">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLHLHFBM" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Sticky Glassmorphic Navbar -->
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/85 border-b border-slate-900 px-6 md:px-12 py-4 flex justify-between items-center transition-all duration-300">
-        <a href="/index.html" class="flex items-center gap-2 group">
-            <img src="/Insightrix.png" alt="Insightrix Logo" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
-            <span class="font-extrabold text-lg tracking-wider bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 bg-clip-text text-transparent">INSIGHTRIX</span>
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-[#090d16]/90 border-b border-slate-800/80 px-6 md:px-12 py-4 flex justify-between items-center transition-all duration-300">
+        <a href="/index.html" class="flex items-center gap-2.5 group z-10">
+            <img src="/Insightrix.png" alt="Insightrix Logo" class="h-7 w-auto object-contain transition-transform duration-200 group-hover:scale-105">
+            <span class="font-extrabold text-base tracking-wider text-white">INSIGHTRIX</span>
         </a>
-        <div class="hidden md:flex gap-8 items-center">
-            <a href="/index.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">Home</a>
-            <a href="/accountingflow.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">AccountingFlow</a>
-            <a href="/auditflow.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">AuditFlow</a>
-            <a href="/company.html" class="text-sm font-semibold text-amber-400 border-b-2 border-amber-400 pb-1">Company</a>
-            <a href="/contact.html" class="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200">Contact</a>
-            <a href="/app.html" class="bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs tracking-tight transition-all duration-300 shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 hover:-translate-y-0.5">Pricing & Download</a>
+        <div class="hidden md:flex gap-8 items-center z-10">
+            <a href="/index.html" class="text-xs font-semibold text-slate-400 hover:text-white transition-colors">Home</a>
+            <a href="/accountingflow.html" class="text-xs font-semibold text-slate-400 hover:text-white transition-colors">AccountingFlow</a>
+            <a href="/auditflow.html" class="text-xs font-semibold text-slate-400 hover:text-white transition-colors">AuditFlow</a>
+            <a href="/company.html" class="text-xs font-bold text-sky-400 border-b-2 border-sky-400 pb-0.5">Company</a>
+            <a href="/contact.html" class="text-xs font-semibold text-slate-400 hover:text-white transition-colors">Contact</a>
+            <a href="/app.html" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-4 py-2 rounded-lg text-xs tracking-tight transition-all duration-200 shadow-md">Pricing & Download</a>
         </div>
         <!-- Mobile Nav Trigger -->
-        <button class="md:hidden text-slate-400 hover:text-white focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-            <i class="fa-solid fa-bars text-xl"></i>
+        <button class="md:hidden text-slate-400 hover:text-white focus:outline-none z-10" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <i class="fa-solid fa-bars text-lg"></i>
         </button>
     </nav>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden fixed top-[69px] left-0 w-full bg-slate-950 border-b border-slate-900 py-6 px-8 flex flex-col gap-4 z-40 transition-all duration-300">
-        <a href="/index.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">Home</a>
-        <a href="/accountingflow.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">AccountingFlow</a>
-        <a href="/auditflow.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">AuditFlow</a>
-        <a href="/company.html" class="text-base font-bold text-amber-400">Company</a>
-        <a href="/contact.html" class="text-base font-semibold text-slate-300 hover:text-amber-400">Contact</a>
-        <a href="/app.html" class="bg-amber-500 text-slate-950 font-bold px-4 py-3 rounded-lg text-center text-sm shadow-md">Pricing & Download</a>
-    </div>
-
-    <!-- Page Header / Hero -->
-    <header class="relative overflow-hidden py-20 md:py-28 px-6 text-center flex flex-col items-center justify-center border-b border-slate-900 bg-slate-950">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_60%)] pointer-events-none"></div>
-        <div class="relative z-10 max-w-4xl mx-auto space-y-4">
-            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white uppercase">The Standard of Integrity</h1>
-            <div class="h-1 w-16 bg-amber-400 mx-auto rounded-full my-4"></div>
-            <p class="text-base md:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                인사이트릭스는 신뢰성과 무결성을 비즈니스의 최우선 가치로 삼습니다.<br>
-                복잡한 재무 데이터 속에서 가장 정직하고 명확한 참값을 조명합니다.
+    <!-- Subpage Hero Header -->
+    <header class="py-16 px-6 text-center border-b border-slate-800/60 relative">
+        <div class="max-w-3xl mx-auto space-y-4">
+            <span class="inline-block px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-[11px] font-bold text-sky-400 uppercase tracking-wider">
+                Responsibility by Design
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Financial Intelligence Architecture</h1>
+            <p class="text-xs md:text-sm text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                Insightrix는 회계와 감사라는 보수적 금융 영역에서 인공지능이 인간의 책임을 대체하거나 통제 불가능한 결론을 내리지 않도록 검증 가능성에 집중합니다.
             </p>
         </div>
     </header>
 
-    <!-- Main Content Grid -->
-    <main class="flex-grow max-w-7xl mx-auto px-6 md:px-12 py-16 space-y-24">
-        
+    <main class="flex-grow max-w-5xl mx-auto px-6 md:px-12 py-16 space-y-16">
         <!-- Philosophy Section -->
-        <section class="space-y-12">
-            <div class="text-center space-y-2">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-white">Our Philosophy</h2>
-                <div class="h-1 w-12 bg-amber-400 mx-auto rounded-full"></div>
+        <div class="saas-card p-10 space-y-6">
+            <h2 class="text-2xl font-bold text-white">우리의 핵심 철학</h2>
+            <div class="space-y-4 text-xs md:text-sm text-slate-300 leading-relaxed">
+                <p>
+                    많은 AI 시스템이 인간의 의사결정을 대신 내리는 방향으로 발전하고 있습니다. 하지만 엄격한 법적 책임과 감사가 따르는 재무 회계 분야에서는 <strong>"왜 이런 숫자가 나왔는지"</strong> 설명하고 입증할 수 없다면 아무리 뛰어난 인공지능이라도 도입될 수 없습니다.
+                </p>
+                <p>
+                    Insightrix는 AI에게 독단적인 판단 권한을 주지 않습니다. AI는 정교한 계산과 증빙 정리 보조자로서 연산하며, 모든 최종 승인은 인간 최고재무책임자(CFO)와 감사인이 검증 가능한 트레일을 기반으로 진행하도록 시스템을 건축합니다.
+                </p>
             </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-panel rounded-2xl p-8 border border-slate-900 space-y-4 hover:border-slate-800 transition-all duration-300">
-                    <h3 class="text-xl font-bold text-white flex items-center gap-3">
-                        <i class="fa-solid fa-flag text-amber-400"></i> Mission
-                    </h3>
-                    <p class="text-sm font-semibold text-amber-400">"To Illuminate the Truth in Data"</p>
-                    <p class="text-xs md:text-sm text-slate-400 leading-relaxed">
-                        우리는 모든 비즈니스의 금융 데이터가 투명하고 정직하게 설명되는 세상을 지향합니다. 기업들이 사각지대 없이 리스크를 선제적으로 통제하여 건전하게 성장할 수 있도록 지능형 재무 인프라를 만듭니다.
-                    </p>
-                </div>
-                
-                <div class="glass-panel rounded-2xl p-8 border border-slate-900 space-y-4 hover:border-slate-800 transition-all duration-300">
-                    <h3 class="text-xl font-bold text-white flex items-center gap-3">
-                        <i class="fa-solid fa-eye text-amber-400"></i> Vision
-                    </h3>
-                    <p class="text-sm font-semibold text-amber-400">"Global No.1 Intelligence Matrix"</p>
-                    <p class="text-xs md:text-sm text-slate-400 leading-relaxed">
-                        인간의 통찰력 깊이와 인공지능의 차분한 정밀함이 수렴하는 자리에 인사이트릭스가 함께 서고자 합니다. 전 세계 재무 감사 및 준법 심사(Compliance)의 새로운 지평을 여는 글로벌 기업으로 도약하겠습니다.
-                    </p>
-                </div>
-            </div>
-        </section>
+        </div>
 
-        <!-- Core Values -->
-        <section class="space-y-12">
-            <div class="text-center space-y-2">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-white">Core Values</h2>
-                <div class="h-1 w-12 bg-amber-400 mx-auto rounded-full"></div>
+        <!-- Corporate Principles -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="saas-card p-8 space-y-3">
+                <div class="text-sky-400 text-lg font-bold">01. Verifiability First</div>
+                <h3 class="text-base font-bold text-white">입증 가능성 최우선</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    시스템이 출력하는 모든 회계 및 감사 결과는 원천 증빙 자료 및 복식부기 공식에 의해 1:1 역추적될 수 있어야 합니다.
+                </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass-panel rounded-2xl p-8 border border-slate-900 text-center space-y-4 hover:border-slate-800 transition-all duration-300">
-                    <div class="h-14 w-14 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mx-auto">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-white">Insight (통찰)</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">단순히 숫자를 취합하는 것을 넘어 비즈니스의 잠재적 취약점과 핵심 흐름을 입체적으로 투영합니다.</p>
-                </div>
-                
-                <div class="glass-panel rounded-2xl p-8 border border-slate-900 text-center space-y-4 hover:border-slate-800 transition-all duration-300">
-                    <div class="h-14 w-14 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mx-auto">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-white">Integrity (무결성)</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">편의주의적 타협 대신 시스템적 엄밀성을 고수하여 거래 사실과 증거 기록의 진실성을 지킵니다.</p>
-                </div>
-
-                <div class="glass-panel rounded-2xl p-8 border border-slate-900 text-center space-y-4 hover:border-slate-800 transition-all duration-300">
-                    <div class="h-14 w-14 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mx-auto">
-                        <i class="fa-solid fa-rocket"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-white">Innovation (혁신)</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed">Rust 엔진의 초고속 처리 능력과 대형 AI를 지혜롭게 연결해 전통의 금융 감리 환경을 재구조화합니다.</p>
-                </div>
+            <div class="saas-card p-8 space-y-3">
+                <div class="text-teal-400 text-lg font-bold">02. Human Oversight</div>
+                <h3 class="text-base font-bold text-white">인간 중심 통제 구조</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    AI는 인간의 판단을 보완하고 증거를 정리하는 도구일 뿐, 법적 책임을 지는 회계 담당자의 서명과 승인권을 침해하지 않습니다.
+                </p>
             </div>
-        </section>
-
-        <!-- Leadership Section -->
-        <section class="space-y-12">
-            <div class="text-center space-y-2">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-white">Leadership</h2>
-                <div class="h-1 w-12 bg-amber-400 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="space-y-8 max-w-5xl mx-auto">
-                <!-- Leader 1 -->
-                <div class="grid md:grid-cols-12 gap-8 bg-slate-900/30 border border-slate-900 rounded-3xl overflow-hidden hover:border-slate-800/80 transition-all duration-300">
-                    <div class="md:col-span-4 bg-slate-900 flex items-center justify-center min-h-[300px]">
-                        <!-- Elegant avatar icon fallback -->
-                        <div class="text-center py-8">
-                            <i class="fa-solid fa-user-tie text-6xl text-slate-700 mb-2"></i>
-                            <div class="text-xs font-bold text-amber-400 uppercase tracking-widest">Douglas Lee</div>
-                        </div>
-                    </div>
-                    <div class="md:col-span-8 p-8 md:p-12 flex flex-col justify-center space-y-4">
-                        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Founder & CEO</span>
-                        <h3 class="text-2xl font-extrabold text-white">Douglas Lee (이도우)</h3>
-                        <p class="text-sm text-slate-300 font-medium italic">"20년의 실무 감사 현장 경험과 데이터 과학의 융합이 투명 경영의 마침표가 될 것입니다."</p>
-                        <div class="h-px bg-slate-800"></div>
-                        <ul class="space-y-2 text-xs text-slate-400">
-                            <li><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> 現 Insightrix 대표이사</li>
-                            <li><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> 前 글로벌 대기업 내부 감사 총괄 본부장 (20년 근무)</li>
-                            <li><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> AICPA (미국공인회계사), CIA (국제내부감사사), CFE (국제공인부정방지전문가)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Leader 2 -->
-                <div class="grid md:grid-cols-12 gap-8 bg-slate-900/30 border border-slate-900 rounded-3xl overflow-hidden hover:border-slate-800/80 transition-all duration-300">
-                    <div class="md:col-span-4 bg-slate-900 flex items-center justify-center min-h-[300px]">
-                        <div class="text-center py-8">
-                            <i class="fa-solid fa-user-gear text-6xl text-slate-700 mb-2"></i>
-                            <div class="text-xs font-bold text-amber-400 uppercase tracking-widest">Jenny Kim</div>
-                        </div>
-                    </div>
-                    <div class="md:col-span-8 p-8 md:p-12 flex flex-col justify-center space-y-4">
-                        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">CFO</span>
-                        <h3 class="text-2xl font-extrabold text-white">Jenny Kim (김민지)</h3>
-                        <p class="text-sm text-slate-300 font-medium italic">"견고한 거버넌스와 재무 무결성은 기업 성장을 촉진하는 가장 든든한 날개입니다."</p>
-                        <div class="h-px bg-slate-800"></div>
-                        <ul class="space-y-2 text-xs text-slate-400">
-                            <li><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> 現 Insightrix CFO</li>
-                            <li><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> 글로벌 투자 캐피탈 재무 전략 디렉터 17년 전문 경력</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Leader 3 (Hiring) -->
-                <div class="grid md:grid-cols-12 gap-8 bg-slate-900/30 border border-slate-900 rounded-3xl overflow-hidden hover:border-slate-800/80 transition-all duration-300">
-                    <div class="md:col-span-4 bg-slate-900/60 border-r border-slate-900/50 flex flex-col items-center justify-center min-h-[300px] text-slate-600">
-                        <i class="fa-solid fa-user-plus text-6xl text-slate-700 mb-3 animate-pulse"></i>
-                        <span class="font-extrabold text-xs tracking-wider uppercase text-amber-500/80">We Are Hiring</span>
-                    </div>
-                    <div class="md:col-span-8 p-8 md:p-12 flex flex-col justify-center space-y-4">
-                        <span class="text-xs font-bold text-amber-500 uppercase tracking-widest">CTO Recruitment</span>
-                        <h3 class="text-2xl font-extrabold text-white">최고기술책임자 영입 진행 중</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            인사이트릭스의 감사 분산 원장 검증 기술과 AI 에이전트 인프라 고도화를 리딩하고, 글로벌 SaaS 스케일업 아키텍처를 주도할 탁월한 엔지니어링 파트너를 찾고 있습니다.
-                        </p>
-                        <div class="h-px bg-slate-800"></div>
-                        <ul class="space-y-2 text-xs text-slate-500">
-                            <li><i class="fa-solid fa-circle-chevron-right mr-2 text-slate-600"></i> Rust Core 및 저지연 병렬 분산 시스템 설계 설계 전문가</li>
-                            <li><i class="fa-solid fa-circle-chevron-right mr-2 text-slate-600"></i> LLM LLama/Gemini API 인프라 구축 및 엔터프라이즈 상용화 유경험자</li>
-                            <li><i class="fa-solid fa-circle-chevron-right mr-2 text-slate-600"></i> 오픈 소스 기여 및 기술 조직 스케일업 리드 경력자</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-16 px-6 md:px-12 mt-12 text-center md:text-left">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div class="md:col-span-6 space-y-4">
-                <div class="flex justify-center md:justify-start items-center gap-2">
-                    <img src="/Insightrix.png" alt="Insightrix Logo" class="h-7 w-auto filter brightness-90">
-                    <span class="font-bold tracking-wider text-slate-300 text-sm">INSIGHTRIX</span>
-                </div>
-                <p class="text-xs text-slate-500 max-w-sm">
-                    Insightrix는 인공지능이 인간의 영역을 지배적으로 판단하지 않는 안전하고 검증 가능한 투명 금융 엔지니어링 생태계를 만듭니다.
-                </p>
+    <footer class="bg-[#090d16] border-t border-slate-800/80 py-12 px-6 md:px-12 text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+            <div class="flex items-center gap-2">
+                <img src="/Insightrix.png" alt="Insightrix Logo" class="h-5 w-auto">
+                <span class="font-bold text-slate-300">INSIGHTRIX</span>
             </div>
-            <div class="md:col-span-6 flex flex-wrap justify-center md:justify-end gap-6 text-xs text-slate-400 font-medium">
-                <a href="/index.html" class="hover:text-amber-400 transition-colors">Home</a>
-                <a href="/accountingflow.html" class="hover:text-amber-400 transition-colors">AccountingFlow</a>
-                <a href="/auditflow.html" class="hover:text-amber-400 transition-colors">AuditFlow</a>
-                <a href="/company.html" class="hover:text-amber-400 transition-colors">Company</a>
-                <a href="/contact.html" class="hover:text-amber-400 transition-colors">Contact</a>
-                <a href="/app.html" class="hover:text-amber-400 transition-colors">Pricing</a>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto border-t border-slate-900/60 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-[11px] text-slate-600 gap-4">
             <p>© 2026 Insightrix Corp. All Rights Reserved.</p>
-            <p>본 플랫폼의 시스템 검증 기능은 특허 기술 및 독자적인 분산 Ledger 추적 기술을 기반으로 작동합니다.</p>
         </div>
     </footer>
 </body>
