@@ -11,6 +11,7 @@ export default defineConfig({
         app: resolve(__dirname, 'app.html'),
         accountingflow: resolve(__dirname, 'accountingflow.html'),
         auditflow: resolve(__dirname, 'auditflow.html'),
+        operationsflow: resolve(__dirname, 'operationsflow.html'),
         company: resolve(__dirname, 'company.html'),
         contact: resolve(__dirname, 'contact.html'),
       },
