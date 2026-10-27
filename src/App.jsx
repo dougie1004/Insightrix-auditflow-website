@@ -18,7 +18,7 @@ function App() {
                         <a href="/auditflow.html" className="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200 no-underline">AuditFlow</a>
                         <a href="/company.html" className="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200 no-underline">Company</a>
                         <a href="/contact.html" className="text-sm font-semibold text-slate-400 hover:text-amber-400 transition-colors duration-200 no-underline">Contact</a>
-                        <a href="/app.html" className="text-sm font-semibold text-amber-400 border-b-2 border-amber-400 pb-1 no-underline">Pricing & Download</a>
+                        <a href="/app.html" className="text-sm font-semibold text-amber-400 border-b-2 border-amber-400 pb-1 no-underline">요금 및 사용 요청</a>
                     </div>
                 </nav>
 
@@ -47,7 +47,7 @@ function App() {
                             <a href="/auditflow.html" className="hover:text-amber-400 transition-colors no-underline">AuditFlow</a>
                             <a href="/company.html" className="hover:text-amber-400 transition-colors no-underline">Company</a>
                             <a href="/contact.html" className="hover:text-amber-400 transition-colors no-underline">Contact</a>
-                            <a href="/app.html" className="hover:text-amber-400 transition-colors no-underline">Pricing</a>
+                            <a href="/app.html" className="hover:text-amber-400 transition-colors no-underline">요금 및 사용 요청</a>
                         </div>
                     </div>
                     <div className="max-w-7xl mx-auto border-t border-slate-900/60 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-[11px] text-slate-600 gap-4">

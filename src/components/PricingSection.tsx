@@ -3,7 +3,7 @@ import { Check, Info, ShieldAlert, Sparkles, AppWindow, ArrowRight, ShieldCheck 
 import DownloadButton from './DownloadButton';
 
 const PricingSection = () => {
-    const [serviceType, setServiceType] = useState('accounting'); // 'accounting' | 'audit'
+    const [serviceType, setServiceType] = useState<'accounting' | 'audit'>('accounting'); // 'accounting' | 'audit'
 
     return (
         <section className="py-20 bg-slate-950 min-h-screen text-slate-100 relative overflow-hidden">
@@ -223,21 +223,20 @@ const PricingSection = () => {
                     </div>
                 </div>
 
-                {/* Main Download Hub */}
-                <div id="download-hub" className="mt-20 glass-panel rounded-3xl p-12 text-center border border-slate-900 relative overflow-hidden">
+                {/* Main Request Hub */}
+                <div id="request-hub" className="mt-20 glass-panel rounded-3xl p-6 md:p-12 text-center border border-slate-900 relative overflow-hidden">
                     <div className="relative z-10 max-w-3xl mx-auto">
                         <div className="flex justify-center mb-6">
                             <div className="p-3 bg-slate-900 border border-slate-800 rounded-xl">
                                 <AppWindow className="w-10 h-10 text-amber-400" />
                             </div>
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-extrabold mb-4 text-white">Demo Version Download</h3>
+                        <h3 className="text-2xl md:text-3xl font-extrabold mb-4 text-white">프로그램 사용 요청</h3>
                         <p className="text-slate-400 mb-8 text-sm md:text-base leading-relaxed font-semibold">
-                            AI가 독단적 결정을 내리지 않는 투명 검증 시스템을 직접 로컬에서 기동해 보세요. <br />
-                            프로그램 내에서 라이선스 키를 간편히 매핑할 수 있습니다.
+                            프로그램은 현재 개발 중입니다. 사용을 요청하시면 프로그램을 별도로 보내드립니다.
                         </p>
 
-                        <DownloadButton service={serviceType as any} />
+                        <DownloadButton service={serviceType} />
                     </div>
                 </div>
 
