@@ -39,10 +39,23 @@
             <a href="/app.html" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-4 py-2 rounded-lg text-xs tracking-tight transition-all duration-200 shadow-md">요금 및 사용 요청</a>
         </div>
         <!-- Mobile Nav Trigger -->
-        <button class="md:hidden text-slate-400 hover:text-white focus:outline-none z-10" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <button aria-label="메뉴 열기" class="md:hidden text-slate-400 hover:text-white focus:outline-none z-10" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
             <i class="fa-solid fa-bars text-lg"></i>
         </button>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-[65px] left-0 w-full bg-[#090d16] border-b border-slate-800 py-6 px-8 flex flex-col gap-4 z-40">
+        <a href="/index.html" class="text-sm font-bold text-sky-400">Home</a>
+        <a href="/accountingflow.html" class="text-sm font-semibold text-slate-300 hover:text-sky-400">AccountingFlow</a>
+        <a href="/auditflow.html" class="text-sm font-semibold text-slate-300 hover:text-sky-400">AuditFlow</a>
+        <a href="/operationsflow.html" class="text-sm font-semibold text-slate-300 hover:text-sky-400">OperationsFlow</a>
+        <a href="/company.html" class="text-sm font-semibold text-slate-300 hover:text-sky-400">Company</a>
+        <a href="/contact.html" class="text-sm font-semibold text-slate-300 hover:text-sky-400">Contact</a>
+        <a href="/app.html" class="bg-sky-600 text-white font-bold px-4 py-2.5 rounded-lg text-center text-xs shadow-md">요금 및 사용 요청</a>
+    </div>
+
+
 
     <!-- Subpage Hero Header -->
     <header class="py-16 px-6 text-center border-b border-slate-800/60 relative">
@@ -52,7 +65,7 @@
             </span>
             <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">범용 ERP가 계산하지 못하는 영역을 해결합니다</h1>
             <p class="text-xs md:text-sm text-slate-400 leading-relaxed max-w-2xl mx-auto">
-                Insightrix는 획일화된 천편일률적 솔루션 대신, 기업 고유의 비즈니스 로직과 회계·감사 검증 기준을 정밀하게 수식화하는 금융 엔지니어링 기업입니다.
+                Insightrix는 회계·감사·기업 운영에서 담당자가 근거와 업무 흐름을 확인할 수 있도록 돕는 솔루션을 개발하고 있습니다.
             </p>
         </div>
     </header>
@@ -66,7 +79,7 @@
                 </div>
                 <h2 class="text-lg font-bold text-white">기업 비전 (Vision)</h2>
                 <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
-                    AI가 블랙박스 추론으로 인간의 법적 책임을 대신하거나 독단적인 숫자를 만들어내지 않는, <strong>세계에서 가장 입증 가능하고 정교한 금융·감사 검증 표준</strong>을 구축합니다.
+                    AI가 블랙박스 추론으로 인간의 법적 책임을 대신하거나 독단적인 숫자를 만들어내지 않는, <strong>근거를 확인할 수 있는 회계·감사·기업 운영 도구</strong>을 구축합니다.
                 </p>
             </div>
 
@@ -92,14 +105,14 @@
                 <div class="space-y-3 border-l-2 border-sky-500/40 pl-4">
                     <h3 class="text-base font-bold text-white">AccountingFlow : 설명 가능한 자동화</h3>
                     <p class="text-xs text-slate-300 leading-relaxed">
-                        AI가 아무리 정교하더라도 복식부기의 대차평균 원칙과 원천 증빙을 벗어난 숫자를 만들어낼 수 없습니다. AccountingFlow는 모든 자동화 전표의 수식적 근거와 증빙 링킹을 100% 명확하게 입증합니다.
+                        회계 자동화에서도 복식부기 원칙과 원천 증빙을 확인하는 과정이 중요합니다. AccountingFlow는 차변·대변과 원천 증빙을 함께 확인하는 검토 흐름을 개발하고 있습니다.
                     </p>
                 </div>
 
                 <div class="space-y-3 border-l-2 border-teal-500/40 pl-4">
-                    <h3 class="text-base font-bold text-white">AuditFlow : 시점별 완벽 재현 가능성</h3>
+                    <h3 class="text-base font-bold text-white">AuditFlow : 근거와 검토 이력</h3>
                     <p class="text-xs text-slate-300 leading-relaxed">
-                        감사인의 검증은 막연한 확률 경고가 아닌 객관적 규칙과 물리적 증거에 기반해야 합니다. AuditFlow는 내부통제 규정 위반을 객관적 지표로 탐지하고, 검증 당시 환경을 시점별로 완벽히 재현(Trail Replay)합니다.
+                        감사인이 검토 기준과 원천 자료, 검토 의견의 흐름을 함께 살펴볼 수 있도록 개발하고 있습니다.
                     </p>
                 </div>
             </div>
@@ -121,7 +134,7 @@
                     <div class="text-teal-400 font-extrabold text-sm tracking-wider">02. Human Sovereignty</div>
                     <h3 class="text-sm font-bold text-white">전문가 주권 보장</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">
-                        AI는 완벽한 근거를 준비하는 차세대 보조자이며, 법적 책임을 지는 재무 전문가(CFO·감수인)의 최종 승인권을 존중합니다.
+                        AI는 담당자의 검토를 돕는 보조 수단이며, 업무 판단과 최종 승인은 담당자의 몫입니다.
                     </p>
                 </div>
 

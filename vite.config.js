@@ -14,6 +14,8 @@ export default defineConfig({
         operationsflow: resolve(__dirname, 'operationsflow.html'),
         company: resolve(__dirname, 'company.html'),
         contact: resolve(__dirname, 'contact.html'),
+        thanks: resolve(__dirname, 'thanks.html'),
+        notFound: resolve(__dirname, '404.html'),
       },
     },
   },

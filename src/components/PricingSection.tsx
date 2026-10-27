@@ -13,6 +13,8 @@ const PricingSection = () => {
             <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
 
                 {/* 🎯 Premise Section */}
+                <p className="max-w-4xl mx-auto mb-8 rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-4 text-sm text-amber-200 text-center">프로그램은 현재 개발 중입니다. 사용을 요청하시면 프로그램을 별도로 보내드립니다.</p>
+
                 <div className="max-w-4xl mx-auto text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-amber-400 tracking-wider uppercase mb-6 shadow-inner">
                         Definition of Service
