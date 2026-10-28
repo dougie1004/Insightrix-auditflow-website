@@ -2,12 +2,12 @@
 
 ## Development
 
-Use `npm install`, then `npm run dev`. `npm run build` regenerates the static marketing pages and builds the nine Vite entry points into `dist/`.
+Use `npm install`, then `npm run dev`. `npm run typecheck` checks the TypeScript sources with the existing strict settings. `npm run build` runs this check, regenerates the static marketing pages and builds the nine Vite entry points into `dist/`.
 
-- `src/site-config.js`: shared product descriptions, navigation and development notice.
+- `src/site-config.js`, `src/site-config.d.ts`: shared product descriptions, navigation and development notice, with a typed public interface.
 - `scripts/render-site.mjs`: home, three product pages, company, Contact, thanks and 404 generator. Edit this source rather than only generated HTML.
 - `src/index.css`, `src/site.js`: marketing design and accessible tabs, mobile navigation, optional GIF playback.
-- `src/components/SiteChrome.jsx`, `PricingSection.tsx`: matching React request page at `/app.html`.
+- `src/components/SiteChrome.tsx`, `PricingSection.tsx`: matching React request page at `/app.html`.
 - `public/demos/demo-data.js`: explicitly fictional sample data for 12 views.
 - `public/demos/demo.js`, `demo.css`: menu changes, search, status filters, details and source-derived sample charts.
 - `public/demos/media/`: three HTML example recordings, each four frames over 22 seconds. Posters load first; GIFs only load after explicit play and can be stopped. These are not recordings of completed applications.
