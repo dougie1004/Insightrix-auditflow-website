@@ -5,7 +5,7 @@ export function Arrow() {
 }
 
 function Wordmark() {
-    return <><span className="brand-icon"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 22V9m9 13V4m9 18V14" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" /></svg></span><span>Insightrix<span className="brand-period">.</span></span></>;
+    return <><span className="brand-icon" aria-hidden="true" /><span>Insightrix<span className="brand-period">.</span></span></>;
 }
 
 export function SiteHeader() {
