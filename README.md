@@ -1,62 +1,24 @@
-# Insightrix Website
+# Insightrix website
 
-## 📦 프로젝트 구조
+## Development
 
-```
-AuditFlow website/
-├── src/
-│   ├── components/
-│   │   ├── PricingSection.tsx    # 요금제 비교 (결제 제거됨)
-│   │   └── DownloadButton.tsx    # 기존 Contact로 연결하는 사용 요청 버튼
-│   ├── pages/
-│   └── App.jsx                   # 메인 라우팅
-├── api/
-│   └── confirm-payment.ts        # Vercel Edge Function (앱 전용)
-├── public/demos/                 # 제품별 가상 예시 HTML·CSS·JS
-└── index.html
+Use `npm install`, then `npm run dev`. `npm run build` regenerates the static marketing pages and builds the nine Vite entry points into `dist/`.
 
-```
+- `src/site-config.js`: shared product descriptions, navigation and development notice.
+- `scripts/render-site.mjs`: home, three product pages, company, Contact, thanks and 404 generator. Edit this source rather than only generated HTML.
+- `src/index.css`, `src/site.js`: marketing design and accessible tabs, mobile navigation, optional GIF playback.
+- `src/components/SiteChrome.jsx`, `PricingSection.tsx`: matching React request page at `/app.html`.
+- `public/demos/demo-data.js`: explicitly fictional sample data for 12 views.
+- `public/demos/demo.js`, `demo.css`: menu changes, search, status filters, details and source-derived sample charts.
+- `public/demos/media/`: three HTML example recordings, each four frames over 22 seconds. Posters load first; GIFs only load after explicit play and can be stopped. These are not recordings of completed applications.
+- `public/fonts/`: self-hosted Pretendard variable font and SIL OFL license.
 
-## 🎨 주요 기능
+All products remain in development and invite pilot participation inquiries through the existing Contact form. Pilot costs, schedule, eligibility and support terms have not been established by the website. No installer URLs, invented release dates, customer endorsements or performance claims are supplied. The Formspree destination and field names are preserved. Do not submit the live form during QA.
 
-### 1. **프로그램 사용 요청**
-- 프로그램은 현재 개발 중이며, 사용 요청 후 별도로 전달합니다.
-- 사용 요청 버튼은 기존 Contact 화면으로 이동합니다.
-- 설치 파일 주소와 임시 버전·용량·업데이트·보안 인증 표시는 제공하지 않습니다.
+## Release checks
 
-### 2. **요금제 비교 페이지**
-- AccountingFlow / AuditFlow 탭 전환
-- 개발 안내와 사용 요청 링크 표시
-- 결제 검증 API와 문의 제출처는 기존 동작 유지
+Build and check the nine pages at desktop and narrow mobile sizes. Verify all 12 demo menus, item details, search/no-results/reset, status filters, keyboard navigation, request links and GIF play/stop. Keep company/private data and local screenshots/logs out of the repository.
 
-### 3. **제품별 소개용 시연**
-- AccountingFlow: 증빙 검토, 전표, 증빙 보관함, 검증 이력
-- AuditFlow: 감사 검토 현황, 검토 항목, 근거 자료, 감사 이력
-- OperationsFlow: 운영 현황, 구매 발주, 입출고·재고, 재고 평가
-- 메뉴와 항목 선택에 따라 화면과 상세가 바뀝니다.
-- 모든 수치·기록은 가상 예시입니다. 실제 구현·운영 결과를 나타내지 않습니다.
-- 개인 PC의 제품 원본이나 회사 운영 자료는 포함하지 않습니다.
+The existing GitHub/Vercel deployment flow uses the review branch for Preview and `main` for Production. Check the remote head before updating either branch, then confirm the resulting deployment and public domain.
 
-### 4. **Vercel Edge Function**
-- 앱에서 호출하는 결제 검증 API
-- Toss Payments 서버 사이드 확인
-- 라이선스 키 발급 및 반환
-
-## 🚀 배포 방법
-
-### Vercel 배포
-```bash
-npm install
-npm run build
-vercel --prod
-```
-
-### 환경 변수 설정 (Vercel Dashboard)
-```
-TOSS_SECRET_KEY=your_secret_key_here
-```
-
-## 📝 TODO
-
-- [ ] 실제 제품 원본 확인 후 소개 자료 갱신
-- [ ] GIF 재촬영과 공개 범위는 별도 사용자 지시에 따라 진행
+Existing payment API and the `WelcomePro` app-launch route are retained without changes; they are outside this marketing redesign and must not be exercised as a website QA step.

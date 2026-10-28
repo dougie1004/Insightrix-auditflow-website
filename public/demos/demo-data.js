@@ -1,7 +1,7 @@
 // All records below are fictional product demonstration data.
 export const products = {
     accounting: {
-        name: 'AccountingFlow', accent: '#367bb3', short: 'AF', area: '회계 업무',
+        name: 'AccountingFlow', accent: '#345cda', short: 'AF', area: '회계 업무',
         views: [
             {
                 label: '증빙·전표 검토', title: '증빙에서 전표까지', kind: 'table',
@@ -56,7 +56,7 @@ export const products = {
         ]
     },
     audit: {
-        name:'AuditFlow', accent:'#178b7c', short:'AU', area:'감사 검토',
+        name:'AuditFlow', accent:'#18745b', short:'AU', area:'감사 검토',
         views:[
             {
                 label:'감사 검토 현황', title:'근거가 이어지는 감사', kind:'table',
@@ -110,7 +110,7 @@ export const products = {
         ]
     },
     operations:{
-        name:'OperationsFlow',accent:'#7062ba',short:'OF',area:'구매·재고 운영',
+        name:'OperationsFlow',accent:'#a85932',short:'OF',area:'구매·재고 운영',
         views:[
             {
                 label:'운영 현황',title:'발주부터 입고까지',kind:'table',
