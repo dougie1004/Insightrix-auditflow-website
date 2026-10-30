@@ -10,14 +10,15 @@ Use `npm install`, then `npm run dev`. `npm run typecheck` checks the TypeScript
 - `src/components/SiteChrome.tsx`, `PricingSection.tsx`: matching React request page at `/app.html`.
 - `public/demos/demo-data.js`: explicitly fictional sample data for 12 views.
 - `public/demos/demo.js`, `demo.css`: menu changes, search, status filters, details and source-derived sample charts.
-- `public/demos/media/`: three HTML example recordings, each four frames over 22 seconds. Posters load first; GIFs only load after explicit play and can be stopped. These are not recordings of completed applications.
+- `public/recordings/`: verified recordings of the current applications, with sample data and an explicit validation scope. Posters load first; GIFs only download after explicit play and can be stopped.
+- `public/demos/media/`: legacy HTML illustrations. AccountingFlow and AuditFlow illustrations must not be presented as application recordings. The root-level legacy `*_demo.gif` files are unverified and must not be used for publication.
 - `public/fonts/`: self-hosted Pretendard variable font and SIL OFL license.
 
 All products remain in development and invite pilot participation inquiries through the existing Contact form. Pilot costs, schedule, eligibility and support terms have not been established by the website. No installer URLs, invented release dates, customer endorsements or performance claims are supplied. The Formspree destination and field names are preserved. Do not submit the live form during QA.
 
 ## Release checks
 
-Build and check the nine pages at desktop and narrow mobile sizes. Verify all 12 demo menus, item details, search/no-results/reset, status filters, keyboard navigation, request links and GIF play/stop. Keep company/private data and local screenshots/logs out of the repository.
+Build and check the nine pages at desktop and narrow mobile sizes. Verify product navigation, the retained OperationsFlow illustration, request links and recording play/stop. Keep a static image as the initial state for all users, including reduced-motion users. Publish application recordings only after comparing them to the validated source version. Keep company/private data and local screenshots/logs out of the repository; only reviewed public media belongs in `public/recordings/`.
 
 The existing GitHub/Vercel deployment flow uses the review branch for Preview and `main` for Production. Check the remote head before updating either branch, then confirm the resulting deployment and public domain.
 

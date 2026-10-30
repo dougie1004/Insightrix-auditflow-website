@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-10-30",
+  "accountingflow": {
+    "sourceCommit": "db74872a24c93be2b656733640b80b2df4d62736",
+    "capture": "Actual development application in browser; direct menu interaction",
+    "sampleData": "Built-in fictional demo journals",
+    "verifiedViews": ["dashboard", "journal", "general ledger", "balance sheet", "trial balance"],
+    "excludedClaims": ["external AI service integration", "production data processing", "commercial readiness"],
+    "animation": "accountingflow-real-20261030.gif",
+    "poster": "accountingflow-real-poster.webp"
+  },
+  "auditflow": {
+    "publication": "hidden until a verified native application recording is ready"
+  }
+}

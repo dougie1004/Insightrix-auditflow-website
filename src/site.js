@@ -75,3 +75,7 @@ for (const recording of document.querySelectorAll('.demo-recording')) {
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) document.querySelectorAll('[data-film]').forEach(stopFilm);
 });
+
+window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', event => {
+    if (event.matches) document.querySelectorAll('[data-film]').forEach(stopFilm);
+});
