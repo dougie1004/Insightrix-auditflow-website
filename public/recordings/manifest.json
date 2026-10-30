@@ -48,5 +48,28 @@
     "sourceBaseCommit": "804acf4e8014778df87280b39bd32bbb917c6e15",
     "status": "approved for publication",
     "sourceCommit": "2174476f647242434288039775ae997ab7421727"
+  },
+  "operationsflow": {
+    "capture": "Four actual Chrome screenshots from the implemented application in an isolated local runtime; held frames",
+    "sampleData": "Synthetic production, SCM and profitability KPIs; no actual company records",
+    "branding": "OperationsFlow",
+    "verifiedViews": [
+      "executive overview",
+      "production KPI filter",
+      "SCM KPI filter",
+      "profitability KPI filter"
+    ],
+    "excludedClaims": [
+      "production source data processing",
+      "all application menus verified",
+      "planning execution"
+    ],
+    "animation": "operationsflow-real-20261030.gif",
+    "poster": "operationsflow-real-poster.webp",
+    "durationMs": 19500,
+    "frames": 4,
+    "width": 852,
+    "height": 710,
+    "sha256": "4f0874fdbde9b1438bd9e2bafe4c03abc2aa7056bdb78c25880bd30d4136ac68"
   }
 }
