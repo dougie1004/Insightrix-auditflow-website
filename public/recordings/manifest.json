@@ -64,12 +64,14 @@
       "all application menus verified",
       "planning execution"
     ],
-    "animation": "operationsflow-real-20261030.gif",
-    "poster": "operationsflow-real-poster.webp",
+    "animation": "operationsflow-hd-20261030.webp",
+    "poster": "operationsflow-hd-20261030-poster.webp",
     "durationMs": 19500,
     "frames": 4,
-    "width": 852,
-    "height": 710,
-    "sha256": "4f0874fdbde9b1438bd9e2bafe4c03abc2aa7056bdb78c25880bd30d4136ac68"
+    "width": 2352,
+    "height": 1778,
+    "sha256": "116c370b116da2618c52c166f491182282990daa1f4e36bf09d397bb350f3110",
+    "gif": "operationsflow-hd-20261030.gif",
+    "encoding": "Native high-density Chrome recapture; lossless animated WebP verified pixel-identical to captured frames; GIF download also available"
   }
 }
