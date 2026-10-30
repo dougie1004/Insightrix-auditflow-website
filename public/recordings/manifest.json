@@ -22,14 +22,14 @@
   "auditflow": {
     "sourceRepository": "https://github.com/dougie1004/AuditFlow",
     "sourceBranch": "develop",
-    "sourceCommit": "804acf4e8014778df87280b39bd32bbb917c6e15",
-    "capture": "Actual Tauri native application via Windows Graphics Capture; direct menu interaction",
+    "capture": "Actual Tauri native application via Windows Graphics Capture; trimmed recorded segments",
     "sampleData": "Fictional sample project and CSV; no customer records",
     "verifiedViews": [
       "project list",
       "project detail",
-      "evidence upload interface",
-      "scenario list"
+      "file selection (stage 1)",
+      "sample CSV preview and sensitive-information hiding complete (stage 2)",
+      "storage preparation (stage 3)"
     ],
     "verifiedRuntime": [
       "CSV preview and masking path",
@@ -41,9 +41,12 @@
       "final audit judgments",
       "commercial readiness"
     ],
-    "animation": "auditflow-real-20261030-v2.gif",
-    "poster": "auditflow-real-v2-poster.webp",
-    "durationMs": 27560,
-    "wordingRevision": "Plain Korean navigation and sample project names; recorded again in the actual application"
+    "animation": "auditflow-wording-review-v3.gif",
+    "poster": "auditflow-wording-review-v3-poster.webp",
+    "durationMs": 16100,
+    "wordingRevision": "Plain Korean navigation and sample project names; recorded again in the actual application",
+    "sourceBaseCommit": "804acf4e8014778df87280b39bd32bbb917c6e15",
+    "status": "approved for publication",
+    "sourceCommit": "2174476f647242434288039775ae997ab7421727"
   }
 }

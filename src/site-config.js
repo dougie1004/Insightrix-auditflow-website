@@ -4,8 +4,8 @@ export const siteProducts = [
     {
         id: 'accounting', slug: 'accountingflow', name: 'AccountingFlow', short: 'AF', number: '01',
         category: '회계 업무', accent: '#345cda', tint: '#edf1ff',
-        heading: '증빙과 전표 사이,\n놓치는 근거 없이.',
-        summary: '전표부터 원장, 재무제표까지 한곳에서 살펴보는 회계 프로그램입니다. 아래 영상에서 전표·원장·재무상태표·시산표 화면을 확인할 수 있습니다. 현재 개발 중이며, 자료 입력과 외부 서비스 연동은 준비 중입니다.',
+        heading: '전표와 원장, 재무제표를\n한곳에서 살펴보세요.',
+        summary: '전표와 총계정원장, 재무상태표와 시산표를 조회하는 회계 프로그램입니다. 현재 개발 중이며, 자료 입력과 외부 서비스 연동은 준비 중입니다.',
         shortDescription: '전표와 원장, 재무제표를 한 흐름으로.',
         steps: [
             ['전표를 확인하고', '샘플 전표의 거래일자·거래처·차변·대변을 조회합니다.'],
@@ -17,8 +17,8 @@ export const siteProducts = [
     {
         id: 'audit', slug: 'auditflow', name: 'AuditFlow', short: 'AU', number: '02',
         category: '감사 검토', accent: '#18745b', tint: '#eaf4ed',
-        heading: '판단의 앞과 뒤에,\n확인할 수 있는 근거.',
-        summary: '감사 프로젝트와 자료, 시나리오를 한곳에서 관리하는 프로그램입니다. 아래 영상에서 프로젝트를 살펴보고 자료와 시나리오 메뉴를 이용하는 모습을 확인할 수 있습니다. 현재 개발 중이며, AI 분석과 최종 보고서는 준비 중입니다.',
+        heading: '감사 프로젝트와 자료를\n한곳에서 관리하세요.',
+        summary: '감사 프로젝트를 만들고 자료를 등록하며 감사 시나리오를 살펴보는 프로그램입니다. 현재 개발 중이며, AI 분석과 최종 보고서는 준비 중입니다.',
         shortDescription: '감사 프로젝트와 자료, 시나리오를 한곳에서.',
         steps: [
             ['프로젝트를 관리하고', '감사 대상과 범위, 진행 상태를 살펴봅니다.'],
