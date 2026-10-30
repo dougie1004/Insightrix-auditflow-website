@@ -4,12 +4,44 @@
     "sourceCommit": "db74872a24c93be2b656733640b80b2df4d62736",
     "capture": "Actual development application in browser; direct menu interaction",
     "sampleData": "Built-in fictional demo journals",
-    "verifiedViews": ["dashboard", "journal", "general ledger", "balance sheet", "trial balance"],
-    "excludedClaims": ["external AI service integration", "production data processing", "commercial readiness"],
+    "verifiedViews": [
+      "dashboard",
+      "journal",
+      "general ledger",
+      "balance sheet",
+      "trial balance"
+    ],
+    "excludedClaims": [
+      "external AI service integration",
+      "production data processing",
+      "commercial readiness"
+    ],
     "animation": "accountingflow-real-20261030.gif",
     "poster": "accountingflow-real-poster.webp"
   },
   "auditflow": {
-    "publication": "hidden until a verified native application recording is ready"
+    "sourceRepository": "https://github.com/dougie1004/AuditFlow",
+    "sourceBranch": "develop",
+    "sourceCommit": "60a6f4de4a18a75b5eaef1994ed24080e9426f0e",
+    "capture": "Actual Tauri native application via Windows Graphics Capture; direct menu interaction",
+    "sampleData": "Synthetic project and CSV created only for verification",
+    "verifiedViews": [
+      "project list",
+      "project detail",
+      "evidence upload interface",
+      "scenario list"
+    ],
+    "verifiedRuntime": [
+      "CSV preview and masking path",
+      "8 canonical events stored with total 3000000",
+      "structural risk engine invoked"
+    ],
+    "excludedClaims": [
+      "external AI service integration",
+      "final audit judgments",
+      "commercial readiness"
+    ],
+    "animation": "auditflow-real-20261030.gif",
+    "poster": "auditflow-real-poster.webp"
   }
 }

@@ -11,7 +11,7 @@ Use `npm install`, then `npm run dev`. `npm run typecheck` checks the TypeScript
 - `public/demos/demo-data.js`: explicitly fictional sample data for 12 views.
 - `public/demos/demo.js`, `demo.css`: menu changes, search, status filters, details and source-derived sample charts.
 - `public/recordings/`: verified recordings of the current applications, with sample data and an explicit validation scope. Posters load first; GIFs only download after explicit play and can be stopped.
-- `public/demos/media/`: legacy HTML illustrations. AccountingFlow and AuditFlow illustrations must not be presented as application recordings. The root-level legacy `*_demo.gif` files are unverified and must not be used for publication.
+- `public/demos/media/`: the retained OperationsFlow HTML illustration. Obsolete AccountingFlow/AuditFlow illustrations are preserved in `legacy-demo-media/`, outside the deployed public directory. The root-level legacy `*_demo.gif` files are unverified and must not be used for publication.
 - `public/fonts/`: self-hosted Pretendard variable font and SIL OFL license.
 
 All products remain in development and invite pilot participation inquiries through the existing Contact form. Pilot costs, schedule, eligibility and support terms have not been established by the website. No installer URLs, invented release dates, customer endorsements or performance claims are supplied. The Formspree destination and field names are preserved. Do not submit the live form during QA.
