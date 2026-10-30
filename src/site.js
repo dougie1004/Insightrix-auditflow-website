@@ -55,7 +55,7 @@ function stopFilm(button) {
     if (!image) return;
     image.src = image.dataset.poster;
     button.setAttribute('aria-pressed', 'false');
-    button.textContent = 'GIF 재생';
+    button.textContent = '영상 재생';
 }
 document.addEventListener('click', event => {
     const button = event.target.closest('[data-film]');
@@ -65,7 +65,7 @@ document.addEventListener('click', event => {
     if (!image) return;
     image.src = image.dataset.animation;
     button.setAttribute('aria-pressed', 'true');
-    button.textContent = 'GIF 멈추기';
+    button.textContent = '영상 멈추기';
 });
 for (const recording of document.querySelectorAll('.demo-recording')) {
     recording.addEventListener('toggle', () => {
