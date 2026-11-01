@@ -50,32 +50,36 @@
     "sourceCommit": "2174476f647242434288039775ae997ab7421727"
   },
   "operationsflow": {
-    "capture": "Four Chrome captures of the existing executive application renderer in a separate local recording copy, using direct HTTP and synthetic fixtures; held frames",
+    "capture": "Six held Chrome frames of existing production, SCM and profitability detail UI renderers in a separate local copy with synthetic inputs; no live operating API snapshot",
     "sampleData": "Synthetic production, SCM and profitability KPIs; no actual company records",
     "branding": "OperationsFlow",
     "verifiedViews": [
-      "executive overview",
-      "production KPI filter",
-      "SCM KPI filter",
-      "profitability KPI filter"
+      "Production: product-group production detail header and table with requery",
+      "SCM: monthly forecast/recommendation and expanded SKU detail with search/reset",
+      "Profitability: period comparison table and monthly profit chart"
     ],
     "excludedClaims": [
       "production source data processing",
       "all application menus verified",
       "planning execution"
     ],
-    "animation": "operationsflow-indigo-blurred-20261101-v2.webp",
-    "poster": "operationsflow-indigo-blurred-20261101-v2-poster.webp",
-    "durationMs": 19500,
-    "frames": 4,
-    "width": 2222,
-    "height": 1778,
-    "sha256": "fda5c90eb1d15fbc2d02b183ef53d13efdd7e310030c54cc890d0f6f4118460f",
-    "gif": "operationsflow-indigo-blurred-20261101-v2.gif",
+    "animation": "operationsflow-details-blurred-20261101-v3.webp",
+    "poster": "operationsflow-details-blurred-20261101-v3-poster.webp",
+    "durationMs": 30000,
+    "frames": 6,
+    "width": 1005,
+    "height": 698,
+    "sha256": "d47f01d174522e96ce021ad9fc1d3bc01c37bd6fcc2ed9a4fb3da82bc94a7b12",
+    "gif": "operationsflow-details-blurred-20261101-v3.gif",
     "encoding": "Native Chrome JPEG captures; lossless animated WebP preserves decoded capture pixels; GIF uses a 256-color palette",
     "recordedAt": "2026-11-01",
     "theme": "AccountingFlow and AuditFlow dark navy and indigo",
     "status": "draft preview awaiting user review",
-    "privacy": "All KPI value text blurred in the rendered application before capture; labels and explanations remain readable"
+    "privacy": "Numeric metrics/counts and all detail table cells blurred before capture; synthetic identifiers; SVG tooltips redacted",
+    "stills": {
+      "production": "operationsflow-details-blurred-20261101-v3-production.webp",
+      "scm": "operationsflow-details-blurred-20261101-v3-scm.webp",
+      "profitability": "operationsflow-details-blurred-20261101-v3-profitability.webp"
+    }
   }
 }
