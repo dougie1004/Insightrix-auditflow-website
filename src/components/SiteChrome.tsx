@@ -9,7 +9,7 @@ function Wordmark() {
 }
 
 export function SiteHeader() {
-    return <><a className="skip-link" href="#main">본문으로 이동</a><header className="site-header"><div className="container header-inner"><a href="/" className="wordmark" aria-label="Insightrix 홈"><Wordmark /></a><nav className="desktop-nav" aria-label="주 메뉴">{navigation.map(([href, label]) => <a key={href} href={href} aria-current={href === '/app.html' ? 'page' : undefined}>{label}</a>)}</nav><a className="button button-dark header-cta" href="/contact.html">파일럿 참여 문의 <Arrow /></a><details className="mobile-nav"><summary aria-label="메뉴 열기"><span /><span /></summary><nav aria-label="모바일 메뉴">{navigation.map(([href, label]) => <a key={href} href={href}>{label}</a>)}<a className="mobile-request" href="/contact.html">파일럿 참여 문의 <Arrow /></a></nav></details></div></header></>;
+    return <><a className="skip-link" href="#main">본문으로 이동</a><header className="site-header"><div className="container header-inner"><a href="/" className="wordmark" aria-label="Insightrix 홈"><Wordmark /></a><a className="language-switch" href="/en/app.html" lang="en" hrefLang="en">EN</a><nav className="desktop-nav" aria-label="주 메뉴">{navigation.map(([href, label]) => <a key={href} href={href} aria-current={href === '/app.html' ? 'page' : undefined}>{label}</a>)}</nav><a className="button button-dark header-cta" href="/contact.html">파일럿 참여 문의 <Arrow /></a><details className="mobile-nav"><summary aria-label="메뉴 열기"><span /><span /></summary><nav aria-label="모바일 메뉴">{navigation.map(([href, label]) => <a key={href} href={href}>{label}</a>)}<a className="mobile-request" href="/contact.html">파일럿 참여 문의 <Arrow /></a></nav></details></div></header></>;
 }
 
 export function SiteFooter() {

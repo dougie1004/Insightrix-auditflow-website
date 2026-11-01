@@ -8,6 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        ...Object.fromEntries(['app','index','accountingflow','auditflow','operationsflow','company','contact','thanks'].map(name => ['en_' + name, resolve(__dirname, 'en/' + name + '.html')])),
         app: resolve(__dirname, 'app.html'),
         accountingflow: resolve(__dirname, 'accountingflow.html'),
         auditflow: resolve(__dirname, 'auditflow.html'),
