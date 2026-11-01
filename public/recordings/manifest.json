@@ -50,7 +50,7 @@
     "sourceCommit": "2174476f647242434288039775ae997ab7421727"
   },
   "operationsflow": {
-    "capture": "Four actual Chrome screenshots from the implemented application in an isolated local runtime; held frames",
+    "capture": "Four Chrome captures of the existing executive application renderer in a separate local recording copy, using direct HTTP and synthetic fixtures; held frames",
     "sampleData": "Synthetic production, SCM and profitability KPIs; no actual company records",
     "branding": "OperationsFlow",
     "verifiedViews": [
@@ -64,14 +64,18 @@
       "all application menus verified",
       "planning execution"
     ],
-    "animation": "operationsflow-hd-20261030.webp",
-    "poster": "operationsflow-hd-20261030-poster.webp",
+    "animation": "operationsflow-indigo-blurred-20261101-v2.webp",
+    "poster": "operationsflow-indigo-blurred-20261101-v2-poster.webp",
     "durationMs": 19500,
     "frames": 4,
-    "width": 2352,
+    "width": 2222,
     "height": 1778,
-    "sha256": "116c370b116da2618c52c166f491182282990daa1f4e36bf09d397bb350f3110",
-    "gif": "operationsflow-hd-20261030.gif",
-    "encoding": "Native high-density Chrome recapture; lossless animated WebP verified pixel-identical to captured frames; GIF download also available"
+    "sha256": "fda5c90eb1d15fbc2d02b183ef53d13efdd7e310030c54cc890d0f6f4118460f",
+    "gif": "operationsflow-indigo-blurred-20261101-v2.gif",
+    "encoding": "Native Chrome JPEG captures; lossless animated WebP preserves decoded capture pixels; GIF uses a 256-color palette",
+    "recordedAt": "2026-11-01",
+    "theme": "AccountingFlow and AuditFlow dark navy and indigo",
+    "status": "draft preview awaiting user review",
+    "privacy": "All KPI value text blurred in the rendered application before capture; labels and explanations remain readable"
   }
 }
