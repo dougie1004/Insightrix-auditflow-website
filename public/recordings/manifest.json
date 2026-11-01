@@ -50,28 +50,36 @@
     "sourceCommit": "2174476f647242434288039775ae997ab7421727"
   },
   "operationsflow": {
-    "capture": "Four actual Chrome screenshots from the implemented application in an isolated local runtime; held frames",
+    "capture": "Six held Chrome frames of existing production, SCM and profitability detail UI renderers in a separate local copy with synthetic inputs; no live operating API snapshot",
     "sampleData": "Synthetic production, SCM and profitability KPIs; no actual company records",
     "branding": "OperationsFlow",
     "verifiedViews": [
-      "executive overview",
-      "production KPI filter",
-      "SCM KPI filter",
-      "profitability KPI filter"
+      "Production: product-group production detail header and table with requery",
+      "SCM: monthly forecast/recommendation and expanded SKU detail with search/reset",
+      "Profitability: period comparison table and monthly profit chart"
     ],
     "excludedClaims": [
       "production source data processing",
       "all application menus verified",
       "planning execution"
     ],
-    "animation": "operationsflow-hd-20261030.webp",
-    "poster": "operationsflow-hd-20261030-poster.webp",
-    "durationMs": 19500,
-    "frames": 4,
-    "width": 2352,
-    "height": 1778,
-    "sha256": "116c370b116da2618c52c166f491182282990daa1f4e36bf09d397bb350f3110",
-    "gif": "operationsflow-hd-20261030.gif",
-    "encoding": "Native high-density Chrome recapture; lossless animated WebP verified pixel-identical to captured frames; GIF download also available"
+    "animation": "operationsflow-details-blurred-20261101-v4.webp",
+    "poster": "operationsflow-details-blurred-20261101-v4-poster.webp",
+    "durationMs": 30000,
+    "frames": 6,
+    "width": 1005,
+    "height": 698,
+    "sha256": "20e9edd62b973bccab926d87c0f41fcc99143c976de86aaa0dd574bd08fef8b6",
+    "gif": "operationsflow-details-blurred-20261101-v4.gif",
+    "encoding": "Native Chrome JPEG captures; lossless animated WebP preserves decoded capture pixels; GIF uses a 256-color palette",
+    "recordedAt": "2026-11-01",
+    "theme": "AccountingFlow and AuditFlow dark navy and indigo",
+    "status": "draft preview awaiting user review",
+    "privacy": "Numeric metrics/counts and all detail table cells blurred before capture; synthetic identifiers; SVG tooltips redacted",
+    "stills": {
+      "production": "operationsflow-details-blurred-20261101-v4-production.webp",
+      "scm": "operationsflow-details-blurred-20261101-v4-scm.webp",
+      "profitability": "operationsflow-details-blurred-20261101-v4-profitability.webp"
+    }
   }
 }
