@@ -63,23 +63,23 @@
       "all application menus verified",
       "planning execution"
     ],
-    "animation": "operationsflow-details-blurred-20261101-v3.webp",
-    "poster": "operationsflow-details-blurred-20261101-v3-poster.webp",
+    "animation": "operationsflow-details-blurred-20261101-v4.webp",
+    "poster": "operationsflow-details-blurred-20261101-v4-poster.webp",
     "durationMs": 30000,
     "frames": 6,
     "width": 1005,
     "height": 698,
-    "sha256": "d47f01d174522e96ce021ad9fc1d3bc01c37bd6fcc2ed9a4fb3da82bc94a7b12",
-    "gif": "operationsflow-details-blurred-20261101-v3.gif",
+    "sha256": "20e9edd62b973bccab926d87c0f41fcc99143c976de86aaa0dd574bd08fef8b6",
+    "gif": "operationsflow-details-blurred-20261101-v4.gif",
     "encoding": "Native Chrome JPEG captures; lossless animated WebP preserves decoded capture pixels; GIF uses a 256-color palette",
     "recordedAt": "2026-11-01",
     "theme": "AccountingFlow and AuditFlow dark navy and indigo",
     "status": "draft preview awaiting user review",
     "privacy": "Numeric metrics/counts and all detail table cells blurred before capture; synthetic identifiers; SVG tooltips redacted",
     "stills": {
-      "production": "operationsflow-details-blurred-20261101-v3-production.webp",
-      "scm": "operationsflow-details-blurred-20261101-v3-scm.webp",
-      "profitability": "operationsflow-details-blurred-20261101-v3-profitability.webp"
+      "production": "operationsflow-details-blurred-20261101-v4-production.webp",
+      "scm": "operationsflow-details-blurred-20261101-v4-scm.webp",
+      "profitability": "operationsflow-details-blurred-20261101-v4-profitability.webp"
     }
   }
 }

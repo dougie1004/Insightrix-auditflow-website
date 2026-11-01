@@ -11,3 +11,5 @@ Media: 6 held frames, 30 seconds, 1005 × 698. GIF and WebP decoding/frame check
 No internal application source, credentials, databases, input records, logs or local paths are included in this website change. The application has no verified publishing remote, so its source is excluded.
 
 Review target: draft PR preview only. Merge and production release require explicit user approval of this version.
+
+V4 layout correction: nonwrapping period labels and Dashboard badge, responsive date controls, and a production table that fits its container. Production frames show actual scrolling from the query header to all six product-group rows and the separate semi-finished row, including the rightmost column. Profitability captures include the complete comparison table and chart. Existing recordings remain unchanged.
