@@ -1,4 +1,4 @@
-export type ProductId = 'accounting' | 'audit' | 'operations';
+export type ProductId = 'accounting' | 'audit' | 'operations' | 'factory' | 'prf' | 'wgf';
 
 export interface SiteProduct {
     readonly id: ProductId;
