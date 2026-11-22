@@ -11,7 +11,7 @@ const gtm = `<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':n
 const page = (title, description, active, body, theme='') => `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} | Insightrix</title><meta name="description" content="${description}"><link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png"><link rel="icon" type="image/svg+xml" href="/brand/favicon.svg"><link rel="preload" href="/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/src/index.css">${gtm}<script type="module" src="/src/site.js"></script><script src="/demos/embed.js" defer></script></head><body class="marketing ${theme}">${header(active)}<main id="main">${body}</main>${footer()}</body></html>`;
 
 const featureNotes = {
-  factory: '현재 계획을 기준으로 작업일을 바꿔 보고, 변경안에서 공정 상태를 확인합니다.',
+  factory: '실제 공장을 재현한 화면에서 작업의 이동을 재생하고 설비별 부하와 대기를 확인합니다.',
   prf: '보유 기술과 개발 조건을 정리한 뒤 연구개발 후보와 검증할 항목을 확인합니다.',
   wgf: '개발 작업을 맡기면 에이전트가 요구사항을 정리하고 작업을 수행합니다. 개발이 끝나면 별도 검증 단계로 이어집니다.',
 };
