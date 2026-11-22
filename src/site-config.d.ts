@@ -1,4 +1,4 @@
-export type ProductId = 'accounting' | 'audit' | 'operations';
+export type ProductId = 'accounting' | 'audit' | 'operations' | 'factory' | 'prf' | 'wgf';
 
 export interface SiteProduct {
     readonly id: ProductId;
@@ -19,3 +19,6 @@ export interface SiteProduct {
 export const developmentNotice: string;
 export const siteProducts: ReadonlyArray<SiteProduct>;
 export const navigation: ReadonlyArray<readonly [string, string]>;
+
+export const showcaseProducts: ReadonlyArray<SiteProduct>;
+export const showcaseNavigation: ReadonlyArray<readonly [string, string]>;

@@ -27,3 +27,9 @@
 
 /* Real program recording: static poster first; no autoplay download. */
 .actual-preview img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#0b1221}.actual-preview>.mini-open{margin:16px 20px}.film-content img{max-width:100%;height:auto}
+
+.request-tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.request-tabs button>strong{overflow-wrap:anywhere}
+@media(max-width:960px){.request-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:480px){.request-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.request-tabs button>strong{font-size:12px}}
+.contact-form #request-product{width:100%;min-height:44px;padding:10px 12px;color:inherit;background:transparent;border:1px solid #cfdacc;border-radius:6px;font:inherit}

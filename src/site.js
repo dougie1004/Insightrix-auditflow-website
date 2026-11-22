@@ -79,3 +79,11 @@ document.addEventListener('visibilitychange', () => {
 window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', event => {
     if (event.matches) document.querySelectorAll('[data-film]').forEach(stopFilm);
 });
+
+// Prefill the public pilot-inquiry product only for known slugs.
+const pilotProduct = document.getElementById('request-product');
+if (pilotProduct) {
+    const slug = new URLSearchParams(window.location.search).get('product');
+    const option = Array.from(pilotProduct.options).find(item => item.dataset.productSlug === slug);
+    if (option) pilotProduct.value = option.value;
+}
