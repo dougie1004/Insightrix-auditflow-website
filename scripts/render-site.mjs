@@ -13,7 +13,7 @@ const page = (title, description, active, body, theme='') => `<!doctype html><ht
 const featureNotes = {
   factory: '실제 공장을 재현한 화면에서 작업의 이동을 재생하고 설비별 부하와 대기를 확인합니다.',
   prf: '보유 기술과 개발 조건을 정리한 뒤 연구개발 후보와 검증할 항목을 확인합니다.',
-  wgf: '개발 작업을 맡기면 에이전트가 요구사항을 정리하고 작업을 수행합니다. 개발이 끝나면 별도 검증 단계로 이어집니다.',
+  wgf: '요일을 평일과 주말로 구분하는 기능을 맡기고, 에이전트가 개발을 마친 상태를 확인합니다.',
 };
 const featureMedia = product => {
   const path = '/recordings/'+product.id+'-function-review';
