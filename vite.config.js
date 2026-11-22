@@ -16,6 +16,8 @@ export default defineConfig({
         prf: resolve(__dirname, 'prf.html'),
         wgf: resolve(__dirname, 'wgf.html'),
         company: resolve(__dirname, 'company.html'),
+        consulting: resolve(__dirname, 'consulting.html'),
+        manufacturingCase: resolve(__dirname, 'manufacturing-case.html'),
         contact: resolve(__dirname, 'contact.html'),
         thanks: resolve(__dirname, 'thanks.html'),
         notFound: resolve(__dirname, '404.html'),
