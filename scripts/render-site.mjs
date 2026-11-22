@@ -44,7 +44,26 @@ const preview = product => {
 };
 const renderProductRows = products => products.map(product=>`<a class="product-row" href="/${product.slug}.html" style="--accent:${product.accent};--tint:${product.tint}"><span class="product-number">${product.number}</span><div class="product-row-name"><span class="product-category">${product.category}</span><h3>${product.name}</h3></div><div class="product-row-copy"><p>${product.shortDescription}</p><span>${product.tags.join('  ·  ')}</span></div><span class="row-arrow">${arrow}</span></a>`).join('');
 const productRows = renderProductRows(siteProducts);
-const home = `<section class="home-hero container"><div class="hero-copy"><a class="pilot-invitation" href="/app.html"><span>파일럿 참여 기업 모집</span>${arrow}</a><span class="eyebrow"><i class="status-dot"></i>현장 상주형 경영혁신 컨설팅과 업무 소프트웨어</span><h1>현장에서 문제를 찾고,<br>해결까지 함께합니다.</h1><p class="hero-description">전문 컨설턴트가 고객사에 상주해 현업과 문제의 원인을 찾습니다. 일하는 방식을 개선하고, 필요한 소프트웨어를 현장에 적용합니다.</p><div class="hero-actions"><a class="button button-dark" href="/consulting.html">현장 개선 상담 ${arrow}</a><a class="text-link" href="#products">제품 둘러보기 ${arrow}</a></div><p class="development-copy">어떻게 일하는지 궁금하다면 <a class="text-link" href="/manufacturing-case.html">제조 현장 사례 보기 ${arrow}</a></p></div><div class="hero-visual"><div class="preview-caption"><span>일의 흐름이 보이는 공간</span><span>제품 미리보기</span></div><div class="hero-product-tabs" role="tablist" aria-label="제품 미리보기">${siteProducts.map((p,i)=>`<button role="tab" aria-selected="${i===0}" aria-controls="hero-preview" id="preview-tab-${p.id}" data-preview="${p.id}" tabindex="${i===0?0:-1}"><span class="wide-label">${p.name}</span><span class="short-label">${p.category}</span></button>`).join('')}</div><div id="hero-preview" role="tabpanel" aria-labelledby="preview-tab-accounting">${preview(siteProducts[0])}</div>${siteProducts.map(p=>`<template id="preview-${p.id}">${preview(p)}</template>`).join('')}<div class="preview-footnote"><span class="tiny-line"></span>시연에는 샘플 자료를 사용하거나 내부 정보를 가렸습니다.</div></div></section><section class="product-index container" id="products"><div class="section-heading"><div><span class="eyebrow">PRODUCTS. ONE CLEAR PURPOSE.</span><h2>업무는 달라도,<br>근거는 선명하게.</h2></div><p>회계·감사부터 제조 운영, 특허 연구, AI 업무 수행까지.<br>필요한 제품을 살펴보세요.</p></div><div class="product-rows">${productRows}</div></section><section class="principles-section"><div class="container principles-layout"><div><span class="eyebrow">OUR APPROACH</span><h2>자동화보다 먼저,<br>확인할 수 있는 과정.</h2><p>결과가 어떻게 나왔는지 담당자가 직접 확인하고 판단할 수 있도록 설계합니다.</p></div><dl class="principles-list"><div><dt><span>01</span>원천 자료에서 시작합니다.</dt><dd>어떤 자료에서 출발했는지, 무엇과 연결됐는지 살펴볼 수 있도록.</dd></div><div><dt><span>02</span>검토의 맥락을 남깁니다.</dt><dd>결과만이 아니라 확인한 내용과 다음 질문을 함께 볼 수 있도록.</dd></div><div><dt><span>03</span>판단은 담당자의 몫입니다.</dt><dd>업무의 최종 판단과 승인을 사람이 맡는 흐름을 바탕으로 개발합니다.</dd></div></dl></div></section><section class="demo-section container" id="demo"><div class="section-heading"><div><span class="eyebrow">INSIGHTRIX PRODUCTS</span><h2>업무에 맞는 제품을 살펴보세요.</h2></div><p>여섯 제품의 주요 기능과 실제 사용 화면을 확인할 수 있습니다.</p></div><div class="product-rows">${productRows}</div></section>`;
+const fieldExamples = [
+  ['수익성','매출만으로는 제품과 고객이 이익에 얼마나 기여하는지 판단하기 어렵습니다.','제품·고객별 매출과 원가를 연결해 손익을 분석하고, 가격·판매 구성 개선의 우선순위를 정합니다.','제품·고객별 손익 분석'],
+  ['비용','비용 총액만으로는 물량 증가의 영향과 공정 비효율의 영향을 구분하기 어렵습니다.','작업공수와 설비 가동시간을 공정별로 분석해, 원가를 높이는 요인과 개선 대상 공정을 파악합니다.','공정별 원가 동인 분석'],
+  ['재고','총재고만 보면 장기재고와 공급 부족 위험이 상쇄되어 보일 수 있습니다.','품목별 수요·가용재고·입고 예정량을 대조해 적정성을 판단하고, 보충과 장기재고 소진의 우선순위를 정합니다.','재고 적정성 및 공급 부족 분석'],
+  ['생산','월간 계획을 변경해도 주간 편성과 일별 작업 배정이 어떻게 달라지는지 한눈에 알기 어렵습니다.','월간 계획, 주간 편성, 일별 작업 배정, 생산실적을 연결해 계획 대비 차이와 조정이 필요한 작업을 확인합니다.','생산계획 대비 실적 관리'],
+  ['인력','전체 인원만으로는 공정별 인력 부족과 교대조 간 업무 편차를 설명하기 어렵습니다.','공정·교대조별 필요 공수와 가용 인력을 비교해, 인력 재배치가 필요한 작업을 파악합니다.','공정별 인력 소요 분석'],
+  ['생산능력(CAPA)','생산 목표를 높이기 전에 어느 설비와 공정이 전체 생산량을 제한하는지 확인해야 합니다.','설비 가동시간과 인력 투입 조건을 달리해 생산 가능량을 산정하고, 병목 해소 방안을 비교합니다.','생산능력 산정 및 병목 분석'],
+];
+const fieldCaseHome = `
+<section class="container field-proof" aria-labelledby="field-proof-title">
+  <div class="section-heading"><div><span class="eyebrow">제조 현장 개선 사례</span><h2 id="field-proof-title">제조업 운영 진단 및<br>수익성 개선</h2></div><p>생산계획과 실적의 차이를 출발점으로 제품·고객별 손익, 공정별 원가, 재고 적정성, 인력과 설비의 생산능력을 함께 분석했습니다.</p></div>
+  <div class="field-compare">
+    <div><span>개선 전</span><h3>계획과 실적의 관리 기준이 분리돼 있었습니다.</h3><p>생산계획을 변경할 때 재고 수급, 설비 부하, 인력 소요, 수익성 영향을 각각 확인해야 했습니다.</p></div>
+    <div><span>개선 후</span><h3>생산계획 조정에 필요한 판단 기준을 마련했습니다.</h3><p>월간 계획부터 일별 작업 배정과 생산실적까지 연결했습니다. 재고 부족과 공정별 생산 여력을 확인하고, 제품·고객별 손익과 비용 분석을 바탕으로 개선 과제의 우선순위를 정했습니다.</p></div>
+  </div>
+  <ul class="field-tags" aria-label="진단·개선 범위">${fieldExamples.map(([label])=>'<li>'+label+'</li>').join('')}</ul>
+  <div class="hero-actions"><a class="button button-dark" href="/consulting.html">제조 운영 개선 상담 ${arrow}</a><a class="text-link" href="/manufacturing-case.html">제조업 컨설팅 사례 보기 ${arrow}</a></div>
+  <p class="field-note">첫 상담에서는 문제가 생기는 상황만 알려 주세요. 내부 자료는 보내지 않아도 됩니다.</p>
+</section>`;
+const home = `<section class="home-hero container"><div class="hero-copy"><a class="pilot-invitation" href="/app.html"><span>파일럿 참여 기업 모집</span>${arrow}</a><span class="eyebrow"><i class="status-dot"></i>현장 상주형 경영혁신 컨설팅과 업무 소프트웨어</span><h1>현장에서 문제를 찾고,<br>해결까지 함께합니다.</h1><p class="hero-description">전문 컨설턴트가 고객사에 상주해 현업과 문제의 원인을 찾습니다. 일하는 방식을 개선하고, 필요한 소프트웨어를 현장에 적용합니다.</p><div class="hero-actions"><a class="button button-dark" href="/consulting.html">현장 개선 상담 ${arrow}</a><a class="text-link" href="#products">제품 둘러보기 ${arrow}</a></div><p class="development-copy">어떻게 일하는지 궁금하다면 <a class="text-link" href="/manufacturing-case.html">제조 현장 사례 보기 ${arrow}</a></p></div><div class="hero-visual"><div class="preview-caption"><span>일의 흐름이 보이는 공간</span><span>제품 미리보기</span></div><div class="hero-product-tabs" role="tablist" aria-label="제품 미리보기">${siteProducts.map((p,i)=>`<button role="tab" aria-selected="${i===0}" aria-controls="hero-preview" id="preview-tab-${p.id}" data-preview="${p.id}" tabindex="${i===0?0:-1}"><span class="wide-label">${p.name}</span><span class="short-label">${p.category}</span></button>`).join('')}</div><div id="hero-preview" role="tabpanel" aria-labelledby="preview-tab-accounting">${preview(siteProducts[0])}</div>${siteProducts.map(p=>`<template id="preview-${p.id}">${preview(p)}</template>`).join('')}<div class="preview-footnote"><span class="tiny-line"></span>시연에는 샘플 자료를 사용하거나 내부 정보를 가렸습니다.</div></div></section>${fieldCaseHome}<section class="product-index container" id="products"><div class="section-heading"><div><span class="eyebrow">PRODUCTS. ONE CLEAR PURPOSE.</span><h2>업무는 달라도,<br>근거는 선명하게.</h2></div><p>회계·감사부터 제조 운영, 특허 연구, AI 업무 수행까지.<br>필요한 제품을 살펴보세요.</p></div><div class="product-rows">${productRows}</div></section><section class="principles-section"><div class="container principles-layout"><div><span class="eyebrow">OUR APPROACH</span><h2>자동화보다 먼저,<br>확인할 수 있는 과정.</h2><p>결과가 어떻게 나왔는지 담당자가 직접 확인하고 판단할 수 있도록 설계합니다.</p></div><dl class="principles-list"><div><dt><span>01</span>원천 자료에서 시작합니다.</dt><dd>어떤 자료에서 출발했는지, 무엇과 연결됐는지 살펴볼 수 있도록.</dd></div><div><dt><span>02</span>검토의 맥락을 남깁니다.</dt><dd>결과만이 아니라 확인한 내용과 다음 질문을 함께 볼 수 있도록.</dd></div><div><dt><span>03</span>판단은 담당자의 몫입니다.</dt><dd>업무의 최종 판단과 승인을 사람이 맡는 흐름을 바탕으로 개발합니다.</dd></div></dl></div></section><section class="demo-section container" id="demo"><div class="section-heading"><div><span class="eyebrow">INSIGHTRIX PRODUCTS</span><h2>업무에 맞는 제품을 살펴보세요.</h2></div><p>여섯 제품의 주요 기능과 실제 사용 화면을 확인할 수 있습니다.</p></div><div class="product-rows">${productRows}</div></section>`;
 fs.writeFileSync('index.html',page('현장 상주형 경영혁신 컨설팅·맞춤형 소프트웨어 개발','전문 컨설턴트가 고객 현장에 상주해 생산계획·재고·수익성 등 운영 문제를 진단하고, 업무 프로세스 개선과 소프트웨어 개발을 함께 진행합니다.','/',home));
 
 function diagram(product){
@@ -85,7 +104,7 @@ const company = `
   </div>
 </section>
 <section class="container product-index" id="field-example">
-  <div class="section-heading"><div><span class="eyebrow">IN PRACTICE</span><h2>제조 현장에서는 이렇게 일합니다.</h2></div><a class="text-link" href="/manufacturing-case.html">생산계획 개선 사례 보기 ${arrow}</a></div>
+  <div class="section-heading"><div><span class="eyebrow">IN PRACTICE</span><h2>제조 현장에서는 이렇게 일합니다.</h2></div><a class="text-link" href="/manufacturing-case.html">제조 현장 개선 사례 보기 ${arrow}</a></div>
   <div class="process-strip">
     <div><span>01</span><h2>계획과 실적이 어긋나는 이유를 찾습니다.</h2><p>영업 수요가 생산계획으로 이어지는 과정과, 계획이 실제 작업으로 배정되는 기준을 현업과 함께 확인합니다.</p></div>
     <div><span>02</span><h2>누가 무엇을 언제 판단할지 정합니다.</h2><p>월간 계획과 주간 조정, 일별 작업 배정이 연결되도록 판단 기준과 담당 역할을 정리합니다.</p></div>
@@ -120,20 +139,22 @@ fs.writeFileSync('consulting.html',page('현장 개선 상담','현장 상주형
 
 const manufacturingCase = `
 <section class="container company-hero">
- <span class="eyebrow">MANUFACTURING CASE</span>
- <h1>월간 생산계획을<br>매일의 작업으로 연결한 사례</h1>
- <p>제조 현장의 실제 개선 작업을 바탕으로, 고객 이름과 내부 수치를 제외하고 정리했습니다. 핵심은 계획을 한 장 더 만드는 게 아니라, 각 부서가 같은 기준으로 변경을 판단하도록 만드는 일이었습니다.</p>
+ <span class="eyebrow">제조 현장 개선 사례</span>
+ <h1>제조업 운영 진단 및<br>수익성 개선 사례</h1>
+ <p>월간 생산계획과 현장 작업의 차이를 분석하고, 제품·고객별 수익성부터 설비 병목까지 운영 전반을 진단한 사례입니다. 고객사명과 내부 수치를 제외했습니다.</p>
 </section>
-<section class="principles-section"><div class="container principles-layout">
- <div><span class="eyebrow">현장 개선 사례</span><h2>무엇을 바꿨나요?</h2></div>
- <dl class="principles-list">
-  <div><dt><span>01</span>어디서 어긋났는지 확인했습니다</dt><dd>월간 계획, 주간 편성안, 현장의 일별 작업 계획은 서로 목적이 달랐습니다. 계획량만 비교해서는 어떤 변경이 현장에서 실행됐는지 알기 어려웠습니다.</dd></div>
-  <div><dt><span>02</span>계획을 바꾸는 기준을 연결했습니다</dt><dd>월간 계획으로 물량을 판단하고, 주간에 변경을 검토한 뒤, 현업이 확정한 내용을 일별 배정과 연결했습니다. 생산실적은 다음 계획을 조정할 때 다시 확인할 수 있게 했습니다.</dd></div>
-  <div><dt><span>03</span>회의에서 확인할 질문이 달라졌습니다</dt><dd>어느 수치가 맞는지만 따지는 대신, 어떤 품목을 언제 배정할지, 어떤 변경을 현장과 먼저 확인할지 판단할 수 있도록 계획과 실적을 나란히 볼 수 있게 했습니다.</dd></div>
- </dl>
-</div></section>
-<section class="container product-index"><div class="section-heading"><div><span class="eyebrow">NEXT STEP</span><h2>비슷한 문제가 있나요?</h2></div><a class="button button-dark" href="/consulting.html">현장 개선 상담 ${arrow}</a></div><div class="product-rows">${renderProductRows(siteProducts.filter(p=>p.id==='operations'||p.id==='factory'))}</div></section>`;
-fs.writeFileSync('manufacturing-case.html',page('제조업 생산계획 개선 사례','제조 현장의 월간 생산계획과 주간 편성, 일별 작업 배정 및 실적을 연결한 현장 개선 사례입니다.','/manufacturing-case.html',manufacturingCase));
+<section class="container field-details" aria-labelledby="field-details-title">
+ <div class="section-heading"><div><span class="eyebrow">진단과 개선</span><h2 id="field-details-title">주요 진단 항목과 개선 방향</h2></div><p>분석 결과를 제품별 판매 전략, 재고 관리, 생산 편성, 인력·설비 배치에 반영할 수 있도록 개선안을 마련합니다.</p></div>
+ <div class="field-cards">${fieldExamples.map(([label,issue,work,method])=>`<article class="field-card"><span class="eyebrow">${method}</span><h3>${label}</h3><p><strong>주요 이슈</strong> ${issue}</p><p><strong>진단 및 개선 방안</strong> ${work}</p></article>`).join('')}</div>
+</section>
+<section class="principles-section">
+ <div class="container principles-layout field-visual">
+  <div><span class="eyebrow">운영 판단 화면</span><h2>생산·재고·수익성을<br>하나의 운영 기준으로 관리합니다.</h2><p>부서 간 수치를 대조하는 데 그치지 않고, 생산 우선순위와 병목 공정의 개선 과제를 공통 기준으로 논의할 수 있습니다.</p><a class="text-link" href="/operationsflow.html#demo">OperationsFlow 시연 보기 ${arrow}</a></div>
+  <figure><img src="/recordings/operationsflow-details-blurred-20261101-v4-production.webp" width="1005" height="698" alt="OperationsFlow의 생산운영 지표 예시 화면" loading="lazy" decoding="async"><figcaption>OperationsFlow 제품 시연 · 샘플 자료</figcaption></figure>
+ </div>
+</section>
+<section class="container product-index"><div class="section-heading"><div><span class="eyebrow">다음 단계</span><h2>제조 운영 개선 상담</h2><p>첫 문의에는 주요 이슈만 적어 주세요. 세부 자료는 진단 범위를 협의한 뒤 확인합니다.</p></div><a class="button button-dark" href="/consulting.html">제조 운영 개선 상담 ${arrow}</a></div><div class="product-rows">${renderProductRows(siteProducts.filter(p=>p.id==='operations'||p.id==='factory'))}</div></section>`;
+fs.writeFileSync('manufacturing-case.html',page('제조업 경영혁신 사례 · 생산·재고·수익성·CAPA','제조 현장의 수익성, 비용, 재고, 생산, 인력, 생산능력 문제를 진단하고 월간 생산계획과 현장 실행을 연결한 개선 사례입니다.','/manufacturing-case.html',manufacturingCase));
 fs.writeFileSync('public/robots.txt','User-agent: *\nAllow: /\nSitemap: '+publicBase+'/sitemap.xml\n');
 fs.writeFileSync('public/sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+publicPages.map(path=>'  <url><loc>'+publicBase+path+'</loc></url>').join('\n')+'\n</urlset>\n');
 
