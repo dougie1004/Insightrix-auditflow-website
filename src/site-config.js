@@ -82,7 +82,7 @@ export const showcaseProducts = [
     },
 ];
 export const showcaseNavigation = [
-    ...showcaseProducts.map(product => ['/'+product.slug+'.html', product.name]),
     ['/company.html', '소개'],
+    ...showcaseProducts.map(product => ['/'+product.slug+'.html', product.name]),
     ['/app.html', '파일럿 참여'],
 ];
