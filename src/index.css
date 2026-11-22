@@ -50,3 +50,15 @@
 .field-visual img{display:block;max-width:100%;height:auto;border-radius:10px;border:1px solid #d1ded0}
 .field-visual figcaption{font-size:13px;margin-top:7px}
 @media(max-width:760px){.field-proof,.field-details{padding-top:42px;padding-bottom:45px}.field-compare,.field-cards{grid-template-columns:1fr}.field-compare>div,.field-card{padding:19px}.field-compare h3,.field-card h3{font-size:21px}}
+
+/* Keep section targets below the sticky menu and give the recording more room. */
+#products,#field-services,#demo{scroll-margin-top:90px}
+.featured-demo .mini-app{border-top:1px solid #d6dfd5;border-radius:12px}
+.preview-footnote{line-height:1.6}
+.product-row-name{min-width:0}
+.product-row-name h3{overflow-wrap:anywhere}
+.product-demo-section .film-note strong{color:var(--ink)}
+@media(max-width:490px){
+  .hero-actions{flex-wrap:wrap;gap:12px 20px}
+  .product-demo-section .film-content{padding-inline:6px}
+}
